@@ -1,5 +1,7 @@
 export LC_ALL="en_US.UTF-8"
 
+export EDITOR=nvim
+
 # Stream song-grab
 alias gsvlc="VERBOSE=true OUTPUT_DIR=./.output ./Github/grab-song/grab-song.sh vlc"
 alias gscele="VERBOSE=true OUTPUT_DIR=./.output ./Github/grab-song/grab-song.sh"
@@ -8,18 +10,12 @@ alias gscele="VERBOSE=true OUTPUT_DIR=./.output ./Github/grab-song/grab-song.sh"
 alias hibr="systemctl hibernate"
 alias lloo="qdbus org.kde.ksmserver /KSMServer logout 1 3 3"
 
-# NVIM alias
-alias vim="optirun nvim"
-
 # Python alias
 alias p="python"
 
 # NVM
 # export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# vi-mode uses system clipboard
-source "$HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -91,7 +87,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ubuntu git archlinux vi-mode yarn zsh-autosuggestions sudo zsh-syntax-highlighting)
+plugins=(ubuntu git archlinux yarn zsh-autosuggestions sudo zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,3 +119,17 @@ source $ZSH/oh-my-zsh.sh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Kitty tab name
+
+function set-title-precmd() {
+  printf "\e]2;%s\a" "${PWD/#$HOME/~}"
+}
+
+function set-title-preexec() {
+  printf "\e]2;%s\a" "$1"
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd set-title-precmd
+add-zsh-hook preexec set-title-preexec

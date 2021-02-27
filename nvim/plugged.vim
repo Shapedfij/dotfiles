@@ -7,9 +7,10 @@ Plug 'joshdick/onedark.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'liuchengxu/space-vim-dark'
+Plug 'arcticicestudio/nord-vim'
 
-" Tmux navigation
-Plug 'christoomey/vim-tmux-navigator'
+" Kitty navigation
+Plug 'knubie/vim-kitty-navigator'
 
 " Git Integration
 Plug 'tpope/vim-fugitive'
@@ -21,6 +22,9 @@ Plug 'vim-python/python-syntax'
 
 " Python formatter
 Plug 'psf/black'
+
+" Markdown
+Plug 'mzlogin/vim-markdown-toc'
 
 " Yank
 Plug 'machakann/vim-highlightedyank'
@@ -35,6 +39,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
