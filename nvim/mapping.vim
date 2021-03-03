@@ -21,3 +21,13 @@ nnoremap <leader><Esc> :bdelete<CR>
 nnoremap <leader>] :bnext<CR>
 nnoremap <leader>[ :bprev<CR>
 
+" Windows navigation
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+
+" Quickfix list
+nnoremap <c-]> :cnext<CR>
+nnoremap <c-[> :cprev<CR>
+nnoremap <c-\> :copen<CR>

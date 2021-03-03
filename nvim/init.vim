@@ -9,6 +9,8 @@ source $HOME/.config/nvim/plugins/treesitter.vim
 source $HOME/.config/nvim/plugins/coc.vim
 source $HOME/.config/nvim/plugins/vim-fugitive.vim
 
+source $HOME/.config/nvim/plugins/isort.vim
+
 source $HOME/.config/nvim/plugins/black.vim
 source $HOME/.config/nvim/plugins/prettier.vim
 

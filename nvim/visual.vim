@@ -8,7 +8,8 @@ set smartcase
 set ignorecase
 set nu
 
-set autoindent noexpandtab tabstop=4 shiftwidth=4
+" set autoindent noexpandtab tabstop=4 shiftwidth=4
+set autoindent noexpandtab tabstop=2 shiftwidth=2
 
 set nowrap
 set noswapfile
@@ -19,7 +20,6 @@ set undofile
 set incsearch
 set scrolloff=8
 
-" set termguicolors
 
 " Spell checker
 " set spell
@@ -46,7 +46,14 @@ set list
 set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:·
 
 syntax on
+set termguicolors
+" keywords bolded, disabled(=0) by default
+let g:ci_dark_enable_bold = 1
+
+
+" gruvbox
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
 
 set clipboard=unnamedplus
+

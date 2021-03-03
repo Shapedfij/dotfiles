@@ -1,16 +1,11 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 " Themes
-Plug 'sainnhe/gruvbox-material'
 Plug 'gruvbox-community/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'liuchengxu/space-vim-dark'
 Plug 'arcticicestudio/nord-vim'
-
-" Kitty navigation
-Plug 'knubie/vim-kitty-navigator'
 
 " Git Integration
 Plug 'tpope/vim-fugitive'
@@ -21,6 +16,7 @@ Plug 'nvie/vim-flake8'
 Plug 'vim-python/python-syntax'
 
 " Python formatter
+Plug 'fisadev/vim-isort'
 Plug 'psf/black'
 
 " Markdown
@@ -61,11 +57,11 @@ Plug 'tjdevries/lsp_extensions.nvim'
 
 " Neovim Tree Sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 call plug#end()
