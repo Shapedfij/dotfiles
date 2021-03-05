@@ -3,8 +3,10 @@ local actions = require('telescope.actions')
 require('telescope').setup {
     defaults = {
         file_sorter = require('telescope.sorters').get_fzy_sorter,
-        prompt_prefix = ' >',
+        prompt_position = "bottom",
+        prompt_prefix = "-> ",
         color_devicons = true,
+        set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
 
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
