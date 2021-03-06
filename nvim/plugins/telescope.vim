@@ -3,8 +3,10 @@
 lua require("fulies")
 nnoremap <leader>vrc :lua require('fulies.telescope').search_dotfiles()<CR>
 
-" For file search
+" Git
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
+
+" For file search
 nnoremap <Leader>p :lua require('telescope.builtin').find_files()<CR>
 nnoremap <Leader><Tab> :lua require('telescope.builtin').buffers()<CR>
 

@@ -1,3 +1,7 @@
+" Coc-Git
+" show chunk diff at current position
+nmap gs <Plug>(coc-git-chunkinfo)
+
 " Release memory on exit
 autocmd VimLeavePre * :call coc#rpc#kill()
 autocmd VimLeave * if get(g:, 'coc_process_pid', 0) | call system('kill -9 -'.g:coc_process_pid) | endif

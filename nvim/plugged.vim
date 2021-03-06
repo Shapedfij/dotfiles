@@ -2,10 +2,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 " Themes
 Plug 'gruvbox-community/gruvbox'
-Plug 'joshdick/onedark.vim'
-Plug 'tomasiser/vim-code-dark'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'arcticicestudio/nord-vim'
+Plug 'rakr/vim-one'
 
 " Git Integration
 Plug 'tpope/vim-fugitive'

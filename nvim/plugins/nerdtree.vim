@@ -1,6 +1,7 @@
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Make prettier
+let g:NERDTreeWinPos = "right"
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowHidden=1

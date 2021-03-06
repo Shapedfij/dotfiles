@@ -7,19 +7,17 @@ set smartindent
 set smartcase
 set ignorecase
 set nu
+set scrolloff=8
 
-" set autoindent noexpandtab tabstop=4 shiftwidth=4
 set autoindent noexpandtab tabstop=2 shiftwidth=2
+set clipboard=unnamedplus
 
 set nowrap
 set noswapfile
 set nobackup
 set undodir=~/.nvim/undodir
 set undofile
-
 set incsearch
-set scrolloff=8
-
 
 " Spell checker
 " set spell
@@ -40,7 +38,6 @@ set hlsearch!
 nnoremap <c-n> :set hlsearch!<cr>
 
 " Intend Highlighting
-
 set encoding=utf-8
 set list
 set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:·
@@ -51,9 +48,8 @@ set termguicolors
 let g:ci_dark_enable_bold = 1
 
 
-" gruvbox
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+" Theme
+colorscheme one
+let g:airline_theme='one'
 
-set clipboard=unnamedplus
 
