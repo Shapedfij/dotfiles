@@ -7,7 +7,9 @@ set smartindent
 set smartcase
 set ignorecase
 set nu
-set scrolloff=8
+
+set scrolloff=10
+set sidescroll=10
 
 set autoindent noexpandtab tabstop=2 shiftwidth=2
 set clipboard=unnamedplus
@@ -42,6 +44,8 @@ set encoding=utf-8
 set list
 set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:·
 
+" TreeSitter syntax highlighting
+lua require'nvim-treesitter.configs'.setup { highlight = { enable=true } }
 syntax on
 set termguicolors
 " keywords bolded, disabled(=0) by default

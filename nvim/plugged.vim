@@ -10,7 +10,6 @@ Plug 'tpope/vim-fugitive'
 " Python
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
-Plug 'vim-python/python-syntax'
 
 " Python formatter
 Plug 'fisadev/vim-isort'
