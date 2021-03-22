@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 " Themes
 Plug 'gruvbox-community/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 Plug 'rakr/vim-one'
 
 " Git Integration
@@ -41,9 +42,6 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Easy surround
 Plug 'tpope/vim-surround'
-
-" Buffer Tabline
-Plug 'ap/vim-buftabline'
 
 " Neovim lsp Plugins
 Plug 'neovim/nvim-lspconfig'

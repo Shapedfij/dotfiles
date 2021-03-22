@@ -11,7 +11,7 @@ set nu
 set scrolloff=10
 set sidescroll=10
 
-set autoindent noexpandtab tabstop=2 shiftwidth=2
+set autoindent
 set clipboard=unnamedplus
 
 set nowrap
@@ -21,19 +21,12 @@ set undodir=~/.nvim/undodir
 set undofile
 set incsearch
 
-" Spell checker
-" set spell
-
 " set noshowmode
 set isfname+=@-@
 
 " Yank Feedback
 let g:highlightedyank_highlight_duration = 100
 highlight HighlightedyankRegion cterm=reverse gui=reverse
-" augroup highlight_yank
-" 	autocmd!
-" 	autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
-" augroup END
 
 " Clear search result
 set hlsearch!
@@ -47,13 +40,32 @@ set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:·
 " TreeSitter syntax highlighting
 lua require'nvim-treesitter.configs'.setup { highlight = { enable=true } }
 syntax on
-set termguicolors
+if has("termguicolors")     " set true colors
+    set t_8f=\[[38;2;%lu;%lu;%lum
+    set t_8b=\[[48;2;%lu;%lu;%lum
+    set termguicolors
+endif
 " keywords bolded, disabled(=0) by default
 let g:ci_dark_enable_bold = 1
 
+" Nord
+" colorscheme nord
+" let g:airline_theme='nord'
 
-" Theme
-colorscheme one
-let g:airline_theme='one'
+" OneDark
+" colorscheme one
+" let g:airline_theme='onedark'
 
+" Gruvbox
+colorscheme gruvbox
+let g:gruvbox_constrast_dark='hard'
+let g:gruvbox_invert_tabline = 1
+let g:gruvbox_transparent_bg = 1
+set background=dark "Setting dark mode
+let g:airline_theme='gruvbox'
+
+" Transparent background
+highlight Normal     ctermbg=NONE guibg=NONE
+highlight LineNr     ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE
 
