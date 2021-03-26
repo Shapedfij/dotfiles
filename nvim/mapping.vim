@@ -2,12 +2,6 @@
 nnoremap <SPACE> <Nop>
 let mapleader=" " 
 
-" so %
-nnoremap <leader>% :so %<CR>
-
-" save 
-nnoremap <C-s> :w<CR>
-
 " Moving lines with 'Alt' key
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==

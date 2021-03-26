@@ -1,12 +1,17 @@
 set nohlsearch
 set hidden
-set expandtab
-set cursorline
 set relativenumber
 set smartindent
 set smartcase
 set ignorecase
 set nu
+
+set expandtab
+" show existing tab with 2 spaces width
+set tabstop=2
+set softtabstop=2
+" when indenting with '>', use 2 spaces width
+set shiftwidth=2
 
 set scrolloff=10
 set sidescroll=10
