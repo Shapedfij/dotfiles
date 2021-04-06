@@ -50,12 +50,9 @@ if has("termguicolors")     " set true colors
     set t_8b=\[[48;2;%lu;%lu;%lum
     set termguicolors
 endif
+
 " keywords bolded, disabled(=0) by default
 let g:ci_dark_enable_bold = 1
-
-" Nord
-" colorscheme nord
-" let g:airline_theme='nord'
 
 " OneDark
 " colorscheme one
