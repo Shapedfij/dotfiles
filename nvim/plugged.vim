@@ -15,6 +15,9 @@ Plug 'nvie/vim-flake8'
 Plug 'fisadev/vim-isort'
 Plug 'psf/black'
 
+" C Formatter
+Plug 'rhysd/vim-clang-format'
+
 " Markdown
 Plug 'mzlogin/vim-markdown-toc'
 
