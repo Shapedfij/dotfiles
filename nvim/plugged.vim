@@ -4,6 +4,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'rakr/vim-one'
 
+" Highlighting
+Plug 'sheerun/vim-polyglot'
+
 " Git Integration
 Plug 'tpope/vim-fugitive'
 
