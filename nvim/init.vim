@@ -21,5 +21,6 @@ source $HOME/.config/nvim/plugins/nerdtree.vim
 source $HOME/.config/nvim/plugins/devicons.vim
 
 source $HOME/.config/nvim/visual.vim
-source $HOME/.config/nvim/plugins/airline.vim
+" source $HOME/.config/nvim/plugins/airline.vim
+source $HOME/.config/nvim/plugins/lauline.vim
 

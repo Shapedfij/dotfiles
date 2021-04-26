@@ -29,8 +29,11 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'machakann/vim-highlightedyank'
 
 " Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+
+" lauline
+Plug 'hoob3rt/lualine.nvim'
 
 " Filetree | Nerdtree
 Plug 'preservim/nerdtree'
