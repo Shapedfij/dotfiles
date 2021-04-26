@@ -7,9 +7,9 @@ let g:lualine = {
     \},
     \'sections' : {
     \  'lualine_a' : [ ['mode', {'upper': v:true,},], ],
-    \  'lualine_b' : [ ['branch', {'icon': '',}, ], ],
-    \  'lualine_c' : [ ['filename', {'file_status': v:true,},], ['diff'], ],
-    \  'lualine_x' : [ 'encoding', 'fileformat', 'filetype' ],
+    \  'lualine_b' : [ ['branch', {'icon': '',},], ],
+    \  'lualine_c' : [ ['filename', {'file_status': v:true,},], ],
+    \  'lualine_x' : [ 'encoding', 'fileformat', 'filetype', ],
     \  'lualine_y' : [ 'progress' ],
     \  'lualine_z' : [ 'location'  ],
     \},
@@ -21,6 +21,6 @@ let g:lualine = {
     \  'lualine_y' : [  ],
     \  'lualine_z' : [  ],
     \},
-    \'extensions' : [ 'fugitive', 'fzf' ],
+    \'extensions' : [ 'fugitive', 'fzf', ],
     \}
 lua require("lualine").setup()
