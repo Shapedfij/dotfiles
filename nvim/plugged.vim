@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 " Themes
 Plug 'gruvbox-community/gruvbox'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'rakr/vim-one'
 
 " Highlighting
