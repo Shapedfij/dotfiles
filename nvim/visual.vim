@@ -6,6 +6,9 @@ set smartcase
 set ignorecase
 set nu
 
+" set cmd height to 1
+set cmdheight=1
+
 set expandtab
 " show existing tab with 2 spaces width
 set tabstop=2
