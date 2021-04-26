@@ -1,6 +1,6 @@
 let g:lualine = {
     \'options' : {
-    \  'theme' : 'palenight',
+    \  'theme' : 'gruvbox',
     \  'section_separators' : ['', ''],
     \  'component_separators' : ['', ''],
     \  'icons_enabled' : v:true,
