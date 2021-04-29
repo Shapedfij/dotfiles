@@ -38,6 +38,7 @@ Plug 'hoob3rt/lualine.nvim'
 " Filetree | Nerdtree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
