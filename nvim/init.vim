@@ -12,15 +12,11 @@ source $HOME/.config/nvim/plugins/vim-fugitive.vim
 " Python
 source $HOME/.config/nvim/plugins/isort.vim
 source $HOME/.config/nvim/plugins/black.vim
-source $HOME/.config/nvim/syntax/python.vim
-source $HOME/.config/nvim/syntax/ghostshell.vim
 
 source $HOME/.config/nvim/plugins/prettier.vim
 
 source $HOME/.config/nvim/plugins/nvim-tree.vim
-source $HOME/.config/nvim/plugins/devicons.vim
 
 source $HOME/.config/nvim/visual.vim
-" source $HOME/.config/nvim/plugins/airline.vim
 source $HOME/.config/nvim/plugins/lauline.vim
 

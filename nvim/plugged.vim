@@ -5,14 +5,10 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'rakr/vim-one'
 
-" Highlighting
-Plug 'sheerun/vim-polyglot'
-
 " Git Integration
 Plug 'tpope/vim-fugitive'
 
-" Python
-Plug 'vim-syntastic/syntastic'
+" Python linter
 Plug 'nvie/vim-flake8'
 
 " Python formatter
@@ -27,10 +23,6 @@ Plug 'mzlogin/vim-markdown-toc'
 
 " Yank
 Plug 'machakann/vim-highlightedyank'
-
-" Airline
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 
 " lauline
 Plug 'hoob3rt/lualine.nvim'
