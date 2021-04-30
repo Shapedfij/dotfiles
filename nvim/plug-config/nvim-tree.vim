@@ -1,13 +1,16 @@
 let g:nvim_tree_side = 'right' "left by default
+let g:nvim_tree_width = 30
 let g:nvim_tree_auto_close = 1
 let g:nvim_tree_quit_on_open = 1
 let g:nvim_tree_follow = 1 
 let g:nvim_tree_indent_markers = 1
+let g:nvim_tree_special_files = [ 'README.md', 'Makefile', 'MAKEFILE' ] " List of filenames that gets highlighted with NvimTreeSpecialFile
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 1,
     \ 'files': 1,
     \ }
+"
 "If 0, do not show the icons for one of 'git' 'folder' and 'files'
 "1 by default, notice that if 'files' is 1, it will only display
 "if nvim-web-devicons is installed and on your runtimepath

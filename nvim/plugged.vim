@@ -5,50 +5,29 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'rakr/vim-one'
 
-" Git Integration
+" Git
 Plug 'tpope/vim-fugitive'
 
-" Python linter
+" Python
 Plug 'nvie/vim-flake8'
-
-" Python formatter
 Plug 'fisadev/vim-isort'
 Plug 'psf/black'
 
-" C Formatter
+" Formater
 Plug 'rhysd/vim-clang-format'
-
-" Markdown
-Plug 'mzlogin/vim-markdown-toc'
-
-" Yank
-Plug 'machakann/vim-highlightedyank'
-
-" lauline
-Plug 'hoob3rt/lualine.nvim'
-
-" Filetree
-Plug 'kyazdani42/nvim-tree.lua'
-
-" Icons
-Plug 'kyazdani42/nvim-web-devicons'
-
-" COC
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Prettier (All Language)
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
-" Easy surround
+" Utils
 Plug 'tpope/vim-surround'
+Plug 'machakann/vim-highlightedyank'
+Plug 'kyazdani42/nvim-web-devicons'
 
-" Neovim lsp Plugins
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim' 
-Plug 'tjdevries/nlua.nvim'
-Plug 'tjdevries/lsp_extensions.nvim'
+" StatusBar | Filetree
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-tree.lua'
 
-" Neovim Tree Sitter
+" COC | Tree Sitter
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Telescope
