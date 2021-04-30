@@ -32,6 +32,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 " Icons
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'yamatsum/nvim-web-nonicons'
 
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
