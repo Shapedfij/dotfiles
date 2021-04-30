@@ -17,7 +17,7 @@ source $HOME/.config/nvim/syntax/ghostshell.vim
 
 source $HOME/.config/nvim/plugins/prettier.vim
 
-source $HOME/.config/nvim/plugins/nerdtree.vim
+source $HOME/.config/nvim/plugins/nvim-tree.vim
 source $HOME/.config/nvim/plugins/devicons.vim
 
 source $HOME/.config/nvim/visual.vim

@@ -35,13 +35,10 @@ Plug 'machakann/vim-highlightedyank'
 " lauline
 Plug 'hoob3rt/lualine.nvim'
 
-" Filetree | Nerdtree
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Filetree
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Icons
-Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " COC
