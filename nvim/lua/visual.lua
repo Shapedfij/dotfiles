@@ -9,6 +9,7 @@ vim.o.background = 'dark'
 
 -- Keyword bold
 vim.g.ci_dark_enable_bold = 1
+
 -- Transparent background
 vim.cmd('highlight Normal     ctermbg=NONE guibg=NONE') 
 vim.cmd('highlight LineNr     ctermbg=NONE guibg=NONE') 
