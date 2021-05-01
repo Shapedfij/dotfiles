@@ -45,7 +45,7 @@ end
 
 
 -- KeyBinding
-vim.api.nvim_set_keymap("n", "<leader>vrc", ":lua require('nv-telescope').search_dotfiles()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>vrc", ":lua require('telescope-x').search_dotfiles()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('telescope.builtin').git_files()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>p", ":lua require('telescope.builtin').find_files()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>pf", ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>", { noremap = true })

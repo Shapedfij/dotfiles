@@ -5,6 +5,6 @@ require("visual")
 
 -- Plugins
 require("git")
-require("nv-telescope")
-require("nv-nvimtree")
-require("nv-lualine")
+require("telescope-x")
+require("nvimtree-x")
+require("lualine-x")
