@@ -37,6 +37,8 @@ return require("packer").startup(
 
 		-- Native LSP
 		use "neovim/nvim-lspconfig"
+
+		-- Auto Completion
 		use "hrsh7th/nvim-compe"
 
 		-- Telescope
@@ -47,9 +49,11 @@ return require("packer").startup(
 
 		-- Treesitter
 		use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+		use "p00f/nvim-ts-rainbow"
 
 		-- Git
 		use 'tpope/vim-fugitive'
+		use "lewis6991/gitsigns.nvim"
 
 		-- Explorer
 		use 'kyazdani42/nvim-tree.lua'
@@ -61,14 +65,12 @@ return require("packer").startup(
 		-- Icons
 		use "kyazdani42/nvim-web-devicons"
 
-		-- Status Line and Bufferline
+		-- Status Line
 		use 'hoob3rt/lualine.nvim'
 
-		-- Utils
+		-- Utilies Plugins
 		use 'tpope/vim-surround'
 		use "windwp/nvim-autopairs"
-		use "lewis6991/gitsigns.nvim"
 		use 'machakann/vim-highlightedyank'
-
-end
+	end
 )

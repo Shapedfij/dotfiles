@@ -11,6 +11,7 @@ require("nvimtree-x")
 require("lualine-x")
 require("compe-x")
 require("gitsigns-x")
+require("treesitter-x")
 
 -- LSP
 require('lsp')
