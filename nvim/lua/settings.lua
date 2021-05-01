@@ -8,15 +8,14 @@ vim.o.fileencoding = "utf-8" -- The encoding written to file
 vim.o.cmdheight = 1 -- More space for displaying messages
 vim.cmd('set colorcolumn=99999') -- fix indentline for now
 
-vim.cmd('set ts=4') -- Insert 2 spaces for a tab
-vim.cmd('set sw=4') -- Change the number of space characters inserted for indentation
-vim.bo.expandtab = true -- Converts tabs to spaces
-
-vim.o.list = true
-vim.cmd('set listchars=tab:→\\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:·') 
-
+vim.o.conceallevel = 0 -- So that I can see `` in markdown files
+vim.cmd('set ts=2') -- Insert 2 spaces for a tab
+vim.cmd('set sw=2') -- Change the number of space characters inserted for indentation
 vim.bo.expandtab = true -- Converts tabs to spaces
 vim.bo.smartindent = true -- Makes indenting smart
+
+vim.o.list = true
+vim.cmd('set listchars=tab:→\\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:·')
 
 vim.o.smartcase = true
 vim.o.ignorecase = true

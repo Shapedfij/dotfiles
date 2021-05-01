@@ -69,5 +69,6 @@ return require("packer").startup(
 		use "windwp/nvim-autopairs"
 		use "lewis6991/gitsigns.nvim"
 		use 'machakann/vim-highlightedyank'
+
 end
 )
