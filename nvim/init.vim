@@ -10,7 +10,6 @@ source $HOME/.config/nvim/plug-config/prettier.vim
 source $HOME/.config/nvim/plug-config/isort.vim
 source $HOME/.config/nvim/plug-config/black.vim
 
-source $HOME/.config/nvim/plug-config/nvim-tree.vim
 source $HOME/.config/nvim/visual.vim
 
 source $HOME/.config/nvim/lua_mod.vim
