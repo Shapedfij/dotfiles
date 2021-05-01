@@ -35,43 +35,34 @@ return require("packer").startup(
         -- Packer can manage itself as an optional plugin
         use "wbthomason/packer.nvim"
 
+        -- Native LSP
+        use "neovim/nvim-lspconfig"
+        use "hrsh7th/nvim-compe"
+
         -- Telescope
-        use {"nvim-lua/popup.nvim", opt = true}
-        use {"nvim-lua/plenary.nvim", opt = true}
-        use {"nvim-telescope/telescope.nvim", opt = true}
-        use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
+        use "nvim-lua/popup.nvim"
+        use "nvim-lua/plenary.nvim"
+        use "nvim-telescope/telescope.nvim"
+        use "nvim-telescope/telescope-fzy-native.nvim"
 
-	-- Git
-	use 'tpope/vim-fugitive'
+		-- Git
+		use 'tpope/vim-fugitive'
 
-	-- Explorer
-	use 'kyazdani42/nvim-tree.lua'
+		-- Explorer
+		use 'kyazdani42/nvim-tree.lua'
         use "kevinhwang91/rnvimr"
 
         -- Color
-        use {"gruvbox-community/gruvbox", opt = true}
+        use "gruvbox-community/gruvbox"
 
         -- Icons
-        use {"kyazdani42/nvim-web-devicons", opt = true}
+        use "kyazdani42/nvim-web-devicons"
 
-        -- Status Line and Bufferline
-	use 'hoob3rt/lualine.nvim'
+		-- Status Line and Bufferline
+		use 'hoob3rt/lualine.nvim'
 
-	-- Utils
-	use 'tpope/vim-surround'
-	use 'machakann/vim-highlightedyank'
-
-        require_plugin("popup.nvim")
-        require_plugin("plenary.nvim")
-        require_plugin("telescope.nvim")
-        require_plugin("telescope-fzy-native.nvim")
-        require_plugin("vim-fugitive")
-        require_plugin("nvim-tree.lua")
-        require_plugin("rnvimr")
-        require_plugin("gruvbox")
-        require_plugin("nvim-web-devicons")
-        require_plugin("lualine.nvim")
-        require_plugin("vim-surround")
-        require_plugin("vim-highlightedyank")
-    end
+		-- Utils
+		use 'tpope/vim-surround'
+		use 'machakann/vim-highlightedyank'
+	end
 )
