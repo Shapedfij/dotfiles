@@ -25,3 +25,6 @@ vim.api.nvim_set_keymap("n", "<Leader>l", ":wincmd l<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-]>", ":cnext<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-[>", ":cprev<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-\\>", ":copen<CR>", { noremap = true })
+
+-- Clear search result
+vim.api.nvim_set_keymap("n", "<C-n>", ":set hlsearch!<CR>", { noremap = true })
