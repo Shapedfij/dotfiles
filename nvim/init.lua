@@ -8,4 +8,7 @@ require("git")
 require("telescope-x")
 require("nvimtree-x")
 require("lualine-x")
-require("nvim-compe-x")
+require("compe-x")
+
+-- LSP
+require('lsp')
