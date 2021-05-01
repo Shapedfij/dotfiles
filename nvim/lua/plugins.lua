@@ -31,38 +31,43 @@ end
 vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
 
 return require("packer").startup(
-    function(use)
-        -- Packer can manage itself as an optional plugin
-        use "wbthomason/packer.nvim"
+   function(use)
+		-- Packer can manage itself as an optional plugin
+		use "wbthomason/packer.nvim"
 
-        -- Native LSP
-        use "neovim/nvim-lspconfig"
-        use "hrsh7th/nvim-compe"
+		-- Native LSP
+		use "neovim/nvim-lspconfig"
+		use "hrsh7th/nvim-compe"
 
-        -- Telescope
-        use "nvim-lua/popup.nvim"
-        use "nvim-lua/plenary.nvim"
-        use "nvim-telescope/telescope.nvim"
-        use "nvim-telescope/telescope-fzy-native.nvim"
+		-- Telescope
+		use "nvim-lua/popup.nvim"
+		use "nvim-lua/plenary.nvim"
+		use "nvim-telescope/telescope.nvim"
+		use "nvim-telescope/telescope-fzy-native.nvim"
+
+		-- Treesitter
+		use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
 		-- Git
 		use 'tpope/vim-fugitive'
 
 		-- Explorer
 		use 'kyazdani42/nvim-tree.lua'
-        use "kevinhwang91/rnvimr"
+		use "kevinhwang91/rnvimr"
 
-        -- Color
-        use "gruvbox-community/gruvbox"
+		-- Color
+		use "gruvbox-community/gruvbox"
 
-        -- Icons
-        use "kyazdani42/nvim-web-devicons"
+		-- Icons
+		use "kyazdani42/nvim-web-devicons"
 
 		-- Status Line and Bufferline
 		use 'hoob3rt/lualine.nvim'
 
 		-- Utils
 		use 'tpope/vim-surround'
+		use "windwp/nvim-autopairs"
+		use "lewis6991/gitsigns.nvim"
 		use 'machakann/vim-highlightedyank'
-	end
+end
 )

@@ -79,6 +79,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+  },
   ["nvim-compe"] = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/nvim-compe"
@@ -90,6 +94,10 @@ _G.packer_plugins = {
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
