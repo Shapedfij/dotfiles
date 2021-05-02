@@ -2,7 +2,7 @@
 vim.cmd('colorscheme ' .. 'gruvbox')
 
 -- Gruvbox dark
-vim.g.gruvbox_constrast_dark='hard'
+vim.g.gruvbox_constrast_dark = 'hard'
 vim.g.gruvbox_invert_tabline = 1
 vim.g.gruvbox_transparent_bg = 1
 vim.o.background = 'dark'

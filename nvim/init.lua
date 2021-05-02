@@ -20,4 +20,3 @@ require("nvimtree-x")
 require("nvim-comment-x")
 require("telescope-x")
 require("treesitter-x")
-

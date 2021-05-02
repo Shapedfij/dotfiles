@@ -1,5 +1,5 @@
-local noremap = function(v ,lhs ,rhs)
-	vim.api.nvim_set_keymap(v, lhs, rhs, { noremap = true })
+local noremap = function(v, lhs, rhs)
+    vim.api.nvim_set_keymap(v, lhs, rhs, {noremap = true})
 end
 
 -- Leader key
