@@ -70,6 +70,7 @@ return require("packer").startup(
 
 		-- Utilies Plugins
 		use 'tpope/vim-surround'
+		use "terrortylor/nvim-comment"
 		use "windwp/nvim-autopairs"
 		use 'machakann/vim-highlightedyank'
 	end
