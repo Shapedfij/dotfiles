@@ -16,6 +16,3 @@ vim.cmd('highlight LineNr     ctermbg=NONE guibg=NONE')
 vim.cmd('highlight SignColumn ctermbg=NONE guibg=NONE')
 
 vim.cmd('highlight HighlightedyankRegion cterm=reverse gui=reverse')
-
--- LSP Saga
-vim.cmd('highlight link LspSagaFinderSelection Search')

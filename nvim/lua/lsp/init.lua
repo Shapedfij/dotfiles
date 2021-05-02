@@ -16,22 +16,18 @@ vim.fn.sign_define(
 )
 
 -- LSP | LSP-saga keybinds
-vim.cmd("nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>")
+vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")
 vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
 vim.cmd("nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>")
-vim.cmd("nnoremap <silent> <F2> <cmd>lua require('lspsaga.rename').rename()<CR>")
+vim.cmd("nnoremap <silent> <F2> <cmd>lua vim.lsp.buf.rename()<CR>")
 
 -- Docs
-vim.cmd("nnoremap <silent> ca :Lspsaga code_action<CR>")
-vim.cmd("nnoremap <silent> K :Lspsaga hover_doc<CR>")
+vim.cmd("nnoremap <silent> K <cmd>vim.lsp.buf.hover()<CR>")
 
 -- Diagnostic
-vim.cmd("nnoremap <silent> <C-\\> <cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>")
-vim.cmd("nnoremap <silent> <C-[> <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>")
-vim.cmd("nnoremap <silent> <C-]> <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>")
-vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
-
-vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
+vim.cmd("nnoremap <silent> <C-\\> <cmd>lua vim.lsp.diagnostic.get_all()<CR>")
+vim.cmd("nnoremap <silent> <C-[> <cmd>lua vim.lsp.diagnostic.get_prev()<CR>")
+vim.cmd("nnoremap <silent> <C-]> <cmd>lua vim.lsp.diagnostic.get_next()<CR>")
 
 -- commented options are defaults
 require('lspkind').init({
