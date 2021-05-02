@@ -38,6 +38,8 @@ return require("packer").startup(
 		-- Native LSP
 		use "neovim/nvim-lspconfig"
 		use "glepnir/lspsaga.nvim"
+		use "onsails/lspkind-nvim"
+		use "kabouzeid/nvim-lspinstall"
 
 		-- Auto Completion
 		use "hrsh7th/nvim-compe"
