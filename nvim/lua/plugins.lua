@@ -37,6 +37,7 @@ return require("packer").startup(
 
 		-- Native LSP
 		use "neovim/nvim-lspconfig"
+		use "glepnir/lspsaga.nvim"
 
 		-- Auto Completion
 		use "hrsh7th/nvim-compe"

@@ -1,3 +1,19 @@
+-- LSP | LSP-saga keybinds
+vim.cmd("nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>")
+vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
+vim.cmd("nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>")
+vim.cmd("nnoremap <silent> <F2> <cmd>lua require('lspsaga.rename').rename()<CR>")
+
+-- Docs
+vim.cmd("nnoremap <silent> ca :Lspsaga code_action<CR>")
+vim.cmd("nnoremap <silent> K :Lspsaga hover_doc<CR>")
+
+-- Diagnostic
+vim.cmd("nnoremap <silent> <C-\\> <cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>")
+vim.cmd("nnoremap <silent> <C-[> <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>")
+vim.cmd("nnoremap <silent> <C-]> <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>")
+vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
+
 -- symbols for autocomplete
 vim.lsp.protocol.CompletionItemKind = {
     "   (Text) ",
@@ -27,14 +43,8 @@ vim.lsp.protocol.CompletionItemKind = {
     "   (TypeParameter)"
 }
 
---[[ " autoformat
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 100) ]]
--- Java
--- autocmd FileType java nnoremap ca <Cmd>lua require('jdtls').code_action()<CR>
 
-local function documentHighlight(client, bufnr)
+local function documentHighlight(client, _)
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec(
@@ -52,6 +62,8 @@ local function documentHighlight(client, bufnr)
         )
     end
 end
+
+
 local lsp_config = {}
 
 function lsp_config.common_on_attach(client, bufnr)
