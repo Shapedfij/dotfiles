@@ -14,8 +14,8 @@ vim.cmd('set sw=2') -- Change the number of space characters inserted for indent
 vim.bo.expandtab = true -- Converts tabs to spaces
 vim.bo.smartindent = true -- Makes indenting smart
 
-vim.o.list = true
-vim.cmd('set listchars=tab:→\\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:·')
+-- vim.o.list = true
+-- vim.cmd('set listchars=tab:→\\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:·')
 
 vim.o.smartcase = true
 vim.o.ignorecase = true

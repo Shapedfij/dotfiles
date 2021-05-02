@@ -31,6 +31,7 @@ vim.cmd("nnoremap <silent> <C-[> <cmd>lua require'lspsaga.diagnostic'.lsp_jump_d
 vim.cmd("nnoremap <silent> <C-]> <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>")
 vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
 
+vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
 
 -- commented options are defaults
 require('lspkind').init({

@@ -1,21 +1,23 @@
 -- Generals
+require("autocommands")
+require("keybindings")
 require('plugins')
 require("settings")
-require("keybindings")
 require("visual")
 
 -- LSP
 require('lsp')
 require('lsp.ls-lua')
+require('lsp.ls-efm')
 
 -- Plugins
-require("git")
 require("autopairs-x")
+require("compe-x")
+require("git")
+require("gitsigns-x")
+require("lualine-x")
+require("nvimtree-x")
 require("nvim-comment-x")
 require("telescope-x")
-require("nvimtree-x")
-require("lualine-x")
-require("compe-x")
-require("gitsigns-x")
 require("treesitter-x")
 

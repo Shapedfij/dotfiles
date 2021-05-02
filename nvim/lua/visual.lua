@@ -15,8 +15,6 @@ vim.cmd('highlight Normal     ctermbg=NONE guibg=NONE')
 vim.cmd('highlight LineNr     ctermbg=NONE guibg=NONE')
 vim.cmd('highlight SignColumn ctermbg=NONE guibg=NONE')
 
--- Yank Feedback
-vim.g.highlightedyank_highlight_duration = 100
 vim.cmd('highlight HighlightedyankRegion cterm=reverse gui=reverse')
 
 -- LSP Saga

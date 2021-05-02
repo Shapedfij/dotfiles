@@ -71,6 +71,10 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
+  ["efm-langserver"] = {
+    loaded = true,
+    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/efm-langserver"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
@@ -154,10 +158,6 @@ _G.packer_plugins = {
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/vim-fugitive"
-  },
-  ["vim-highlightedyank"] = {
-    loaded = true,
-    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/vim-highlightedyank"
   },
   ["vim-surround"] = {
     loaded = true,

@@ -40,6 +40,7 @@ return require("packer").startup(
 		use "glepnir/lspsaga.nvim"
 		use "onsails/lspkind-nvim"
 		use "kabouzeid/nvim-lspinstall"
+		use "mattn/efm-langserver"
 
 		-- Auto Completion
 		use "hrsh7th/nvim-compe"
@@ -75,6 +76,5 @@ return require("packer").startup(
 		use 'tpope/vim-surround'
 		use "terrortylor/nvim-comment"
 		use "windwp/nvim-autopairs"
-		use 'machakann/vim-highlightedyank'
 	end
 )
