@@ -1,30 +1,49 @@
-local utils = require('utils')
+function Define_augroups(definitions) -- {{{1
+  -- Create autocommand groups based on the passed definitions
+  --
+  -- The key will be the name of the group, and each definition
+  -- within the group should have:
+  --    1. Trigger
+  --    2. Pattern
+  --    3. Text
+  -- just like how they would normally be defined from Vim itself
+  for group_name, definition in pairs(definitions) do
+    vim.cmd("augroup " .. group_name)
+    vim.cmd("autocmd!")
 
-utils.define_augroups({
+    for _, def in pairs(definition) do
+      local command = table.concat(vim.tbl_flatten {"autocmd", def}, " ")
+      vim.cmd(command)
+    end
 
+    vim.cmd("augroup END")
+  end
+end
+
+Define_augroups(
+  {
     -- Yank Highlighting
     _general_settings = {
-        {
-            'TextYankPost', '*',
-            'lua require(\'vim.highlight\').on_yank({higroup = \'Search\', timeout = 100})'
-        }
+      {
+        "TextYankPost",
+        "*",
+        "lua require('vim.highlight').on_yank({higroup = 'Search', timeout = 100})"
+      }
     },
-
     _markdown = {
-        {'FileType', 'markdown', 'setlocal wrap'},
-        {'FileType', 'markdown', 'setlocal spell'}
+      {"FileType", "markdown", "setlocal wrap"},
+      {"FileType", "markdown", "setlocal spell"}
     },
-
     -- Auto Formaters
     _auto_formatters = {
-        {'BufWrite', '*.lua', 'call LuaFormat()'},
-        {'BufWritePre', '*.py', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'},
-        {'BufWritePre', '*.js', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'},
-        {'BufWritePre', '*.js', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'},
-        {'BufWritePre', '*.jsx', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'},
-        {'BufWritePre', '*.ts', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'},
-        {'BufWritePre', '*.tsx', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'},
-        {'BufWritePre', '*.json', 'lua vim.lsp.buf.formatting_sync(nil, 1000)'},
-        {'BufWritePre', '*.rb', 'lua vim.lsp.buf.formatting_sync(nil,1000)'}
+      {"BufWritePre", "*.py", "lua vim.lsp.buf.formatting_sync(nil, 1000)"}
     }
-})
+  }
+)
+
+vim.api.nvim_exec([[
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost *.lua FormatWrite
+augroup END
+]], true)

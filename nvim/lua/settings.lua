@@ -1,4 +1,4 @@
-vim.cmd('syntax on') -- syntax highlighting
+vim.cmd("syntax on") -- syntax highlighting
 vim.o.termguicolors = true -- set term gui colors most terminals support this
 vim.o.t_Co = "256" -- Support 256 colors
 vim.o.hidden = true -- Required to keep multiple buffers open multiple buffers
@@ -6,11 +6,11 @@ vim.o.pumheight = 10 -- Makes popup menu smaller
 
 vim.o.fileencoding = "utf-8" -- The encoding written to file
 vim.o.cmdheight = 1 -- More space for displaying messages
-vim.cmd('set colorcolumn=99999') -- fix indentline for now
+vim.cmd("set colorcolumn=99999") -- fix indentline for now
 
 vim.o.conceallevel = 0 -- So that I can see `` in markdown files
-vim.cmd('set ts=2') -- Insert 2 spaces for a tab
-vim.cmd('set sw=2') -- Change the number of space characters inserted for indentation
+vim.cmd("set ts=2") -- Insert 2 spaces for a tab
+vim.cmd("set sw=2") -- Change the number of space characters inserted for indentation
 vim.bo.expandtab = true -- Converts tabs to spaces
 vim.bo.smartindent = true -- Makes indenting smart
 
@@ -23,7 +23,7 @@ vim.o.autoindent = true
 vim.o.hlsearch = true
 vim.o.incsearch = true
 
-vim.cmd('set nowrap')
+vim.cmd("set nowrap")
 vim.wo.number = true -- set numbered lines
 vim.wo.relativenumber = true -- set relative number
 vim.wo.cursorline = true -- Enable highlighting of the current line
