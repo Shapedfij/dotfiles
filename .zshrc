@@ -143,3 +143,5 @@ if [[ $(ps --no-header -p $PPID -o comm) =~ '^yakuake|kitty$' ]]; then
             xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
 fi
 # }}}
+
+alias luamake=/home/kaiz/.config/nvim/lua-language-server/3rd/luamake/luamake
