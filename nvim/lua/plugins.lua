@@ -52,6 +52,9 @@ return require("packer").startup(
 
     -- Utilies Plugins
     use "mhartington/formatter.nvim"
+    use {"prettier/vim-prettier", run = "yarn install"}
+
+    -- Utilies Plugins
     use "tpope/vim-surround"
     use "terrortylor/nvim-comment"
     use "windwp/nvim-autopairs"

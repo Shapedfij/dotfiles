@@ -1,4 +1,4 @@
-function Define_augroups(definitions) -- {{{1
+local function define_augroups(definitions) -- {{{1
   -- Create autocommand groups based on the passed definitions
   --
   -- The key will be the name of the group, and each definition
@@ -20,7 +20,7 @@ function Define_augroups(definitions) -- {{{1
   end
 end
 
-Define_augroups(
+define_augroups(
   {
     -- Yank Highlighting
     _general_settings = {
@@ -36,14 +36,12 @@ Define_augroups(
     },
     -- Auto Formaters
     _auto_formatters = {
-      {"BufWritePre", "*.py", "lua vim.lsp.buf.formatting_sync(nil, 1000)"}
+      {"BufWritePre", "*.py", "lua vim.lsp.buf.formatting_sync(nil, 1000)"},
+      {
+        "BufWritePost",
+        "*.lua,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.yml,*.html",
+        "FormatWrite"
+      }
     }
   }
 )
-
-vim.api.nvim_exec([[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost *.lua FormatWrite
-augroup END
-]], true)
