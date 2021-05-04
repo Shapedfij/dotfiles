@@ -42,7 +42,7 @@ return require("packer").startup(
     use "kevinhwang91/rnvimr"
 
     -- Color
-    use "gruvbox-community/gruvbox"
+    use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 
     -- Icons
     use "kyazdani42/nvim-web-devicons"
@@ -50,11 +50,12 @@ return require("packer").startup(
     -- Status Line
     use "hoob3rt/lualine.nvim"
 
-    -- Utilies Plugins
+    -- Formatter
     use "mhartington/formatter.nvim"
     use {"prettier/vim-prettier", run = "yarn install"}
 
     -- Utilies Plugins
+    use "norcalli/nvim-colorizer.lua"
     use "tpope/vim-surround"
     use "terrortylor/nvim-comment"
     use "windwp/nvim-autopairs"
