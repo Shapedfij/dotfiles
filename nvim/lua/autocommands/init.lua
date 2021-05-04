@@ -39,7 +39,7 @@ define_augroups(
       {"BufWritePre", "*.py", "lua vim.lsp.buf.formatting_sync(nil, 1000)"},
       {
         "BufWritePost",
-        ".*.lua,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*markdown,*.vue,*.yml,*.yaml,*.html",
+        "*.lua,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*markdown,*.vue,*.yml,*.yaml,*.html",
         "FormatWrite"
       }
     }

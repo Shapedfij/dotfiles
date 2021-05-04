@@ -62,12 +62,7 @@ return require("packer").startup(
         require("spellsitter").setup()
       end
     }
-    use {
-      "blackCauldron7/surround.nvim",
-      config = function()
-        require "surround".setup {}
-      end
-    }
+    use {"tpope/vim-surround"}
     use "terrortylor/nvim-comment"
     use "windwp/nvim-autopairs"
   end
