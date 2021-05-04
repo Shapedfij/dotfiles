@@ -43,6 +43,7 @@ return require("packer").startup(
 
     -- Color
     use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+    use "norcalli/nvim-colorizer.lua"
 
     -- Icons
     use "kyazdani42/nvim-web-devicons"
@@ -55,8 +56,18 @@ return require("packer").startup(
     use {"prettier/vim-prettier", run = "yarn install"}
 
     -- Utilies Plugins
-    use "norcalli/nvim-colorizer.lua"
-    use "tpope/vim-surround"
+    use {
+      "lewis6991/spellsitter.nvim",
+      config = function()
+        require("spellsitter").setup()
+      end
+    }
+    use {
+      "blackCauldron7/surround.nvim",
+      config = function()
+        require "surround".setup {}
+      end
+    }
     use "terrortylor/nvim-comment"
     use "windwp/nvim-autopairs"
   end
