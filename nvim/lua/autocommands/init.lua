@@ -37,7 +37,11 @@ define_augroups(
     -- Auto Formaters
     _auto_formatters = {
       {"BufWritePre", "*.py", "lua vim.lsp.buf.formatting_sync(nil, 1000)"},
-      {"BufWritePost", "*", "FormatWrite"}
+      {
+        "BufWritePost",
+        ".*.lua,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*markdown,*.vue,*.yml,*.yaml,*.html",
+        "FormatWrite"
+      }
     }
   }
 )
