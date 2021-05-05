@@ -1,4 +1,3 @@
--- tsserver/web javascript react, vue, json, html, css, yaml
 require "lspconfig".efm.setup {
   cmd = {vim.fn.stdpath("data") .. "/lspinstall/efm/efm-langserver"},
   init_options = {documentFormatting = true},
@@ -12,8 +11,9 @@ require "lspconfig".efm.setup {
           lintStdin = true,
           lintFormats = {"%f:%l:%c: %m"}
         },
-        {formatCommand = "isort --quiet -", formatStdin = true},
-        {formatCommand = "black --quiet -", formatStdin = true}
+        -- {formatCommand = "black --quiet -", formatStdin = true},
+        {formatCommand = "yapf --quiet ", formatStdin = true},
+        {formatCommand = "isort --quiet -", formatStdin = true}
       }
     }
   }
