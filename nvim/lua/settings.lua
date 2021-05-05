@@ -9,10 +9,11 @@ vim.o.fileencoding = "utf-8" -- The encoding written to file
 vim.o.cmdheight = 1 -- More space for displaying messages
 
 vim.o.conceallevel = 0 -- So that I can see `` in markdown files
--- vim.cmd("set ts=2") -- Insert 2 spaces for a tab
--- vim.cmd("set sw=2") -- Change the number of space characters inserted for indentation
 vim.g.autointend = true
-vim.bo.expandtab = true -- Converts tabs to spaces
+vim.g.smartintend = true
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
 
 vim.o.smartcase = true
 vim.o.ignorecase = true
