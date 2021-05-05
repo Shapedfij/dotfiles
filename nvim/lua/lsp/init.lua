@@ -45,6 +45,13 @@ vim.cmd("nnoremap <silent> <C-\\> <cmd>lua vim.lsp.diagnostic.get_all()<CR>")
 vim.cmd("nnoremap <silent> <C-[> <cmd>lua vim.lsp.diagnostic.get_prev()<CR>")
 vim.cmd("nnoremap <silent> <C-]> <cmd>lua vim.lsp.diagnostic.get_next()<CR>")
 
+-- Auto Import
+vim.cmd("inoremap <silent><expr> <C-Space> compe#complete()")
+vim.cmd("inoremap <silent><expr> <CR>      compe#confirm('<CR>')")
+vim.cmd("inoremap <silent><expr> <C-e>     compe#close('<C-e>')")
+vim.cmd("inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })")
+vim.cmd("inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })")
+
 -- commented options are defaults
 require("lspkind").init({})
 
