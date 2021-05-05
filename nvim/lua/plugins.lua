@@ -23,6 +23,7 @@ return require("packer").startup(
 
     -- Auto Completion
     use "hrsh7th/nvim-compe"
+    use "hrsh7th/vim-vsnip"
 
     -- Telescope
     use "nvim-lua/popup.nvim"
@@ -54,6 +55,7 @@ return require("packer").startup(
     -- Formatter
     use "mhartington/formatter.nvim"
     use {"prettier/vim-prettier", run = "yarn install"}
+    use "psf/black"
 
     -- Utilies Plugins
     use {

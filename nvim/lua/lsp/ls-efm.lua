@@ -12,7 +12,7 @@ require "lspconfig".efm.setup {
           lintFormats = {"%f:%l:%c: %m"}
         },
         -- {formatCommand = "black --quiet -", formatStdin = true},
-        {formatCommand = "yapf --quiet ", formatStdin = true},
+        -- {formatCommand = "yapf --quiet ", formatStdin = true},
         {formatCommand = "isort --quiet -", formatStdin = true}
       }
     }
