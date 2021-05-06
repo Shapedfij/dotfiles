@@ -33,6 +33,8 @@ vim.o.backup = false -- This is recommended by coc
 vim.o.swapfile = false
 vim.o.writebackup = false -- This is recommended by coc
 
+vim.wo.list = true
+vim.o.listchars = "tab:→ ,trail:•,extends:»,precedes:«"
 vim.o.updatetime = 300 -- Faster completion
 vim.o.timeoutlen = 500 -- By default timeoutlen is 1000 ms
 vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
