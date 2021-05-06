@@ -1,8 +1,5 @@
 require("flutter-tools").setup {
   flutter_path = "/home/kaiz/GitHub/flutter/bin/flutter",
-  widget_guides = {
-    enabled = true
-  },
   lsp = {
     settings = {
       showTodos = true

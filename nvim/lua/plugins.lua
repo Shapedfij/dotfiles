@@ -44,6 +44,7 @@ return require("packer").startup(
 
     -- Flutter
     use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim"}
+    use "dart-lang/dart-vim-plugin"
 
     -- Color
     use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
