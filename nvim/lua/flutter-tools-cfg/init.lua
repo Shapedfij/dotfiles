@@ -1,5 +1,5 @@
 require("flutter-tools").setup {
-  flutter_path = "$HOME/GitHub/flutter",
+  flutter_path = "/home/kaiz/GitHub/flutter/bin/flutter",
   widget_guides = {
     enabled = true
   },
