@@ -13,6 +13,7 @@ require("lsp.ls-efm")
 -- Plugins
 require("autopairs-cfg")
 require("compe-cfg")
+require("flutter-tools-cfg")
 require("git")
 require("gitsigns-cfg")
 require("formatter-cfg")

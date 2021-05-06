@@ -42,6 +42,9 @@ return require("packer").startup(
     use "kyazdani42/nvim-tree.lua"
     use "kevinhwang91/rnvimr"
 
+    -- Flutter
+    use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim"}
+
     -- Color
     use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
     use "norcalli/nvim-colorizer.lua"
