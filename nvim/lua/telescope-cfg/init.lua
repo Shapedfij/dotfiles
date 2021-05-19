@@ -43,7 +43,7 @@ M.search_dotfiles = function()
 end
 
 -- KeyBinding
-vim.api.nvim_set_keymap("n", "<Leader>vrc", ":lua require('telescope-x').search_dotfiles()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>vrc", ":lua require('telescope-cfg').search_dotfiles()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-p>", ":lua require('telescope.builtin').git_files()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>p", ":lua require('telescope.builtin').find_files()<CR>", {noremap = true})
 vim.api.nvim_set_keymap(
