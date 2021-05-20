@@ -64,10 +64,10 @@ return require("packer").startup(
 
     -- Utilies Plugins
     use {
-      "lewis6991/spellsitter.nvim",
-      config = function()
-        require("spellsitter").setup()
-      end
+      "lewis6991/spellsitter.nvim"
+      -- config = function()
+      --   require("spellsitter").setup()
+      -- end
     }
     use {"tpope/vim-surround"}
     use "terrortylor/nvim-comment"
