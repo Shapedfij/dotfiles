@@ -1,9 +1,9 @@
 -- Generals
 require("autocommands")
-require("keybindings")
 require("plugins")
 require("settings")
 require("visual")
+require("keybindings")
 
 -- LSP
 require("lsp")

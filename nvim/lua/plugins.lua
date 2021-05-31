@@ -49,6 +49,8 @@ return require("packer").startup(
 
     -- Color
     use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+
+    use "eddyekofo94/gruvbox-flat.nvim"
     use "norcalli/nvim-colorizer.lua"
 
     -- Icons
@@ -63,12 +65,6 @@ return require("packer").startup(
     use "psf/black"
 
     -- Utilies Plugins
-    use {
-      "lewis6991/spellsitter.nvim"
-      -- config = function()
-      --   require("spellsitter").setup()
-      -- end
-    }
     use {"tpope/vim-surround"}
     use "terrortylor/nvim-comment"
     use "windwp/nvim-autopairs"
