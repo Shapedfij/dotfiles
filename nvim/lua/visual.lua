@@ -2,6 +2,7 @@
 vim.g.gruvbox_dark_sidebar = false
 vim.g.gruvbox_transparent = true
 vim.g.gruvbox_italic_functions = true
+vim.g.gruvbox_sidebars = {"qf", "vista_kind", "terminal", "packer"}
 vim.g.gruvbox_hide_inactive_statusline = true
 vim.g.gruvbox_dark_float = false
 vim.g.gruvbox_colors = {hint = "orange"}

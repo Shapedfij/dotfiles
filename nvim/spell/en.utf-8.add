@@ -180,3 +180,12 @@ HighlightedyankRegion
 gui
 clist
 q
+NvimTreeFindFile
+NvimTreeRefresh
+NvimTreeToggle
+NvimTreeFolderIcon
+vim
+vim
+vim
+t
+vim
