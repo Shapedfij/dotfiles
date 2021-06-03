@@ -3,9 +3,9 @@ vim.api.nvim_set_keymap("n", "<Space>", "<Nop>", {noremap = true})
 vim.g.mapleader = " "
 
 -- Quickfix list
-vim.api.nvim_set_keymap("n", "]q", ":cnext<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "[q", ":cprev<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "\\q", ":clist<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-]>", ":cnext<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-[>", ":cprev<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-\\>", ":clist<CR>", {noremap = true})
 
 -- Line transform using 'Alt'
 vim.api.nvim_set_keymap("n", "<A-j>", ":m .+1<CR>==", {noremap = true})
