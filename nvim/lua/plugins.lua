@@ -17,7 +17,6 @@ return require("packer").startup(
 
     -- Native LSP
     use "neovim/nvim-lspconfig"
-    use "onsails/lspkind-nvim"
     use "kabouzeid/nvim-lspinstall"
     use "mattn/efm-langserver"
 

@@ -31,9 +31,6 @@ vim.fn.sign_define(
   }
 )
 
--- commented options are defaults
-require("lspkind").init({})
-
 require "lspinstall".setup() -- important
 
 local nvim_lsp = require("lspconfig")
