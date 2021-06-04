@@ -7,6 +7,11 @@ vim.g.nvim_tree_follow = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_show_icons = {git = 1, folders = 1, files = 1}
 
+require("nvim-tree.events").on_nvim_tree_ready(
+  function()
+    vim.cmd("NvimTreeRefresh")
+  end
+)
 vim.g.nvim_tree_icons = {
   default = "",
   symlink = "",
@@ -35,6 +40,4 @@ vim.g.nvim_tree_icons = {
   }
 }
 
-vim.api.nvim_set_keymap("n", "<C-t>", ":NvimTreeToggle<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<Leader>r", ":NvimTreeRefresh<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<Leader>n", ":NvimTreeFindFile<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", {noremap = true})
