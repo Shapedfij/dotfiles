@@ -19,6 +19,10 @@ return require("packer").startup(
     use "neovim/nvim-lspconfig"
     use "kabouzeid/nvim-lspinstall"
     use "mattn/efm-langserver"
+    use "folke/lsp-colors.nvim"
+
+    -- Spell Checker
+    use "lewis6991/spellsitter.nvim"
 
     -- Auto Completion
     use "hrsh7th/nvim-compe"
@@ -48,7 +52,6 @@ return require("packer").startup(
 
     -- Color
     use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
-
     use "eddyekofo94/gruvbox-flat.nvim"
     use "norcalli/nvim-colorizer.lua"
 
