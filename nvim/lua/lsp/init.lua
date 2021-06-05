@@ -30,7 +30,6 @@ vim.fn.sign_define(
     numhl = "LspDiagnosticsSignInformation"
   }
 )
-
 require "lspinstall".setup() -- important
 
 local nvim_lsp = require("lspconfig")
@@ -76,3 +75,24 @@ local servers = require "lspinstall".installed_servers()
 for _, lsp in pairs(servers) do
   nvim_lsp[lsp].setup {on_attach = on_attach}
 end
+
+-- SpellChecker
+require("spellsitter").setup()
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+  vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    virtual_text = {
+      prefix = "● "
+    }
+  }
+)
+require("lsp-colors").setup(
+  {
+    Error = "#db4b4b",
+    Warning = "#e0af68",
+    Information = "#0db9d7",
+    Hint = "#10B981"
+  }
+)
