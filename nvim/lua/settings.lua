@@ -1,5 +1,5 @@
 vim.cmd("syntax on") -- syntax highlighting
-vim.o.spell = true
+-- vim.o.spell = true
 -- vim.o.termguicolor = true -- set term gui colors most terminals support this
 -- vim.o.t_Co = "256" -- Support 256 colors
 vim.o.hidden = true -- Required to keep multiple buffers open multiple buffers
