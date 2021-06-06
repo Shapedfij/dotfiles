@@ -121,6 +121,8 @@ vim.lsp.protocol.CompletionItemKind = {
   "   (Operator)",
   "   (TypeParameter)"
 }
+
+-- LSP Colors
 require("lsp-colors").setup(
   {
     Error = "#db4b4b",
