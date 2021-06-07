@@ -1,7 +1,6 @@
 vim.g.syntax_on = true -- syntax highlighting
 vim.g.termguicolors = true -- set term gui colors most terminals support this
 vim.g.t_Co = 256 -- Support 256 colors
-vim.g.nowrap = true
 
 vim.o.hidden = true -- Required to keep multiple buffers open multiple buffers
 vim.o.pumheight = 10 -- Makes popup menu smaller
@@ -17,6 +16,7 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 
+vim.g.nowrap = true
 vim.o.smartcase = true
 vim.o.ignorecase = true
 vim.o.hlsearch = true

@@ -1,4 +1,4 @@
-local function define_augroups(definitions) -- {{{1
+local function define_augroups(definitions) -- {{{
   -- Create autocommand groups based on the passed definitions
   --
   -- The key will be the name of the group, and each definition
