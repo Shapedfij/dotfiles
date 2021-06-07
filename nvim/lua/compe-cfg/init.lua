@@ -21,7 +21,6 @@ require("compe").setup {
     calc = {kind = "   (Calc)"},
     vsnip = {kind = "   (Snippet)"},
     nvim_lsp = {kind = "   (LSP)"},
-    -- nvim_lua = {kind = "  "},
     nvim_lua = false,
     spell = {kind = "   (Spell)"},
     tags = false,
@@ -76,8 +75,8 @@ vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
-vim.api.nvim_set_keymap("i", "<silent><expr> <C-Space>", "compe#complete()", {noremap = true})
-vim.api.nvim_set_keymap("i", "<silent><expr> <CR>", "compe#confirm('<CR>')", {noremap = true})
-vim.api.nvim_set_keymap("i", "<silent><expr> <C-e>", "compe#close('<C-e>')", {noremap = true})
-vim.api.nvim_set_keymap("i", "<silent><expr> <C-f>", "compe#scroll({ 'delta': +4 })", {noremap = true})
-vim.api.nvim_set_keymap("i", "<silent><expr> <C-d>", "compe#scroll({ 'delta': -4 })", {noremap = true})
+vim.cmd("inoremap <silent><expr> <C-Space> compe#complete()")
+vim.cmd("inoremap <silent><expr> <CR> compe#confirm('<CR>')")
+vim.cmd("inoremap <silent><expr> <C-e> compe#close('<C-e>')")
+vim.cmd("inoremap <silent><expr> <C-f> compe#scroll({ 'delta': +4 })")
+vim.cmd("inoremap <silent><expr> <C-d> compe#scroll({ 'delta': -4 })")

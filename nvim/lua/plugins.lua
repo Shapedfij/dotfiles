@@ -53,6 +53,7 @@ return require("packer").startup(
 
     -- ColorScheme
     use "eddyekofo94/gruvbox-flat.nvim"
+    use {"Th3Whit3Wolf/one-nvim", requires = "tjdevries/colorbuddy.vim"}
 
     -- Highlight Colors Hex
     use "norcalli/nvim-colorizer.lua"
