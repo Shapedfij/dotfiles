@@ -7,10 +7,9 @@ require("settings")
 
 -- LSP
 require("lsp")
+require("lsp.signs")
 require("lsp.ls-efm")
 require("lsp.ls-lua")
-require("lsp.lsp-colors")
-require("lsp.lsp-icons")
 
 -- Plugins
 require("autopairs-cfg")
@@ -21,6 +20,7 @@ require("git")
 require("gitsigns-cfg")
 require("formatter-cfg")
 require("lualine-cfg")
+require("lspcolors-cfg")
 require("nvimtree-cfg")
 require("spellsitter-cfg")
 require("telescope-cfg")
