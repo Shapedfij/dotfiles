@@ -1,3 +1,6 @@
+vim.g.termguicolors = true -- set term gui colors most terminals support this
+vim.g.t_Co = 256 -- Support 256 colors
+
 -- Gruvbox Flat
 vim.g.gruvbox_transparent = true
 vim.g.gruvbox_italic_functions = true

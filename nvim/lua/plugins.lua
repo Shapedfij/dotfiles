@@ -51,9 +51,10 @@ return require("packer").startup(
     use "dart-lang/dart-vim-plugin"
     use "Neevash/awesome-flutter-snippets"
 
-    -- Color
-    use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+    -- ColorScheme
     use "eddyekofo94/gruvbox-flat.nvim"
+
+    -- Highlight Colors Hex
     use "norcalli/nvim-colorizer.lua"
 
     -- Icons
