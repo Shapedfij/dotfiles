@@ -1,5 +1,5 @@
 vim.g.nvim_tree_width = 26
-vim.g.nvim_tree_side = "right"
+-- vim.g.nvim_tree_side = "right"
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_tab_open = 1
 vim.g.nvim_tree_auto_close = 1

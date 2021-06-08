@@ -29,7 +29,8 @@ export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 
 # themes ---------------------------------------------------------------
-ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship"
+# ZSH_THEME="robbyrussell"
 # ZSH_THEME="dot"
 
 # plugins ---------------------------------------------------------------
