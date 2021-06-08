@@ -12,6 +12,35 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
   }
 )
 
+-- lsp diagnostics signs
+vim.fn.sign_define(
+  "LspDiagnosticsSignError",
+  {
+    texthl = "LspDiagnosticsSignError",
+    numhl = "LspDiagnosticsSignError"
+  }
+)
+vim.fn.sign_define(
+  "LspDiagnosticsSignWarning",
+  {
+    texthl = "LspDiagnosticsSignWarning",
+    numhl = "LspDiagnosticsSignWarning"
+  }
+)
+vim.fn.sign_define(
+  "LspDiagnosticsSignHint",
+  {
+    texthl = "LspDiagnosticsSignHint",
+    numhl = "LspDiagnosticsSignHint"
+  }
+)
+vim.fn.sign_define(
+  "LspDiagnosticsSignInformation",
+  {
+    texthl = "LspDiagnosticsSignInformation",
+    numhl = "LspDiagnosticsSignInformation"
+  }
+)
 -- symbols for autocomplete
 vim.lsp.protocol.CompletionItemKind = {
   "   (Text) ",

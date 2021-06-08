@@ -36,7 +36,7 @@ define_augroups(
     },
     -- Auto Formaters
     _auto_formatters = {
-      {"BufWritePre", "*.py", "lua vim.lsp.buf.formatting_sync(nil, 1000)"},
+      {"BufWritePre", "*", "lua vim.lsp.buf.formatting_sync(nil, 1000)"},
       {"BufWritePre", "*.py", "execute ':Black'"},
       {"BufWritePre", "*.dart", "execute ':DartFmt'"},
       {

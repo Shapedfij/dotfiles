@@ -42,37 +42,24 @@ M.search_dotfiles = function()
   require("telescope.builtin").find_files({prompt_title = "~ VimRC ~", cwd = "$HOME/.config/nvim/"})
 end
 
+M.search_kitty_dotfiles = function()
+  require("telescope.builtin").find_files({prompt_title = "~ Kitty Config ~", cwd = "$HOME/.config/kitty/"})
+end
+
 -- Custom KeyBinding
+local opts = {noremap = true, silent = true}
+
+vim.api.nvim_set_keymap("n", "<Leader>vrc", [[<cmd>lua require('telescope-cfg').search_dotfiles()<cr>]], opts)
+vim.api.nvim_set_keymap("n", "<Leader>term", [[<cmd>lua require('telescope-cfg').search_kitty_dotfiles()<cr>]], opts)
+vim.api.nvim_set_keymap("n", "<C-p>", [[<cmd>lua require('telescope.builtin').git_files()<cr>]], opts)
+vim.api.nvim_set_keymap("n", "<Leader>p", [[<cmd>lua require('telescope.builtin').find_files()<cr>]], opts)
+vim.api.nvim_set_keymap("n", "<Leader><Tab>", [[<cmd>lua require('telescope.builtin').buffers()<cr>]], opts)
 
 vim.api.nvim_set_keymap(
   "n",
-  "<Leader>vrc",
-  [[<cmd>lua require('telescope-cfg').search_dotfiles()<cr>]],
-  {noremap = true, silent = true}
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<C-p>",
-  [[<cmd>lua require('telescope.builtin').git_files()<cr>]],
-  {noremap = true, silent = true}
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<Leader>p",
-  [[<cmd>lua require('telescope.builtin').find_files()<cr>]],
-  {noremap = true, silent = true}
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<Leader><Tab>",
-  [[<cmd>lua require('telescope.builtin').buffers()<cr>]],
-  {noremap = true, silent = true}
-)
-vim.api.nvim_set_keymap(
-  "n",
   "<Leader>pf",
-  [[<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<cr>]],
-  {noremap = true, silent = true}
+  [[<cmd>lua require('telescope.builtin').grep_string({search = vim.fn.input("Grep For > ")})<cr>]],
+  opts
 )
 
 return M
