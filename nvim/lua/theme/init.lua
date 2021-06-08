@@ -3,6 +3,3 @@ vim.g.t_Co = 256 -- Support 256 colors
 
 -- colorscheme
 require("theme.atom")
-
--- plugins colorizer
-require("colorizer").setup()

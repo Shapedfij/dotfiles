@@ -6,8 +6,36 @@ vim.g.gruvbox_dark_float = false
 vim.g.gruvbox_colors = {hint = "orange"}
 vim.cmd [[colorscheme gruvbox-flat]]
 
--- INFO: not working
--- Transparent background
--- vim.cmd("highlight Normal     ctermbg=NONE guibg=NONE")
--- vim.cmd("highlight LineNr     ctermbg=NONE guibg=NONE")
--- vim.cmd("highlight SignColumn ctermbg=NONE guibg=NONE")
+-- lsp diagnostics signs
+vim.fn.sign_define(
+  "LspDiagnosticsSignError",
+  {
+    texthl = "LspDiagnosticsSignError",
+    text = "",
+    numhl = "LspDiagnosticsSignError"
+  }
+)
+vim.fn.sign_define(
+  "LspDiagnosticsSignWarning",
+  {
+    texthl = "LspDiagnosticsSignWarning",
+    text = "",
+    numhl = "LspDiagnosticsSignWarning"
+  }
+)
+vim.fn.sign_define(
+  "LspDiagnosticsSignHint",
+  {
+    texthl = "LspDiagnosticsSignHint",
+    text = "",
+    numhl = "LspDiagnosticsSignHint"
+  }
+)
+vim.fn.sign_define(
+  "LspDiagnosticsSignInformation",
+  {
+    texthl = "LspDiagnosticsSignInformation",
+    text = "",
+    numhl = "LspDiagnosticsSignInformation"
+  }
+)
