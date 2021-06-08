@@ -13,6 +13,7 @@ vim.cmd("autocmd Colorscheme * highlight NvimTreeNormal guifg=#9da5b3 guibg=#212
 vim.cmd("autocmd Colorscheme * highlight NvimTreeFolderName guifg=#9da5b3")
 vim.cmd("autocmd Colorscheme * highlight NvimTreeRootFolder guifg=#9da5b3")
 vim.cmd("autocmd Colorscheme * highlight NvimTreeFolderIcon guifg=#9da5b3")
+vim.cmd("autocmd Colorscheme * highlight NvimTreeOpenedFolderName guifg=#9da5b3")
 vim.cmd("autocmd Colorscheme * highlight NvimTreeVertSplit guifg=#282c34")
 vim.cmd("autocmd Colorscheme * highlight NvimTreeEndOfBuffer guifg=#21252B")
 
@@ -23,8 +24,3 @@ vim.cmd("autocmd Colorscheme * highlight LspDiagnosticsLineNrInformation guifg=#
 vim.cmd("autocmd Colorscheme * highlight LspDiagnosticsLineNrHint guifg=#61AFEF guibg=#344559")
 vim.cmd("autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()")
 
--- lsp diagnostics signs
-vim.fn.sign_define("LspDiagnosticsSignError", {numhl = "LspDiagnosticsLineNrError"})
-vim.fn.sign_define("LspDiagnosticsSignWarning", {numhl = "LspDiagnosticsLineNrWarning"})
-vim.fn.sign_define("LspDiagnosticsSignInformation", {numhl = "LspDiagnosticsLineNrInformation"})
-vim.fn.sign_define("LspDiagnosticsSignHint", {numhl = "LspDiagnosticsLineNrHint"})
