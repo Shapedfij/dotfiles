@@ -1,4 +1,4 @@
-require "lspconfig".efm.setup {
+require("lspconfig").efm.setup {
   cmd = {vim.fn.stdpath("data") .. "/lspinstall/efm/efm-langserver"},
   init_options = {documentFormatting = true},
   filetypes = {"python"},
@@ -11,8 +11,6 @@ require "lspconfig".efm.setup {
           lintStdin = true,
           lintFormats = {"%f:%l:%c: %m"}
         },
-        -- {formatCommand = "black --quiet -", formatStdin = true},
-        -- {formatCommand = "yapf --quiet ", formatStdin = true},
         {formatCommand = "isort --quiet -", formatStdin = true}
       }
     }
