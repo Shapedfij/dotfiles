@@ -4,8 +4,7 @@ require("telescope").setup {
   defaults = {
     file_sorter = require("telescope.sorters").get_fzy_sorter,
     prompt_position = "bottom",
-    prompt_prefix = " 🔍 ",
-    selection_caret = " 👉 ",
+    selection_caret = "❯ ",
     entry_prefix = "  ",
     color_devicons = true,
     set_env = {["COLORTERM"] = "truecolor"}, -- default = nil,
