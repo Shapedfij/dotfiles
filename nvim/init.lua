@@ -1,6 +1,6 @@
 -- Generals
 require("autocommands")
-require("colorscheme")
+require("theme")
 require("keybindings")
 require("plugins")
 require("settings")

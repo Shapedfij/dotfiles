@@ -30,9 +30,9 @@ return require("packer").startup(
     use "hrsh7th/vim-vsnip"
 
     -- Telescope
-    use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
+    use "nvim-lua/popup.nvim"
     use "nvim-telescope/telescope-fzy-native.nvim"
 
     -- Treesitter

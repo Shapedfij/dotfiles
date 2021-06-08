@@ -13,6 +13,9 @@ vim.g.nvim_tree_show_icons = {
   files = 1,
   folder_arrows = 1
 }
+vim.g.nvim_tree_ignore = {
+  ".git"
+}
 
 require("nvim-tree.events").on_nvim_tree_ready(
   function()
@@ -48,4 +51,5 @@ vim.g.nvim_tree_icons = {
   }
 }
 
-vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", {noremap = true})
+local opts = {noremap = true, silent = true}
+vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
