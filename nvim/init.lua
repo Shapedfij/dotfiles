@@ -15,6 +15,7 @@ require("spellsitter-cfg")
 
 -- Plugins
 require("autopairs-cfg")
+require('colorizer-cfg')
 require("compe-cfg")
 require("comment-cfg")
 require("fluttertools-cfg")

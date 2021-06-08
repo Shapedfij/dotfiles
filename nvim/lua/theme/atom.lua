@@ -6,7 +6,6 @@ vim.g.foldcolum = 2
 vim.cmd("autocmd Colorscheme * highlight EndOfBuffer guifg=#272b34")
 vim.cmd("autocmd Colorscheme * highlight foldcolumn guifg=#272b34")
 vim.cmd("autocmd Colorscheme * highlight VertSplit guifg=#272b34")
-vim.cmd("autocmd Colorscheme * highlight Normal guibg=#272b34")
 
 -- nvim tree colors
 vim.cmd("autocmd Colorscheme * highlight NvimTreeIndentMarker guifg=#3b4048")

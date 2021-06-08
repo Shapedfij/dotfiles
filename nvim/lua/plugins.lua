@@ -55,6 +55,9 @@ return require("packer").startup(
     use "eddyekofo94/gruvbox-flat.nvim"
     use {"Th3Whit3Wolf/one-nvim", requires = "tjdevries/colorbuddy.vim"}
 
+    -- Color previewers
+    use "norcalli/nvim-colorizer.lua"
+
     -- Icons
     use "kyazdani42/nvim-web-devicons"
 
