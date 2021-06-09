@@ -12,35 +12,40 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
   }
 )
 
--- lsp diagnostics signs
+-- lsp diagnostics text
 vim.fn.sign_define(
   "LspDiagnosticsSignError",
   {
     texthl = "LspDiagnosticsSignError",
-    numhl = "LspDiagnosticsSignError"
+    numhl = "LspDiagnosticsSignError",
+    text = " "
   }
 )
 vim.fn.sign_define(
   "LspDiagnosticsSignWarning",
   {
     texthl = "LspDiagnosticsSignWarning",
-    numhl = "LspDiagnosticsSignWarning"
+    numhl = "LspDiagnosticsSignWarning",
+    text = " "
   }
 )
 vim.fn.sign_define(
   "LspDiagnosticsSignHint",
   {
     texthl = "LspDiagnosticsSignHint",
-    numhl = "LspDiagnosticsSignHint"
+    numhl = "LspDiagnosticsSignHint",
+    text = " "
   }
 )
 vim.fn.sign_define(
   "LspDiagnosticsSignInformation",
   {
     texthl = "LspDiagnosticsSignInformation",
-    numhl = "LspDiagnosticsSignInformation"
+    numhl = "LspDiagnosticsSignInformation",
+    text = " "
   }
 )
+
 -- symbols for autocomplete
 vim.lsp.protocol.CompletionItemKind = {
   "   (Text) ",
