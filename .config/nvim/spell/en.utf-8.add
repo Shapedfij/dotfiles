@@ -3696,3 +3696,6 @@ config
 config
 modules
 mappings
+like
+vscode
+Shortcuts
