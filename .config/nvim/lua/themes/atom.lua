@@ -1,30 +1,57 @@
 -- One Vim
 require("colorbuddy").colorscheme("one-nvim")
 
+-- Colors
+local fg = "#9da5b3"
+local fg_dark = "#3b4048"
+local bg = "#282C34"
+local bg_dark = "#21252B"
+
+local blue = "#61AFEF"
+local blue_bg = "#344559"
+
+local red = "#E06C75"
+local red_bg = "#4D3840"
+
+local yellow = "#E5C07B"
+local yellow_bg = "#4E4942"
+
+local green = "#98C379"
+local green_bg = "#3E4941"
+
 -- minimal split
 vim.g.foldcolum = 2
-vim.cmd("autocmd Colorscheme * highlight EndOfBuffer guifg=#272b34")
-vim.cmd("autocmd Colorscheme * highlight foldcolumn guifg=#272b34")
-vim.cmd("autocmd Colorscheme * highlight VertSplit guifg=#272b34")
+vim.cmd("autocmd Colorscheme * highlight EndOfBuffer guifg=" .. bg)
+vim.cmd("autocmd Colorscheme * highlight foldcolumn guifg=" .. bg)
+vim.cmd("autocmd Colorscheme * highlight VertSplit guifg=" .. bg)
 
 -- nvim tree colors
-vim.cmd("autocmd Colorscheme * highlight NvimTreeIndentMarker guifg=#3b4048")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeNormal guifg=#9da5b3 guibg=#21252B")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeFolderName guifg=#9da5b3")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeRootFolder guifg=#9da5b3")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeFolderIcon guifg=#9da5b3")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeOpenedFolderName guifg=#9da5b3")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeVertSplit guifg=#272b34")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeEndOfBuffer guifg=#21252B")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeGitStaged  guifg=#61AFEF")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeGitRenamed  guifg=#E5C07B")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeGitMerge  guifg=#98C379")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeGitDirty  guifg=#E5C07B")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeGitNew  guifg=#98C379")
-vim.cmd("autocmd Colorscheme * highlight NvimTreeGitDeleted  guifg=#E06C75")
+vim.cmd("autocmd Colorscheme * highlight NvimTreeIndentMarker guifg=" .. fg_dark)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeNormal guifg=" .. fg .. " guibg=" .. bg_dark)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeFolderName guifg=" .. fg)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeRootFolder guifg=" .. fg)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeFolderIcon guifg=" .. fg)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeOpenedFolderName guifg=" .. fg)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeVertSplit guifg=" .. bg)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeEndOfBuffer guifg=" .. bg_dark)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeGitStaged  guifg=" .. blue)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeGitRenamed  guifg=" .. yellow)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeGitMerge  guifg=" .. green)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeGitDirty  guifg=" .. yellow)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeGitNew  guifg=" .. green)
+vim.cmd("autocmd Colorscheme * highlight NvimTreeGitDeleted  guifg=" .. red)
 
 -- lsp diagnostics signs colors
-vim.cmd("autocmd Colorscheme * highlight LspDiagnosticsLineNrError guifg=#E06C75 guibg=#4D3840")
-vim.cmd("autocmd Colorscheme * highlight LspDiagnosticsLineNrWarning guifg=#E5C07B guibg=#4E4942")
-vim.cmd("autocmd Colorscheme * highlight LspDiagnosticsLineNrInformation guifg=#98C379 guibg=#3E4941")
-vim.cmd("autocmd Colorscheme * highlight LspDiagnosticsLineNrHint guifg=#61AFEF guibg=#344559")
+vim.cmd("autocmd Colorscheme * highlight LspDiagnosticsLineNrError guifg=" .. red .. " guibg=" .. red_bg .. " gui=bold")
+vim.cmd(
+  "autocmd Colorscheme * highlight LspDiagnosticsLineNrWarning guifg=" ..
+    yellow .. " guibg=" .. yellow_bg .. " gui=bold"
+)
+
+vim.cmd(
+  "autocmd Colorscheme * highlight LspDiagnosticsLineNrInformation guifg=" ..
+    green .. " guibg=" .. green_bg .. " gui=bold"
+)
+vim.cmd(
+  "autocmd Colorscheme * highlight LspDiagnosticsLineNrHint guifg=" .. blue .. " guibg=" .. blue_bg .. " gui=bold"
+)
