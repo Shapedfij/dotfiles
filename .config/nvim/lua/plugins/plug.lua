@@ -52,6 +52,7 @@ return require("packer").startup(
     use "Neevash/awesome-flutter-snippets"
 
     -- ColorScheme
+    use "monsonjeremy/onedark.nvim"
     use "eddyekofo94/gruvbox-flat.nvim"
     use {"Th3Whit3Wolf/one-nvim", requires = "tjdevries/colorbuddy.vim"}
 

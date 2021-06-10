@@ -160,6 +160,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/one-nvim"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/packer.nvim"
