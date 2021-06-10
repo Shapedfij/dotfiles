@@ -36,6 +36,9 @@ local on_attach = function(_, bufnr)
   buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", opts)
   buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", opts)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
+
+  vim.cmd("setlocal omnifunc=v:lua.vim.lsp.omnifunc")
+  print("LSP Attached.")
 end
 
 local servers = require "lspinstall".installed_servers()
