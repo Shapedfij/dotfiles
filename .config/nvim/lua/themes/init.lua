@@ -2,14 +2,14 @@ vim.g.termguicolors = true -- set term gui colors most terminals support this
 vim.g.t_Co = 256 -- Support 256 colors
 
 -- colorscheme
--- require("themes.gruvbox")
--- require("themes.one-nvim")
 require("themes.onedark")
+-- require("themes.gruvbox")
 
 -- Lualine
 require("lualine").setup {
   options = {
     theme = "onedark",
+    -- theme = 'gruvbox-flat'
     section_separators = {"", ""},
     component_separators = {"", ""},
     icons_enabled = true

@@ -80,10 +80,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/black"
   },
-  ["colorbuddy.vim"] = {
-    loaded = true,
-    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/colorbuddy.vim"
-  },
   ["dart-vim-plugin"] = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/dart-vim-plugin"
@@ -155,10 +151,6 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
-  },
-  ["one-nvim"] = {
-    loaded = true,
-    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/one-nvim"
   },
   ["onedark.nvim"] = {
     loaded = true,
