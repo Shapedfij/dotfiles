@@ -67,7 +67,6 @@ return require("packer").startup(
     -- Formatter
     use "mhartington/formatter.nvim"
     use {"prettier/vim-prettier", run = "yarn install"}
-    use "psf/black"
 
     -- Utilies Plugins
     use {"tpope/vim-surround"}
