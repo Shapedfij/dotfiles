@@ -4,11 +4,6 @@ local flake8 = {
   lintFormats = {"%f=%l:%c: %m"}
 }
 
-local luafmt = {
-  formatCommand = "luafmt --indent-count 2 --line-width 120 --stdin",
-  formatStdin = true
-}
-
 require("lspconfig").efm.setup(
   {
     init_options = {documentFormatting = true},
@@ -16,8 +11,7 @@ require("lspconfig").efm.setup(
     settings = {
       rootMarkers = {".git/"},
       languages = {
-        python = {flake8},
-        lua = {luafmt}
+        python = {flake8}
       }
     }
   }

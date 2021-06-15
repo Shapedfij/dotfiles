@@ -20,6 +20,7 @@ require("formatter").setup(
       json = {prettierFmt},
       yaml = {prettierFmt},
       markdown = {prettierFmt},
+      html = {prettierFmt},
       lua = {
         -- luafmt
         function()

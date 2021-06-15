@@ -52,7 +52,16 @@ return require("packer").startup(
     use "Neevash/awesome-flutter-snippets"
 
     -- ColorScheme
-    use "monsonjeremy/onedark.nvim"
+    use {
+      "ful1e5/onedark.nvim",
+      config = function()
+        vim.g.onedark_hide_inactive_statusline = true
+
+        -- Load the colorscheme
+        vim.cmd [[colorscheme onedark]]
+      end
+    }
+
     use "eddyekofo94/gruvbox-flat.nvim"
 
     -- Color previewers
@@ -66,6 +75,7 @@ return require("packer").startup(
 
     -- Formatter
     use "mhartington/formatter.nvim"
+    use "andrejlevkovitch/vim-lua-format"
     use {"prettier/vim-prettier", run = "yarn install"}
     use "psf/black"
 

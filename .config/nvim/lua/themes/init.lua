@@ -9,7 +9,7 @@ require("themes.onedark")
 require("lualine").setup {
   options = {
     theme = "onedark",
-    -- theme = 'gruvbox-flat'
+    -- theme = "gruvbox-flat",
     section_separators = {"", ""},
     component_separators = {"", ""},
     icons_enabled = true

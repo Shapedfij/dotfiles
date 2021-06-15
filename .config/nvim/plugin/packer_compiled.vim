@@ -46,7 +46,7 @@ local function save_profiles(threshold)
   _G._packer.profile_output = results
 end
 
-time("Luarocks path setup", true)
+time([[Luarocks path setup]], true)
 local package_path_str = "/home/kaiz/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/kaiz/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/kaiz/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/kaiz/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
 local install_cpath_pattern = "/home/kaiz/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
@@ -57,8 +57,8 @@ if not string.find(package.cpath, install_cpath_pattern, 1, true) then
   package.cpath = package.cpath .. ';' .. install_cpath_pattern
 end
 
-time("Luarocks path setup", false)
-time("try_loadstring definition", true)
+time([[Luarocks path setup]], false)
+time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
   local success, result = pcall(loadstring(s))
   if not success then
@@ -69,8 +69,8 @@ local function try_loadstring(s, component, name)
   return result
 end
 
-time("try_loadstring definition", false)
-time("Defining packer_plugins", true)
+time([[try_loadstring definition]], false)
+time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["awesome-flutter-snippets"] = {
     loaded = true,
@@ -153,6 +153,7 @@ _G.packer_plugins = {
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
+    config = { "\27LJ\1\2j\0\0\2\0\5\0\t4\0\0\0007\0\1\0)\1\2\0:\1\2\0004\0\0\0007\0\3\0%\1\4\0>\0\2\1G\0\1\0\24colorscheme onedark\bcmd%onedark_hide_inactive_statusline\6g\bvim\0" },
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/onedark.nvim"
   },
@@ -188,6 +189,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
+  ["vim-lua-format"] = {
+    loaded = true,
+    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/vim-lua-format"
+  },
   ["vim-prettier"] = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/vim-prettier"
@@ -202,7 +207,11 @@ _G.packer_plugins = {
   }
 }
 
-time("Defining packer_plugins", false)
+time([[Defining packer_plugins]], false)
+-- Config for: onedark.nvim
+time([[Config for onedark.nvim]], true)
+try_loadstring("\27LJ\1\2j\0\0\2\0\5\0\t4\0\0\0007\0\1\0)\1\2\0:\1\2\0004\0\0\0007\0\3\0%\1\4\0>\0\2\1G\0\1\0\24colorscheme onedark\bcmd%onedark_hide_inactive_statusline\6g\bvim\0", "config", "onedark.nvim")
+time([[Config for onedark.nvim]], false)
 if should_profile then save_profiles() end
 
 END

@@ -11,7 +11,6 @@ utils.define_augroups(
       }
     },
     _markdown = {
-      {"FileType", "markdown", "setlocal wrap"},
       {"FileType", "markdown", "setlocal spell"}
     },
     -- Auto Formaters
@@ -19,9 +18,10 @@ utils.define_augroups(
       -- {"BufWritePre", "*", "lua vim.lsp.buf.formatting_sync(nil, 1000)"},
       {"BufWritePre", "*.py", ":Black"},
       {"BufWritePre", "*.dart", "execute ':DartFmt'"},
+      {"BufWritePre", "*.lua", "call LuaFormat()"},
       {
         "BufWritePost",
-        "*.lua,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*markdown,*.vue,*.yml,*.yaml,*.html",
+        "*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*markdown,*.vue,*.yml,*.yaml,*.html",
         "FormatWrite"
       }
     }
