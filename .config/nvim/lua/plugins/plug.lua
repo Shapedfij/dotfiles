@@ -4,14 +4,14 @@ local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
-  execute "packadd packer.nvim"
+    execute("!git clone https://github.com/wbthomason/packer.nvim " ..
+                install_path)
+    execute "packadd packer.nvim"
 end
 
 vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
 
-return require("packer").startup(
-  function(use)
+return require("packer").startup(function(use)
     -- Packer can manage itself as an optional plugin
     use "wbthomason/packer.nvim"
 
@@ -52,16 +52,7 @@ return require("packer").startup(
     use "Neevash/awesome-flutter-snippets"
 
     -- ColorScheme
-    use {
-      "ful1e5/onedark.nvim",
-      config = function()
-        vim.g.onedark_hide_inactive_statusline = true
-
-        -- Load the colorscheme
-        vim.cmd [[colorscheme onedark]]
-      end
-    }
-
+    use "ful1e5/onedark.nvim"
     use "eddyekofo94/gruvbox-flat.nvim"
 
     -- Color previewers
@@ -83,5 +74,4 @@ return require("packer").startup(
     use {"tpope/vim-surround"}
     use "terrortylor/nvim-comment"
     use "windwp/nvim-autopairs"
-  end
-)
+end)

@@ -3732,3 +3732,6 @@ vim
 Blankline
 vim
 Changelog
+Linting
+ptr
+left_ptr_watch

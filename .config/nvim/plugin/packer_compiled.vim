@@ -153,7 +153,6 @@ _G.packer_plugins = {
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
-    config = { "\27LJ\1\2j\0\0\2\0\5\0\t4\0\0\0007\0\1\0)\1\2\0:\1\2\0004\0\0\0007\0\3\0%\1\4\0>\0\2\1G\0\1\0\24colorscheme onedark\bcmd%onedark_hide_inactive_statusline\6g\bvim\0" },
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/onedark.nvim"
   },
@@ -208,10 +207,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: onedark.nvim
-time([[Config for onedark.nvim]], true)
-try_loadstring("\27LJ\1\2j\0\0\2\0\5\0\t4\0\0\0007\0\1\0)\1\2\0:\1\2\0004\0\0\0007\0\3\0%\1\4\0>\0\2\1G\0\1\0\24colorscheme onedark\bcmd%onedark_hide_inactive_statusline\6g\bvim\0", "config", "onedark.nvim")
-time([[Config for onedark.nvim]], false)
 if should_profile then save_profiles() end
 
 END
