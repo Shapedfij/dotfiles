@@ -16,7 +16,7 @@ vim.api.nvim_set_keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", {noremap = true})
 vim.api.nvim_set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", {noremap = true})
 
 -- Tab navigation
-vim.api.nvim_set_keymap("n", "<Leader><Esc>", ":bdelete<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader><Esc>", ":bd<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>]", ":bnext<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>[", ":bprev<CR>", {noremap = true})
 
