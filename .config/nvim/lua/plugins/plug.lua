@@ -52,7 +52,7 @@ return require("packer").startup(function(use)
     use "Neevash/awesome-flutter-snippets"
 
     -- ColorScheme
-    use "ful1e5/onedark.nvim"
+    use {"ful1e5/onedark.nvim", branch = 'dev'}
     use "eddyekofo94/gruvbox-flat.nvim"
 
     -- Color previewers
