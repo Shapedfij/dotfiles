@@ -28,6 +28,7 @@ require("lualine").setup {
 
 -- Onedark
 require("onedark").setup({
+    transparent = true,
     hideInactiveStatusline = true,
     darkSidebar = false,
     darkFloat = false
