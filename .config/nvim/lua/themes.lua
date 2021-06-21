@@ -1,10 +1,3 @@
--- Onedark
--- vim.g.onedark_hide_inactive_statusline = false
--- require("onedark").setup({darkSidebar = false})
--- Gruvbox-Flat
--- vim.g.gruvbox_hide_inactive_statusline = true
--- vim.cmd [[colorscheme gruvbox-flat]]
--- Lualine
 require("lualine").setup {
     options = {
         theme = "onedark",
@@ -28,5 +21,19 @@ require("lualine").setup {
         lualine_x = {"location"},
         lualine_y = {},
         lualine_z = {}
-    }
+    },
+    tabline = {},
+    extensions = {}
 }
+
+-- Onedark
+require("onedark").setup({
+    hideInactiveStatusline = true,
+    darkSidebar = false,
+    darkFloat = false
+})
+
+-- Gruvbox-Flat
+-- vim.g.gruvbox_hide_inactive_statusline = true
+-- vim.cmd [[colorscheme gruvbox-flat]]
+-- Lualine
