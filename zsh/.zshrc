@@ -5,6 +5,8 @@ export EDITOR=nvim
 export ZSH="/home/kaiz/.oh-my-zsh"
 
 # Aliases --------------------------------------------------------------
+# nvim
+alias nvimdev=nvim --cmd "set rtp+=$(pwd)" .
 # Stream song-grab
 alias gsvlc="VERBOSE=true OUTPUT_DIR=./.output ./Github/grab-song/grab-song.sh vlc"
 alias gscele="VERBOSE=true OUTPUT_DIR=./.output ./Github/grab-song/grab-song.sh"
@@ -29,12 +31,11 @@ export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 
 # themes ---------------------------------------------------------------
-# ZSH_THEME="spaceship"
 ZSH_THEME="robbyrussell"
-# ZSH_THEME="dot"
 
 # plugins ---------------------------------------------------------------
 plugins=(
+	vi-mode
 	ubuntu
 	git
 	archlinux
