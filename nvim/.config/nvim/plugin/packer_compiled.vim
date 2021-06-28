@@ -104,10 +104,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
-  ["gruvbox-flat.nvim"] = {
-    loaded = true,
-    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/gruvbox-flat.nvim"
-  },
   ["lsp-colors.nvim"] = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim"
