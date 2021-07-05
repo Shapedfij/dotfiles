@@ -1,8 +1,8 @@
 -- Lualine
 require("lualine").setup {
     options = {
-        theme = "onedark",
-        -- theme = "gruvbox-flat",
+        -- theme = "onedark",
+        theme = "github",
         section_separators = {"", ""},
         component_separators = {"", ""},
         icons_enabled = true
@@ -27,9 +27,17 @@ require("lualine").setup {
     extensions = {}
 }
 
--- Onedark
-require("onedark").setup({
-    hideInactiveStatusline = true,
-    darkSidebar = false,
-    darkFloat = true
+-- GitHub
+require("github").setup({
+    themeStyle = "dark",
+    hideInactiveStatusline = true
+    -- darkSidebar = false,
+    -- darkFloat = true
 })
+
+-- -- Onedark
+-- require("onedark").setup({
+--   hideInactiveStatusline = true,
+--   darkSidebar = false,
+--   darkFloat = true
+-- })
