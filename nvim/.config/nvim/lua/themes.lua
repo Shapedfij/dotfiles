@@ -28,7 +28,7 @@ require("lualine").setup {
 }
 
 -- GitHub
-require("github").setup({
+require("github-theme").setup({
     themeStyle = "dark",
     hideInactiveStatusline = true
     -- darkSidebar = false,
