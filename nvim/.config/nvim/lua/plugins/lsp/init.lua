@@ -12,7 +12,7 @@ local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, ...)
   end
 
-  --Enable completion triggered by <c-x><c-o>
+  -- Enable completion triggered by <c-x><c-o>
   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
   -- Mappings.
@@ -25,13 +25,17 @@ local on_attach = function(_, bufnr)
   buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
   buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
   buf_set_keymap("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", opts)
-  buf_set_keymap("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>", opts)
-  buf_set_keymap("n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", opts)
+  buf_set_keymap("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>",
+                 opts)
+  buf_set_keymap("n", "<space>wl",
+                 "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>",
+                 opts)
   buf_set_keymap("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
   buf_set_keymap("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
   buf_set_keymap("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
   buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-  buf_set_keymap("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", opts)
+  buf_set_keymap("n", "<space>e",
+                 "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", opts)
   buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", opts)
   buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", opts)
   buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", opts)
@@ -41,8 +45,6 @@ local on_attach = function(_, bufnr)
   print("LSP Attached.")
 end
 
-local servers = require "lspinstall".installed_servers()
+local servers = require"lspinstall".installed_servers()
 
-for _, lsp in pairs(servers) do
-  nvim_lsp[lsp].setup {on_attach = on_attach}
-end
+for _, lsp in pairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach} end

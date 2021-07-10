@@ -42,6 +42,7 @@ return require("packer").startup(function(use)
   -- Git
   use "tpope/vim-fugitive"
   use "lewis6991/gitsigns.nvim"
+  use {"TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim"}
 
   -- Explorer
   use "kyazdani42/nvim-tree.lua"

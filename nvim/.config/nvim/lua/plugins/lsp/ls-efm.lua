@@ -4,15 +4,8 @@ local flake8 = {
   lintFormats = {"%f=%l:%c: %m"}
 }
 
-require("lspconfig").efm.setup(
-  {
-    init_options = {documentFormatting = true},
-    filetypes = {"lua", "python"},
-    settings = {
-      rootMarkers = {".git/"},
-      languages = {
-        python = {flake8}
-      }
-    }
-  }
-)
+require("lspconfig").efm.setup({
+  init_options = {documentFormatting = true},
+  filetypes = {"lua", "python"},
+  settings = {rootMarkers = {".git/"}, languages = {python = {flake8}}}
+})
