@@ -6,7 +6,9 @@ export ZSH="/home/kaiz/.oh-my-zsh"
 
 # Aliases --------------------------------------------------------------
 # nvim
-alias nvimdev=nvim --cmd "set rtp+=$(pwd)" .
+alias n="nvim ."
+alias nd="nvim --cmd 'set rtp+=$(pwd)' ."
+
 # Stream song-grab
 alias gsvlc="VERBOSE=true OUTPUT_DIR=./.output ./Github/grab-song/grab-song.sh vlc"
 alias gscele="VERBOSE=true OUTPUT_DIR=./.output ./Github/grab-song/grab-song.sh"
@@ -14,6 +16,10 @@ alias gscele="VERBOSE=true OUTPUT_DIR=./.output ./Github/grab-song/grab-song.sh"
 # Logout session KDE
 alias hibr="systemctl hibernate"
 alias lloo="qdbus org.kde.ksmserver /KSMServer logout 1 3 3"
+
+# Directory
+alias .f="cd ~/.dotfiles"
+alias .g="cd ~/GitHub"
 
 # Python
 alias p="python"
