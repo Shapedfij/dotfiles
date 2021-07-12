@@ -29,13 +29,11 @@ require("lualine").setup {
 
 -- GitHub
 require("github-theme").setup({
-  themeStyle = "dark",
   -- themeStyle = "dimmed",
   -- themeStyle = "light",
   hideInactiveStatusline = true,
   darkSidebar = false,
-  darkFloat = true,
-  colors = {bg_statusline = "#000000"}
+  darkFloat = true
 })
 
 -- -- Onedark

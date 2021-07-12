@@ -47,4 +47,10 @@ end
 
 local servers = require"lspinstall".installed_servers()
 
-for _, lsp in pairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach} end
+for _, lsp in pairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = function(client)
+      require("illuminate").on_attach(client)
+    end
+  }
+end

@@ -73,7 +73,8 @@ return require("packer").startup(function(use)
   use "psf/black"
 
   -- Utilies Plugins
-  use {"tpope/vim-surround"}
+  use "RRethy/vim-illuminate"
+  use "tpope/vim-surround"
   use "terrortylor/nvim-comment"
   use "windwp/nvim-autopairs"
 end)
