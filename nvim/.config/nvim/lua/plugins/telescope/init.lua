@@ -33,14 +33,14 @@ local M = {}
 M.search_dotfiles = function()
   require("telescope.builtin").find_files({
     prompt_title = "~ VimRC ~",
-    cwd = "$HOME/.config/nvim/"
+    cwd = "$HOME/.dotfiles/nvim/.config/nvim"
   })
 end
 
 M.search_kitty_dotfiles = function()
   require("telescope.builtin").find_files({
     prompt_title = "~ Kitty Config ~",
-    cwd = "$HOME/.config/kitty/"
+    cwd = "$HOME/.dotfiles/kitty/.config/kitty"
   })
 end
 
