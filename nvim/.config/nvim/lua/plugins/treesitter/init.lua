@@ -24,5 +24,14 @@ require("nvim-treesitter.configs").setup {
     disable = {"dart"}
   },
   indent = {enable = true},
-  context_commentstring = {enable = true}
+  context_commentstring = {enable = true},
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm"
+    }
+  }
 }
