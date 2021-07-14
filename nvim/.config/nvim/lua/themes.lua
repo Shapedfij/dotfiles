@@ -28,9 +28,12 @@ require("lualine").setup {
 }
 
 -- GitHub
+local themeStyle = "dark"
+-- local themeStyle = "dimmed"
+-- local themeStyle = "light"
+
 require("github-theme").setup({
-  -- themeStyle = "dimmed",
-  -- themeStyle = "light",
+  themeStyle = themeStyle,
   hideInactiveStatusline = true,
   darkSidebar = false,
   darkFloat = true
