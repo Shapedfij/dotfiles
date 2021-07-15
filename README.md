@@ -11,7 +11,7 @@ Ninja's Configuration files
 ### github-theme
 
 <p align="center">
-  <img src="https://imgur.com/pFuZqVZ" alt="kitty+nvim+github-theme" />
+  <img src="https://imgur.com/pFuZqVZ.png" alt="kitty+nvim+github-theme" />
 </p>
 
 ## Installing
