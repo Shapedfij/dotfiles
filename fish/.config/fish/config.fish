@@ -14,9 +14,15 @@ alias gscele="VERBOSE=true OUTPUT_DIR=./.output ./Github/grab-song/grab-song.sh"
 
 # dotfiles
 alias .f="cd ~/.dotfiles"
-alias .up="stow --adopt -nv *"
+alias .dot="cd ~/.dotfiles && nvim ."
+alias .fish="cd ~/.dotfiles/fish/.config/fish && nvim config.fish"
+alias .kitty="cd ~/.dotfiles/kitty/.config/kitty && nvim kitty.conf"
+alias .nvim="cd ~/.dotfiles/nvim/.config/nvim && nvim init.lua"
+alias .zsh="cd ~/.dotfiles/zsh && nvim .zshrc"
+alias .stow-up="stow --adopt -nv *"
+alias .stow="stow -S -nv"
 
-# Directory
+# Git/Work directories
 alias .g="cd ~/GitHub"
 alias .ful="cd ~/GitHub/ful1e5/"
 alias .on="cd ~/GitHub/projekt0n/"

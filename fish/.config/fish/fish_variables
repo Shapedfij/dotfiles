@@ -1,8 +1,15 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR ZO_CMD:zo
+SETUVAR Z_CMD:z
+SETUVAR Z_DATA:/home/kaiz/\x2elocal/share/z/data
+SETUVAR Z_DATA_DIR:/home/kaiz/\x2elocal/share/z
+SETUVAR Z_EXCLUDE:\x5e/home/kaiz\x24
 SETUVAR __fish_initialized:3100
+SETUVAR _fisher_jethrokuan_2F_z_files:/home/kaiz/\x2econfig/fish/functions/__z\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__z_add\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__z_clean\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__z_complete\x2efish\x1e/home/kaiz/\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/kaiz/\x2econfig/fish/functions/fisher\x2efish\x1e/home/kaiz/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher
+SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_vi_2D_mode_files:/home/kaiz/\x2econfig/fish/functions/__vi_mode\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_bind_all\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_bind_directions\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_bind_directions_g\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_common\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_common_emacs\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_common_insert\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_direction_command\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_g\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_overwrite\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_replace\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_save_cmdline\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_undo\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/__vi_mode_user_key_bindings\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/fish_user_key_bindings\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/vi_mode_insert\x2efish\x1e/home/kaiz/\x2econfig/fish/functions/vi_mode_normal\x2efish\x1e/home/kaiz/\x2econfig/fish/conf\x2ed/vi\x2dmode\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eoh\x2dmy\x2dfish/plugin\x2dvi\x2dmode\x1ejethrokuan/z
 SETUVAR fish_color_autosuggestion:4D5566
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:39BAE6
