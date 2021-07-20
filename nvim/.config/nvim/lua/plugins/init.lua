@@ -1,5 +1,5 @@
 -- Setup
-require("plugins.plug")
+require("plugins.packer")
 
 -- LSP
 require("plugins.lsp")

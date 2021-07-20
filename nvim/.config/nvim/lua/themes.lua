@@ -1,4 +1,4 @@
--- Lualine
+-- -- Lualine
 require("lualine").setup {
   options = {
     -- theme = "onedark",
@@ -28,16 +28,7 @@ require("lualine").setup {
 }
 
 -- GitHub
-local themeStyle = "dark"
--- local themeStyle = "dimmed"
--- local themeStyle = "light"
-
-require("github-theme").setup({
-  themeStyle = themeStyle,
-  hideInactiveStatusline = true,
-  darkSidebar = false,
-  darkFloat = true
-})
+require("github-theme").setup({hideInactiveStatusline = false, transparent = true})
 
 -- -- Onedark
 -- require("onedark").setup({
