@@ -30,4 +30,4 @@ alias .on="cd ~/GitHub/projekt0n/"
 # Python
 alias p="python"
 
-starship init fish | source
+# starship init fish | source
