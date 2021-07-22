@@ -30,4 +30,10 @@ alias .on="cd ~/GitHub/projekt0n/"
 # Python
 alias p="python"
 
+
+# Blur
+for wid in (xdotool search --pid $fish_pid);
+  xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid;
+end
+
 # starship init fish | source
