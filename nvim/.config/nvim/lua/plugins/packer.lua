@@ -55,7 +55,6 @@ return require("packer").startup(function(use)
   -- ColorScheme
   use {"ful1e5/onedark.nvim", branch = "dev"}
   use {"projekt0n/github-nvim-theme"}
-  -- use {"ful1e5/github-nvim-theme", branch = "dev"}
 
   -- Color previewers
   use "norcalli/nvim-colorizer.lua"
@@ -73,6 +72,7 @@ return require("packer").startup(function(use)
   use "psf/black"
 
   -- Utilies Plugins
+  use "dag/vim-fish"
   use "RRethy/vim-illuminate"
   use "tpope/vim-surround"
   use "terrortylor/nvim-comment"
