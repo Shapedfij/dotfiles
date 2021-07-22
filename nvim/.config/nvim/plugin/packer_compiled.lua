@@ -189,6 +189,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["vim-fish"] = {
+    loaded = true,
+    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/vim-fish"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/vim-fugitive"
