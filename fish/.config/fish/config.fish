@@ -34,8 +34,10 @@ alias p="python"
 # Blur
 function blurk
   if test $DISPLAY
-    for ID in (xdotool search --class kitty)
-      xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $ID
+    for class in kitty konsole;
+      for ID in (xdotool search --class $class)
+        xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $ID
+      end
     end
   end
 end
