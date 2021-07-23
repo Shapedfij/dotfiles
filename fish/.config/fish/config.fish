@@ -32,8 +32,14 @@ alias p="python"
 
 
 # Blur
-for wid in (xdotool search --pid $fish_pid);
-  xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid;
+function blurk
+  if test $DISPLAY
+    for ID in (xdotool search --class kitty)
+      xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $ID
+    end
+  end
 end
+
+blurk
 
 # starship init fish | source

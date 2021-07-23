@@ -28,4 +28,8 @@ require("lualine").setup {
 }
 
 -- GitHub
-require("github-theme").setup({hideInactiveStatusline = true})
+require("github-theme").setup({
+  themeStyle = "dark",
+  hideInactiveStatusline = true,
+  transparent = true
+})
