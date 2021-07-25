@@ -30,9 +30,8 @@ alias .on="cd ~/GitHub/projekt0n/"
 # Python
 alias p="python"
 
-
 # Blur
-function blurk
+function blur_terminal_background
   if test $DISPLAY
     for class in kitty konsole;
       for ID in (xdotool search --class $class)
@@ -42,6 +41,4 @@ function blurk
   end
 end
 
-blurk
-
-# starship init fish | source
+blur_terminal_background
