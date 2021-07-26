@@ -1,5 +1,7 @@
 set fish_greeting
 
+fish_vi_key_bindings
+
 # exa
 alias ll="exa -l --icons"
 alias llt="exa -l -T --icons"
