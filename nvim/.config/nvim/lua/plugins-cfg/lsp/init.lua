@@ -47,12 +47,20 @@ local on_attach = function(_, bufnr)
   print("LSP Attached.")
 end
 
-local servers = require"lspinstall".installed_servers()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport =
+    {properties = {"documentation", "detail", "additionalTextEdits"}}
 
-for _, lsp in pairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach} end
+local servers = require"lspinstall".installed_servers()
+for _, lsp in pairs(servers) do
+  nvim_lsp[lsp].setup {on_attach = on_attach, capabilities = capabilities}
+end
+
 local luadev = require("lua-dev").setup({
   lspconfig = {
     on_attach = on_attach,
+    capabilities = capabilities,
     settings = {Lua = {diagnostics = {globals = {"vim"}}}}
   }
 })
