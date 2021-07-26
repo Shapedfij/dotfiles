@@ -4,7 +4,6 @@ require("plugins.packer")
 -- LSP
 require("plugins.lsp")
 require("plugins.lsp.signs")
-require("plugins.lsp.ls-lua")
 require("plugins.lspcolors")
 
 -- Plugins

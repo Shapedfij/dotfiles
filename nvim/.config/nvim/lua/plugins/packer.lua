@@ -20,6 +20,7 @@ return require("packer").startup(function(use)
   use "mattn/efm-langserver"
   use "folke/lsp-colors.nvim"
   use "windwp/nvim-ts-autotag"
+  use "folke/lua-dev.nvim"
 
   -- Spell Checker
   use "lewis6991/spellsitter.nvim"

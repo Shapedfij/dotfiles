@@ -54,3 +54,7 @@ for _, lsp in pairs(servers) do
     end
   }
 end
+
+local luadev = require("lua-dev").setup({lspconfig = {on_attach = on_attach}})
+
+nvim_lsp.sumneko_lua.setup(luadev)
