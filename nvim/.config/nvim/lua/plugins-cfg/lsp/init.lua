@@ -42,19 +42,19 @@ local on_attach = function(_, bufnr)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 
   vim.cmd("setlocal omnifunc=v:lua.vim.lsp.omnifunc")
+  require("illuminate").on_attach(_, bufnr)
+
   print("LSP Attached.")
 end
 
 local servers = require"lspinstall".installed_servers()
 
-for _, lsp in pairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = function(client)
-      require("illuminate").on_attach(client)
-    end
+for _, lsp in pairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach} end
+local luadev = require("lua-dev").setup({
+  lspconfig = {
+    on_attach = on_attach,
+    settings = {Lua = {diagnostics = {globals = {"vim"}}}}
   }
-end
+})
 
-local luadev = require("lua-dev").setup({lspconfig = {on_attach = on_attach}})
-
-nvim_lsp.sumneko_lua.setup(luadev)
+nvim_lsp.sumneko_lua.setup {luadev}

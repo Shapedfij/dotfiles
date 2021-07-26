@@ -48,10 +48,10 @@ end
 local opts = {noremap = true, silent = true}
 
 vim.api.nvim_set_keymap("n", "<Leader>vrc",
-                        [[<cmd>lua require('plugins.telescope').search_dotfiles()<cr>]],
+                        [[<cmd>lua require('plugins-cfg.telescope').search_dotfiles()<cr>]],
                         opts)
 vim.api.nvim_set_keymap("n", "<Leader>term",
-                        [[<cmd>lua require('plugins.telescope').search_kitty_dotfiles()<cr>]],
+                        [[<cmd>lua require('plugins-cfg.telescope').search_kitty_dotfiles()<cr>]],
                         opts)
 vim.api.nvim_set_keymap("n", "<C-p>",
                         [[<cmd>lua require('telescope.builtin').git_files()<cr>]], opts)

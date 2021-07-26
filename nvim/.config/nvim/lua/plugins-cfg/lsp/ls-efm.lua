@@ -6,6 +6,6 @@ local flake8 = {
 
 require("lspconfig").efm.setup({
   init_options = {documentFormatting = true},
-  filetypes = {"lua", "python"},
+  filetypes = {"python"},
   settings = {rootMarkers = {".git/"}, languages = {python = {flake8}}}
 })

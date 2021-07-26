@@ -1,6 +1,8 @@
 require("autocmds")
 require("mappings")
 require("settings")
-require("git")
-require("themes")
+
 require("plugins")
+require("plugins-cfg")
+
+require("themes")
