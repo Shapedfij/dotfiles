@@ -2,6 +2,13 @@ require("lspinstall").setup() -- important
 
 local nvim_lsp = require("lspconfig")
 
+-- Setting LSP Border
+local border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover,
+                                                      {border = border})
+vim.lsp.handlers["textDocument/signatureHelp"] =
+    vim.lsp.with(vim.lsp.handlers.signature_help, {border = border})
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(_, bufnr)
@@ -35,9 +42,14 @@ local on_attach = function(_, bufnr)
   buf_set_keymap("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
   buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
   buf_set_keymap("n", "<space>e",
-                 "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", opts)
-  buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", opts)
-  buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", opts)
+                 "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({border={'╭', '─', '╮', '│', '╯', '─', '╰', '│'}})<cr>",
+                 opts)
+  buf_set_keymap("n", "[d",
+                 "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts={border={'╭', '─', '╮', '│', '╯', '─', '╰', '│'}}})<cr>",
+                 opts)
+  buf_set_keymap("n", "]d",
+                 "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts={border={'╭', '─', '╮', '│', '╯', '─', '╰', '│'}}})<cr>",
+                 opts)
   buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", opts)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 
@@ -59,28 +71,16 @@ local luadev = require("lua-dev").setup({
     capabilities = capabilities,
     settings = {
       Lua = {
-        runtime = {
-          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-          version = "LuaJIT",
-          -- Setup your lua path
-          path = vim.split(package.path, ";")
-        },
         diagnostics = {
           -- Get the language server to recognize the `vim` global
           globals = {"vim"}
-        },
-        workspace = {
-          -- Make the server aware of Neovim runtime files
-          library = {
-            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-            [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
-          }
         }
       }
     }
   }
 })
-nvim_lsp.sumneko_lua.setup {luadev}
+
+nvim_lsp.sumneko_lua.setup({luadev})
 
 -- Other LSP
 local servers = require"lspinstall".installed_servers()
