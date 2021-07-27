@@ -52,17 +52,38 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport =
     {properties = {"documentation", "detail", "additionalTextEdits"}}
 
-local servers = require"lspinstall".installed_servers()
-for _, lsp in pairs(servers) do
-  nvim_lsp[lsp].setup {on_attach = on_attach, capabilities = capabilities}
-end
-
+-- Lua LSP
 local luadev = require("lua-dev").setup({
   lspconfig = {
     on_attach = on_attach,
     capabilities = capabilities,
-    settings = {Lua = {diagnostics = {globals = {"vim"}}}}
+    settings = {
+      Lua = {
+        runtime = {
+          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+          version = "LuaJIT",
+          -- Setup your lua path
+          path = vim.split(package.path, ";")
+        },
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = {"vim"}
+        },
+        workspace = {
+          -- Make the server aware of Neovim runtime files
+          library = {
+            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+            [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
+          }
+        }
+      }
+    }
   }
 })
-
 nvim_lsp.sumneko_lua.setup {luadev}
+
+-- Other LSP
+local servers = require"lspinstall".installed_servers()
+for _, lsp in pairs(servers) do
+  nvim_lsp[lsp].setup {on_attach = on_attach, capabilities = capabilities}
+end
