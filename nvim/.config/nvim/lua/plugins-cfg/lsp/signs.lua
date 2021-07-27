@@ -39,7 +39,9 @@ vim.lsp.protocol.CompletionItemKind = {
   " ﳤ  (Struct)", "   (Event)", "   (Operator)", "   (TypeParameter)"
 }
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  -- Use a sharp border with `FloatBorder` highlights
-  border = "single"
-})
+local border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"} -- the border option is the same as `|help nvim_open_win|`
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover,
+                                                      {border = border})
+vim.lsp.handlers["textDocument/signatureHelp"] =
+    vim.lsp.with(vim.lsp.handlers.signature_help, {border = border})
