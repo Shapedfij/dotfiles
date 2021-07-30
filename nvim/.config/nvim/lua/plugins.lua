@@ -11,7 +11,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute "packadd packer.nvim"
 end
 
-vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
+-- vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
+vim.cmd "autocmd BufWritePost plugins.lua luafile %" -- Auto source when there are changes in plugins.lua
 
 return require("packer").startup(function(use)
   -- Packer can manage itself as an optional plugin
@@ -68,6 +69,7 @@ return require("packer").startup(function(use)
 
   -- Status Line
   use "hoob3rt/lualine.nvim"
+  -- use "romgrk/barbar.nvim"
 
   -- Formatter
   use "mhartington/formatter.nvim"
