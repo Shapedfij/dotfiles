@@ -39,7 +39,6 @@ local on_attach = function(_, bufnr)
                  opts)
   buf_set_keymap("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
   buf_set_keymap("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-  buf_set_keymap("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
   buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
   buf_set_keymap("n", "<space>e",
                  "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({border={'╭', '─', '╮', '│', '╯', '─', '╰', '│'}})<cr>",

@@ -53,6 +53,21 @@ vim.api.nvim_set_keymap("n", "<Leader>vrc",
 vim.api.nvim_set_keymap("n", "<Leader>term",
                         [[<cmd>lua require('plugins-cfg.telescope').search_kitty_dotfiles()<cr>]],
                         opts)
+
+vim.api.nvim_set_keymap("n", "<Leader>help",
+                        [[<cmd>lua require('telescope.builtin').help_tags()<cr>]], opts)
+vim.api.nvim_set_keymap("n", "<Leader>man",
+                        [[<cmd>lua require('telescope.builtin').man_pages()<cr>]], opts)
+vim.api.nvim_set_keymap("n", "<Leader>=",
+                        [[<cmd>lua require('telescope.builtin').spell_suggest()<cr>]],
+                        opts)
+
+vim.api.nvim_set_keymap("n", "<Leader>ca",
+                        [[<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>]],
+                        opts)
+vim.api.nvim_set_keymap("n", "<Leader>ts",
+                        [[<cmd>lua require('telescope.builtin').treesitter()<cr>]], opts)
+
 vim.api.nvim_set_keymap("n", "<C-p>",
                         [[<cmd>lua require('telescope.builtin').git_files()<cr>]], opts)
 vim.api.nvim_set_keymap("n", "<Leader>p",

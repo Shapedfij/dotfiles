@@ -35,9 +35,10 @@ return require("packer").startup(function(use)
   use "rafamadriz/friendly-snippets"
 
   -- Telescope
-  use "nvim-lua/plenary.nvim"
-  use "nvim-telescope/telescope.nvim"
-  use "nvim-lua/popup.nvim"
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
+  }
   use "nvim-telescope/telescope-fzy-native.nvim"
 
   -- Treesitter
