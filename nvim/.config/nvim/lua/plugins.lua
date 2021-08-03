@@ -29,6 +29,9 @@ return require("packer").startup(function(use)
   -- Spell Checker
   use "lewis6991/spellsitter.nvim"
 
+  -- Polygot
+  use "sheerun/vim-polyglot"
+
   -- Auto Completion
   use "hrsh7th/nvim-compe"
   use "hrsh7th/vim-vsnip"
