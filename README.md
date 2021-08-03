@@ -2,6 +2,18 @@
 
 Ninja's Configuration files
 
+## Install
+
+```bash
+stow -S -nv *
+```
+
+## Adopt
+
+```bash
+stow --adopt -nv *
+```
+
 ### onedark-theme
 
 <p align="center">
@@ -13,9 +25,3 @@ Ninja's Configuration files
 <p align="center">
   <img src="https://imgur.com/pFuZqVZ.png" alt="kitty+nvim+github-theme" />
 </p>
-
-## Installing
-
-```bash
-stow */
-```
