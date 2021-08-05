@@ -3,6 +3,7 @@ require("lualine").setup {
   options = {
     -- theme = "onedark",
     theme = "github",
+    -- theme = "tokyonight",
     section_separators = {"", ""},
     component_separators = {"", ""},
     icons_enabled = true
@@ -27,6 +28,10 @@ require("lualine").setup {
   extensions = {}
 }
 
+-- Tokyonight
+-- vim.cmd [[colorscheme tokyonight]]
+
+-- Onedark
 -- require("onedark").setup({hideInactiveStatusline = true})
 
 require("github-theme").setup({

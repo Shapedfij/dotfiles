@@ -3,7 +3,7 @@ require("spellsitter").setup {
   captures = {} -- set to {} to spellcheck everything
 }
 
-vim.spell = false
+vim.spell = true
 vim.g.spellsitter = true
 vim.g.spellcheck = true
 vim.o.spelloptions = "camel"

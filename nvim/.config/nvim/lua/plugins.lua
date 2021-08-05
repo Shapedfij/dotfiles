@@ -11,8 +11,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute "packadd packer.nvim"
 end
 
--- vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
-vim.cmd "autocmd BufWritePost plugins.lua luafile %" -- Auto source when there are changes in plugins.lua
+-- Auto source when there are changes in plugins.lua
+vim.cmd [[autocmd BufWritePost plugins.lua luafile %]]
 
 return require("packer").startup(function(use)
   -- Packer can manage itself as an optional plugin
@@ -64,6 +64,7 @@ return require("packer").startup(function(use)
   -- ColorScheme
   use {"ful1e5/onedark.nvim", branch = "dev"}
   use {"projekt0n/github-nvim-theme"}
+  use "folke/tokyonight.nvim"
 
   -- Color previewers
   use "norcalli/nvim-colorizer.lua"

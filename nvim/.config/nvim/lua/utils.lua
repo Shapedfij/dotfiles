@@ -22,4 +22,11 @@ M.define_augroups = function(definitions) -- {{{
   end
 end
 
+_G.load = function(file)
+  require("plenary.reload").reload_module(file, true)
+  return require(file)
+end
+
+vim.api.nvim_set_keymap("n", "<Leader>rr", "<cmd>luafile $MYVIMRC<CR>",
+                        {noremap = true, silent = true})
 return M
