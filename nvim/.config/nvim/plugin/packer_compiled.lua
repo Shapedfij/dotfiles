@@ -193,6 +193,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
+  },
   ["vim-fish"] = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/vim-fish"

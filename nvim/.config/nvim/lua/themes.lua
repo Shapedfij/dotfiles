@@ -34,6 +34,7 @@ require("lualine").setup {
 -- Onedark
 -- require("onedark").setup({hideInactiveStatusline = true})
 
+-- Github
 require("github-theme").setup({
   themeStyle = "dimmed",
   hideInactiveStatusline = true,
