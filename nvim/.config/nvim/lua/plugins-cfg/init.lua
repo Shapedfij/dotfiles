@@ -1,3 +1,5 @@
+require("plugins-cfg.devicons")
+
 -- LSP
 require("plugins-cfg.lsp")
 require("plugins-cfg.lsp.signs")
