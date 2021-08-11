@@ -29,9 +29,6 @@ return require("packer").startup(function(use)
   -- Spell Checker
   use "lewis6991/spellsitter.nvim"
 
-  -- Polygot
-  use "sheerun/vim-polyglot"
-
   -- Auto Completion
   use "hrsh7th/nvim-compe"
   use "hrsh7th/vim-vsnip"
@@ -82,7 +79,7 @@ return require("packer").startup(function(use)
   use {"prettier/vim-prettier", run = "yarn install"}
   use "psf/black"
 
-  -- Utilies Plugins
+  -- Misc
   use "dag/vim-fish"
   use "RRethy/vim-illuminate"
   use "tpope/vim-surround"
