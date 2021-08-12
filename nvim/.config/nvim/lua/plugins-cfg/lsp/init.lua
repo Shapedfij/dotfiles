@@ -53,8 +53,6 @@ local on_attach = function(_, bufnr)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 
   vim.cmd("setlocal omnifunc=v:lua.vim.lsp.omnifunc")
-  require("illuminate").on_attach(_, bufnr)
-
   print("LSP Attached.")
 end
 

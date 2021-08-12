@@ -81,7 +81,6 @@ return require("packer").startup(function(use)
 
   -- Misc
   use "dag/vim-fish"
-  use "RRethy/vim-illuminate"
   use "tpope/vim-surround"
   use "terrortylor/nvim-comment"
   use "windwp/nvim-autopairs"
