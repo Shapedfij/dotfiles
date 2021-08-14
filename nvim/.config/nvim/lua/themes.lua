@@ -39,5 +39,5 @@ require("github-theme").setup({
   themeStyle = "dimmed",
   hideInactiveStatusline = true,
   darkFloat = false,
-  transparent = true
+  darkSidebar = false
 })
