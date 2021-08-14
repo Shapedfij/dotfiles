@@ -31,6 +31,7 @@ alias .on="cd ~/GitHub/projekt0n/"
 
 # Python
 alias p="python"
+set -x PATH ~/.local/bin $PATH
 
 # Blur
 function blur_terminal_background
@@ -44,3 +45,4 @@ function blur_terminal_background
 end
 
 blur_terminal_background
+
