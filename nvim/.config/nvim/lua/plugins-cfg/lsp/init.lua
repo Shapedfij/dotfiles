@@ -62,8 +62,27 @@ capabilities.textDocument.completion.completionItem.resolveSupport =
     {properties = {"documentation", "detail", "additionalTextEdits"}}
 
 -- Lua LSP
+-- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
+USER = vim.fn.expand("$USER")
+
+local sumneko_root_path = ""
+local sumneko_binary = ""
+
+if vim.fn.has("mac") == 1 then
+  sumneko_root_path = "/Users/" .. USER .. "/.config/nvim/lua-language-server"
+  sumneko_binary = "/Users/" .. USER ..
+                       "/.config/nvim/lua-language-server/bin/macOS/lua-language-server"
+elseif vim.fn.has("unix") == 1 then
+  sumneko_root_path = "/home/" .. USER .. "/.config/nvim/lua-language-server"
+  sumneko_binary = "/home/" .. USER ..
+                       "/.config/nvim/lua-language-server/bin/Linux/lua-language-server"
+else
+  print("Unsupported system for sumneko")
+end
+
 local luadev = require("lua-dev").setup({
   lspconfig = {
+    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
@@ -71,7 +90,8 @@ local luadev = require("lua-dev").setup({
         diagnostics = {
           -- Get the language server to recognize the `vim` global
           globals = {"vim"}
-        }
+        },
+        workspace = {maxPreload = 10000}
       }
     }
   }
