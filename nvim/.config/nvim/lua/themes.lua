@@ -27,13 +27,16 @@ require("lualine").setup {
   tabline = {},
   extensions = {}
 }
-
 -- Tokyonight
 -- vim.cmd [[colorscheme tokyonight]]
-
+--
+--
+--
 -- Onedark
 -- require("onedark").setup({hideInactiveStatusline = true})
-
+--
+--
+--
 -- Github
 require("github-theme").setup({
   themeStyle = "dimmed",
