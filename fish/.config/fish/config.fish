@@ -33,6 +33,9 @@ alias .on="cd ~/GitHub/projekt0n/"
 alias p="python"
 set -x PATH ~/.local/bin $PATH
 
+# Flutter
+set -Ua fish_user_paths ~/GitHub/flutter/bin
+
 # Blur
 function blur_terminal_background
   if test $DISPLAY
