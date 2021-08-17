@@ -27,5 +27,4 @@ _G.load = function(file)
   return require(file)
 end
 
-vim.api.nvim_set_keymap("n", "<Leader>rr", "<cmd>luafile $MYVIMRC<CR>", {noremap = true, silent = true})
 return M
