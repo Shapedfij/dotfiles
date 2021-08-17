@@ -67,7 +67,7 @@ return require("packer").startup(function(use)
   use "kyazdani42/nvim-web-devicons"
 
   -- Status Line
-  use "hoob3rt/lualine.nvim"
+  use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
   -- use "romgrk/barbar.nvim"
 
   -- Formatter

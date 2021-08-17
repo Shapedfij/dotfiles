@@ -1,9 +1,5 @@
 local prettierFmt = function()
-  return {
-    exe = "prettier",
-    args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
-    stdin = true
-  }
+  return {exe = "prettier", args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)}, stdin = true}
 end
 
 require("formatter").setup({
@@ -19,12 +15,6 @@ require("formatter").setup({
     json = {prettierFmt},
     yaml = {prettierFmt},
     markdown = {prettierFmt},
-    html = {prettierFmt},
-    lua = {
-      -- luafmt
-      function()
-        return {exe = "luafmt", args = {"--indent-count", 2, "--stdin"}, stdin = true}
-      end
-    }
+    html = {prettierFmt}
   }
 })
