@@ -3,7 +3,8 @@ require("lspinstall").setup()
 M = {}
 
 M.lspconfig = require("lspconfig")
-M.border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
+
+M.border = "rounded"
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = M.border})
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = M.border})
@@ -52,7 +53,7 @@ M.capabilities.textDocument.completion.completionItem.resolveSupport =
     {properties = {"documentation", "detail", "additionalTextEdits"}}
 
 -- LSP setup
-local servers = require"lspinstall".installed_servers()
+local servers = require("lspinstall").installed_servers()
 for _, lsp in pairs(servers) do M.lspconfig[lsp].setup {on_attach = M.on_attach, capabilities = M.capabilities} end
 
 return M

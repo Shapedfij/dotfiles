@@ -1,2 +1,2 @@
 require("core.lsp")
-require("core.lsp.servers")
+require("core.compe")

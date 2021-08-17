@@ -29,7 +29,12 @@ local luadev = require("lua-dev").setup({
           path = vim.split(package.path, ";")
         },
         diagnostics = {globals = {"vim"}},
-        workspace = {checkThirdParty = false, maxPreload = 2000, preloadFileSize = 500}
+        workspace = {
+          checkThirdParty = false,
+          library = {[vim.fn.expand("$VIMRUNTIME/lua")] = true, [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true},
+          maxPreload = 2000,
+          preloadFileSize = 500
+        }
       }
     }
   }
