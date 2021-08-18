@@ -64,7 +64,10 @@ return require("packer").startup(function(use)
   use "norcalli/nvim-colorizer.lua"
 
   -- Icons
-  use "kyazdani42/nvim-web-devicons"
+  use {
+    "projekt0n/circles.nvim",
+    requires = {{"kyazdani42/nvim-web-devicons"}, {"kyazdani42/nvim-tree.lua", opt = true}}
+  }
 
   -- Status Line
   use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}

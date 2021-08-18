@@ -15,20 +15,6 @@ vim.g.nvim_tree_ignore = {".git"}
 vim.g.nvim_tree_root_folder_modifier = ":p:~"
 vim.g.nvim_tree_special_files = {}
 
-local icons = require("core.icons")
-vim.g.nvim_tree_icons = {
-  default = icons.empty_circle,
-  symlink = icons.empty_circle,
-  folder = {
-    default = icons.empty_circle,
-    open = icons.circle,
-    empty = icons.empty_circle,
-    empty_open = icons.circle,
-    symlink = icons.empty_circle,
-    symlink_open = icons.circle
-  }
-}
-
 function NvimTreeOSOpen()
   local lib = require "nvim-tree.lib"
   local node = lib.get_node_at_cursor()

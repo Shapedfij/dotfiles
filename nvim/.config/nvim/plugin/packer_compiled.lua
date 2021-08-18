@@ -77,6 +77,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/black"
   },
+  ["circles.nvim"] = {
+    loaded = true,
+    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/circles.nvim"
+  },
   ["dart-vim-plugin"] = {
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/dart-vim-plugin"

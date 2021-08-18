@@ -1,7 +1,6 @@
 require("plugins-cfg.autopairs")
 require("plugins-cfg.colorizer")
 require("plugins-cfg.comment")
-require("plugins-cfg.devicons")
 require("plugins-cfg.formatter")
 require("plugins-cfg.fugitive")
 require("plugins-cfg.gitsigns")
