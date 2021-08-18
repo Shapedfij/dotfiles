@@ -4,7 +4,7 @@ M = {}
 
 M.lspconfig = require("lspconfig")
 
-M.border = "rounded"
+M.border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = M.border})
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = M.border})
@@ -37,9 +37,15 @@ M.on_attach = function(_, bufnr)
   buf_set_keymap("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
   buf_set_keymap("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
   buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-  buf_set_keymap("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({border=M.border})<cr>", opts)
-  buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts={border=M.border}})<cr>", opts)
-  buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts={border=M.border}})<cr>", opts)
+  buf_set_keymap("n", "<space>e",
+                 "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({border={'╭', '─', '╮', '│', '╯', '─', '╰', '│'}})<cr>",
+                 opts)
+  buf_set_keymap("n", "[d",
+                 "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts={border={'╭', '─', '╮', '│', '╯', '─', '╰', '│'}}})<cr>",
+                 opts)
+  buf_set_keymap("n", "]d",
+                 "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts={border={'╭', '─', '╮', '│', '╯', '─', '╰', '│'}}})<cr>",
+                 opts)
   buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", opts)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 
