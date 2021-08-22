@@ -8,3 +8,5 @@ vim.api.nvim_set_keymap("n", "<Leader>gl", ":diffget //3<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>gs", ":Gstatus<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>gp", ":G push<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>gl", ":G pull<CR>", {noremap = true})
+
+vim.api.nvim_set_keymap("n", "<Leader>grs", ":G reset --soft HEAD~1<CR>", {noremap = true})
