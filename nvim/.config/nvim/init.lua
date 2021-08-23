@@ -4,6 +4,6 @@ require("settings")
 
 require("plugins")
 require("core")
-require("plugins-cfg")
+require("config")
 
 require("themes")

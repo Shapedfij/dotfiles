@@ -38,9 +38,8 @@ end
 -- Custom KeyBinding
 local opts = {noremap = true, silent = true}
 
-vim.api.nvim_set_keymap("n", "<Leader>vrc", [[<cmd>lua require('plugins-cfg.telescope').search_dotfiles()<cr>]], opts)
-vim.api.nvim_set_keymap("n", "<Leader>term", [[<cmd>lua require('plugins-cfg.telescope').search_kitty_dotfiles()<cr>]],
-                        opts)
+vim.api.nvim_set_keymap("n", "<Leader>vrc", [[<cmd>lua require('config.telescope').search_dotfiles()<cr>]], opts)
+vim.api.nvim_set_keymap("n", "<Leader>term", [[<cmd>lua require('config.telescope').search_kitty_dotfiles()<cr>]], opts)
 
 vim.api.nvim_set_keymap("n", "<Leader>help", [[<cmd>lua require('telescope.builtin').help_tags()<cr>]], opts)
 vim.api.nvim_set_keymap("n", "<Leader>man", [[<cmd>lua require('telescope.builtin').man_pages()<cr>]], opts)

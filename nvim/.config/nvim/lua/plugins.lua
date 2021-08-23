@@ -47,8 +47,7 @@ return require("packer").startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   -- Explorer
-  use "kyazdani42/nvim-tree.lua"
-  use "kevinhwang91/rnvimr"
+  use {"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons"}
 
   -- Flutter
   use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim"}
