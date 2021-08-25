@@ -67,20 +67,12 @@ return require("packer").startup(function(use)
     "projekt0n/circles.nvim",
     requires = {{"kyazdani42/nvim-web-devicons"}, {"kyazdani42/nvim-tree.lua", opt = true}},
     config = function()
-      require("circles").setup({
-        icons = {
-          empty = "",
-          -- 
-          filled = "",
-          lsp_prefix = ""
-        }
-      })
+      require("circles").setup({icons = {empty = "", filled = "", lsp_prefix = ""}})
     end
   }
 
   -- Status Line
-  use {"hoob3rt/lualine.nvim"}
-  -- use "romgrk/barbar.nvim"
+  use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
 
   -- Formatter
   use "mhartington/formatter.nvim"

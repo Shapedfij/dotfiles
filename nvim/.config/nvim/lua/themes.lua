@@ -25,15 +25,20 @@ require("lualine").setup {
 --
 --
 -- Onedark
--- require("onedark").setup({hideInactiveStatusline = true, darkFloat = false, darkSidebar = false})
+-- require("onedark").setup({
+--   msgAreaStyle = "italic",
+--   hideInactiveStatusline = true,
+--   darkFloat = false,
+--   darkSidebar = false
+-- })
 --
 --
 --
 -- Github
 require("github-theme").setup({
   themeStyle = "dimmed",
+  msgAreaStyle = "italic",
   hideInactiveStatusline = true,
   darkFloat = false,
-  darkSidebar = false,
-  msgAreaStyle = "italic"
+  darkSidebar = false
 })
