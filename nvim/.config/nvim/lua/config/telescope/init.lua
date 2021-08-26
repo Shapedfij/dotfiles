@@ -54,6 +54,8 @@ vim.api.nvim_set_keymap("n", "<Leader>=", [[<cmd>lua require('telescope.builtin'
 
 vim.api.nvim_set_keymap("n", "<Leader>ca", [[<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>]], opts)
 vim.api.nvim_set_keymap("n", "<Leader>ts", [[<cmd>lua require('telescope.builtin').treesitter()<cr>]], opts)
+vim.api.nvim_set_keymap("n", "<Leader>hi", [[<cmd>lua require('telescope.builtin').highlights()<cr>]], opts)
+vim.api.nvim_set_keymap("n", "<Leader>reg", [[<cmd>lua require('telescope.builtin').registers()<cr>]], opts)
 
 vim.api.nvim_set_keymap("n", "<Leader>pf",
                         [[<cmd>lua require('telescope.builtin').grep_string({search = vim.fn.input("Grep For > ")})<cr>]],
