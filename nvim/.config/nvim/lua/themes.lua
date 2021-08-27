@@ -1,8 +1,8 @@
 -- Lualine
 require("lualine").setup {
   options = {
-    -- theme = "onedark",
-    theme = "github",
+    theme = "onedark",
+    -- theme = "github",
     -- theme = "tokyonight",
     section_separators = {"", ""},
     component_separators = {"", ""},
@@ -25,20 +25,20 @@ require("lualine").setup {
 --
 --
 -- Onedark
--- require("onedark").setup({
---   msgAreaStyle = "italic",
---   hideInactiveStatusline = true,
---   darkFloat = false,
---   darkSidebar = false
--- })
---
---
---
--- Github
-require("github-theme").setup({
-  themeStyle = "dimmed",
+require("onedark").setup({
   msgAreaStyle = "italic",
   hideInactiveStatusline = true,
   darkFloat = false,
   darkSidebar = false
 })
+--
+--
+--
+-- Github
+-- require("github-theme").setup({
+--   themeStyle = "dimmed",
+--   msgAreaStyle = "italic",
+--   hideInactiveStatusline = true,
+--   darkFloat = false,
+--   darkSidebar = false
+-- })
