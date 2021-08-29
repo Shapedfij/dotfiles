@@ -14,14 +14,18 @@ stow -S -nv *
 stow --adopt -nv *
 ```
 
-### onedark-theme
+### onedark setup
 
 <p align="center">
   <img src="https://imgur.com/tptzxgH.png" alt="kitty+nvim+onedark" />
 </p>
 
-### github-theme
+### github setup
 
 <p align="center">
-  <img src="https://imgur.com/pFuZqVZ.png" alt="kitty+nvim+github-theme" />
+  <img src="https://imgur.com/vsB4hy9.png" alt="kitty+nvim+github-theme" />
 </p>
+
+### Font
+
+- Ubuntu Mono
