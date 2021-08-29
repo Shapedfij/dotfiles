@@ -36,7 +36,7 @@ require("lualine").setup {
 --
 -- Github
 require("github-theme").setup({
-  themeStyle = "dimmed",
+  themeStyle = "dark",
   msgAreaStyle = "italic",
   hideInactiveStatusline = true,
   darkFloat = false,

@@ -78,7 +78,7 @@ _G.packer_plugins = {
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/black"
   },
   ["circles.nvim"] = {
-    config = { "\27LJ\2\nq\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\nicons\1\0\0\1\0\3\15lsp_prefix\b\nempty\b\vfilled\b\nsetup\fcircles\frequire\0" },
+    config = { "\27LJ\2\nq\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\nicons\1\0\0\1\0\3\vfilled\b\nempty\b\15lsp_prefix\b\nsetup\fcircles\frequire\0" },
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/circles.nvim"
   },
@@ -227,7 +227,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: circles.nvim
 time([[Config for circles.nvim]], true)
-try_loadstring("\27LJ\2\nq\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\nicons\1\0\0\1\0\3\15lsp_prefix\b\nempty\b\vfilled\b\nsetup\fcircles\frequire\0", "config", "circles.nvim")
+try_loadstring("\27LJ\2\nq\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\nicons\1\0\0\1\0\3\vfilled\b\nempty\b\15lsp_prefix\b\nsetup\fcircles\frequire\0", "config", "circles.nvim")
 time([[Config for circles.nvim]], false)
 if should_profile then save_profiles() end
 
