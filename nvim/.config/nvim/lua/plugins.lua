@@ -22,7 +22,6 @@ return require("packer").startup(function(use)
   use "neovim/nvim-lspconfig"
   use "kabouzeid/nvim-lspinstall"
   use "mattn/efm-langserver"
-  use "folke/lsp-colors.nvim"
   use "windwp/nvim-ts-autotag"
   use "folke/lua-dev.nvim"
 
@@ -47,7 +46,13 @@ return require("packer").startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   -- Explorer
-  use {"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons"}
+  use {
+    "kyazdani42/nvim-tree.lua",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("config.nvimtree")
+    end
+  }
 
   -- Flutter
   use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim"}
