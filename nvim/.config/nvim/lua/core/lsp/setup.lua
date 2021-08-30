@@ -3,11 +3,7 @@ require("lspinstall").setup()
 M = {}
 
 M.lspconfig = require("lspconfig")
-
-M.border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
-
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = M.border})
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = M.border})
+M.border = "rounded"
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -37,19 +33,14 @@ M.on_attach = function(_, bufnr)
   buf_set_keymap("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
   buf_set_keymap("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
   buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-  buf_set_keymap("n", "<space>e",
-                 "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({border=require('core.lsp.setup').border})<cr>",
-                 opts)
-  buf_set_keymap("n", "[d",
-                 "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts={border=require('core.lsp.setup').border}})<cr>",
-                 opts)
-  buf_set_keymap("n", "]d",
-                 "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts={border=require('core.lsp.setup').border}})<cr>",
-                 opts)
+  buf_set_keymap("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({border=M.border})<cr>", opts)
+  buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts={border=M.border}})<cr>", opts)
+  buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts={border=M.border}})<cr>", opts)
   buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", opts)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 
   vim.cmd("setlocal omnifunc=v:lua.vim.lsp.omnifunc")
+
   print("LSP Attached.")
 end
 
