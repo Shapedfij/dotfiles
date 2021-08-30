@@ -21,25 +21,27 @@ return require("packer").startup(function(use)
   -- Native LSP
   use "neovim/nvim-lspconfig"
   use "kabouzeid/nvim-lspinstall"
-  use "mattn/efm-langserver"
-  use "windwp/nvim-ts-autotag"
   use "folke/lua-dev.nvim"
 
-  -- Spell Checker
-  use "lewis6991/spellsitter.nvim"
+  -- Individual Servers
+  use "mattn/efm-langserver"
+
+  -- Treesitter
+  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+  use "nvim-treesitter/playground"
+  use "windwp/nvim-ts-autotag"
 
   -- Auto Completion
   use "hrsh7th/nvim-compe"
   use "hrsh7th/vim-vsnip"
   use "rafamadriz/friendly-snippets"
 
+  -- Spell Checker
+  use "lewis6991/spellsitter.nvim"
+
   -- Telescope
   use {"nvim-telescope/telescope.nvim", requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}}
   use "nvim-telescope/telescope-fzy-native.nvim"
-
-  -- Treesitter
-  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-  use "nvim-treesitter/playground"
 
   -- Git
   use "tpope/vim-fugitive"
