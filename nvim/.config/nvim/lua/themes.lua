@@ -35,6 +35,7 @@ require("lualine").setup {
 --
 --
 -- Github
+vim.o.background = "dark"
 require("github-theme").setup({
   themeStyle = "dark",
   msgAreaStyle = "italic",
