@@ -1,8 +1,10 @@
+vim.o.background = "dark"
+
 -- Lualine
 require("lualine").setup {
   options = {
-    -- theme = "onedark",
-    theme = "github",
+    theme = "onedark",
+    -- theme = "github",
     -- theme = "tokyonight",
     section_separators = {"", ""},
     component_separators = {"", ""},
@@ -21,25 +23,20 @@ require("lualine").setup {
 }
 -- Tokyonight
 -- vim.cmd [[colorscheme tokyonight]]
---
---
---
+
 -- Onedark
--- require("onedark").setup({
---   msgAreaStyle = "italic",
---   hideInactiveStatusline = true,
---   darkFloat = false,
---   darkSidebar = false
--- })
---
---
---
--- Github
-vim.o.background = "dark"
-require("github-theme").setup({
-  themeStyle = "dark",
+require("onedark").setup({
   msgAreaStyle = "italic",
   hideInactiveStatusline = true,
   darkFloat = false,
   darkSidebar = false
 })
+
+-- -- Github
+-- require("github-theme").setup({
+--   themeStyle = "dark",
+--   msgAreaStyle = "italic",
+--   hideInactiveStatusline = true,
+--   darkFloat = false,
+--   darkSidebar = false
+-- })
