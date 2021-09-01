@@ -62,8 +62,8 @@ return require("packer").startup(function(use)
   use "Neevash/awesome-flutter-snippets"
 
   -- ColorScheme
-  use {"ful1e5/onedark.nvim", branch = "dev"}
-  use {"projekt0n/github-nvim-theme"}
+  use "ful1e5/onedark.nvim"
+  use "projekt0n/github-nvim-theme"
   use "folke/tokyonight.nvim"
 
   -- Color previewers
