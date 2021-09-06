@@ -18,6 +18,9 @@ return require("packer").startup(function(use)
   -- Packer can manage itself as an optional plugin
   use "wbthomason/packer.nvim"
 
+  -- Startup-time
+  use "dstein64/vim-startuptime"
+
   -- Native LSP
   use "neovim/nvim-lspconfig"
   use "kabouzeid/nvim-lspinstall"
