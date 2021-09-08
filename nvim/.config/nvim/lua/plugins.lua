@@ -86,20 +86,13 @@ return require("packer").startup({
     use {
       "ful1e5/onedark.nvim",
       -- disable = true,
-      requires = {"hoob3rt/lualine.nvim"},
       config = function()
-        require("onedark").setup({
-          msgAreaStyle = "italic",
-          hideInactiveStatusline = true,
-          darkFloat = false,
-          darkSidebar = false
-        })
+        require("onedark").setup({msgAreaStyle = "italic", darkFloat = false, darkSidebar = false})
       end
     }
     use {
       "projekt0n/github-nvim-theme",
       disable = true,
-      requires = {"hoob3rt/lualine.nvim"},
       config = function()
         require("github-theme").setup({
           themeStyle = "dark",
@@ -127,15 +120,6 @@ return require("packer").startup({
       requires = {{"kyazdani42/nvim-web-devicons"}, {"kyazdani42/nvim-tree.lua", opt = true}},
       config = function()
         require("circles").setup({icons = {empty = "", filled = "", lsp_prefix = ""}})
-      end
-    }
-
-    -- Status Line
-    use {
-      "hoob3rt/lualine.nvim",
-      requires = {"kyazdani42/nvim-web-devicons", opt = true},
-      config = function()
-        require("config.lualine").setup("dark")
       end
     }
 

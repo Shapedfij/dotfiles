@@ -1,9 +1,5 @@
 local map = vim.api.nvim_set_keymap
 
--- Leader key
-map("n", "<Space>", "<Nop>", {noremap = true})
-vim.g.mapleader = " "
-
 -- Quickfix list
 map("n", "<C-]>", ":cnext<CR>", {noremap = true})
 map("n", "<C-[>", ":cprev<CR>", {noremap = true})

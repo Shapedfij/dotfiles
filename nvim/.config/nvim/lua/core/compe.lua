@@ -1,8 +1,5 @@
 local lsp = require("core.lsp.setup")
 
--- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noinsert"
-
 -- Compe setup
 require("compe").setup {
   enabled = true,
