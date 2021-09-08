@@ -1,6 +1,6 @@
 require("autocmds")
 require("options")
-require("mappings")
+require("maps")
 
 require("core")
--- require("plugins")
+require("plugins")

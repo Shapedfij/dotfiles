@@ -1,4 +1,4 @@
-local map = vim.api.nvim_set_keymap
+local map = require("util").map
 
 -- Quickfix list
 map("n", "<C-]>", ":cnext<CR>", {noremap = true})

@@ -43,7 +43,7 @@ end
 
 -- Custom KeyBinding
 local opts = {noremap = true, silent = true}
-local map = vim.api.nvim_set_keymap
+local map = require("util").map
 
 map("n", "<Leader>vrc", "<cmd>lua require('config.telescope').search_dotfiles()<cr>", opts)
 map("n", "<Leader>term", "<cmd>lua require('config.telescope').search_kitty_dotfiles()<cr>", opts)

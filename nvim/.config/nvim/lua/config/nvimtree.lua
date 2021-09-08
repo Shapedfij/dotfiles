@@ -24,5 +24,5 @@ require("nvim-tree.events").on_nvim_tree_ready(function()
   vim.cmd("NvimTreeRefresh")
 end)
 
-local opts = {noremap = true, silent = true}
-vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
+local map = require("util").map
+map("n", "<C-b>", ":NvimTreeToggle<CR>", {noremap = true, silent = true})

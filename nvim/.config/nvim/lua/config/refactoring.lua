@@ -18,8 +18,8 @@ M.refactors = function()
   }):find()
 end
 
+local map = require("util").map
 local opt = {noremap = true, silent = true, expr = false}
-vim.api.nvim_set_keymap("v", "<Leader>rf", [[ <cmd>lua require('refactoring').refactor('Extract Function')<cr>]], opt)
-vim.api.nvim_set_keymap("v", "<Leader>re",
-                        [[ <cmd>lua require('refactoring').refactor('Extract Function To File')<cr>]], opt)
-vim.api.nvim_set_keymap("v", "<Leader>ref", [[ <cmd>lua M.refactors()<cr>]], opt)
+map("v", "<Leader>rf", [[ <cmd>lua require('refactoring').refactor('Extract Function')<cr>]], opt)
+map("v", "<Leader>re", [[ <cmd>lua require('refactoring').refactor('Extract Function To File')<cr>]], opt)
+map("v", "<Leader>ref", [[ <cmd>lua M.refactors()<cr>]], opt)

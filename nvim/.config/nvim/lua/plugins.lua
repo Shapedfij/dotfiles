@@ -27,7 +27,8 @@ return require("packer").startup({
     use {
       "dstein64/vim-startuptime",
       config = function()
-        vim.api.nvim_set_keymap("n", "<Leader>st", ":StartupTime<CR>", {noremap = true})
+        local map = require("util").map
+        map("n", "<Leader>st", ":StartupTime<CR>", {noremap = true})
       end
     }
 
