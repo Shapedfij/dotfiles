@@ -19,10 +19,7 @@ vim.cmd([[
 ]])
 
 local plugins = function(use)
-  -- Packer can manage itself as an optional plugin
   use "wbthomason/packer.nvim"
-
-  -- Startup-time
   use {
     "dstein64/vim-startuptime",
     config = function()
@@ -31,15 +28,28 @@ local plugins = function(use)
     end
   }
 
-  -- Native LSP
+  --
+  -- LSP
+  --
+
   use "neovim/nvim-lspconfig"
   use "kabouzeid/nvim-lspinstall"
   use "folke/lua-dev.nvim"
 
-  -- Individual Servers
+  --
+  -- LSP tools
+  --
+
   use "mattn/efm-langserver"
 
-  -- Treesitter
+  use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim"}
+  use "dart-lang/dart-vim-plugin"
+  use "Neevash/awesome-flutter-snippets"
+
+  --
+  -- Treesitter & Spell Checker
+  --
+
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
@@ -49,13 +59,6 @@ local plugins = function(use)
   }
   use "nvim-treesitter/playground"
   use "windwp/nvim-ts-autotag"
-
-  -- Auto Completion
-  use "hrsh7th/nvim-compe"
-  use "hrsh7th/vim-vsnip"
-  use "rafamadriz/friendly-snippets"
-
-  -- Spell Checker
   use {
     "lewis6991/spellsitter.nvim",
     config = function()
@@ -63,7 +66,18 @@ local plugins = function(use)
     end
   }
 
+  --
+  -- Auto Completion
+  --
+
+  use "hrsh7th/nvim-compe"
+  use "hrsh7th/vim-vsnip"
+  use "rafamadriz/friendly-snippets"
+
+  --
   -- Telescope
+  --
+
   use {
     "nvim-telescope/telescope.nvim",
     requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}},
@@ -72,10 +86,12 @@ local plugins = function(use)
     end,
     event = "VimEnter"
   }
-
   use {"nvim-telescope/telescope-fzy-native.nvim", requires = "nvim-telescope/telescope.nvim"}
 
+  --
   -- Git
+  --
+
   use {
     "tpope/vim-fugitive",
     config = function()
@@ -89,40 +105,22 @@ local plugins = function(use)
     end
   }
 
-  -- Explorer
-  use {
-    "kyazdani42/nvim-tree.lua",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("config.nvimtree")
-    end
-  }
-
-  -- Flutter
-  use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim"}
-  use "dart-lang/dart-vim-plugin"
-  use "Neevash/awesome-flutter-snippets"
-
-  -- ColorScheme:
+  --
+  -- ColorScheme
+  --
 
   use {
     "ful1e5/onedark.nvim",
     -- disable = true,
     config = function()
-      require("onedark").setup({msgAreaStyle = "italic", darkFloat = false, darkSidebar = false})
+      require("themes.onedark")
     end
   }
   use {
     "projekt0n/github-nvim-theme",
     disable = true,
     config = function()
-      require("github-theme").setup({
-        themeStyle = "dark",
-        msgAreaStyle = "italic",
-        hideInactiveStatusline = true,
-        darkFloat = false,
-        darkSidebar = false
-      })
+      require("themes.github")
     end
   }
   use {
@@ -133,15 +131,10 @@ local plugins = function(use)
     end
   }
 
-  -- Color previewers
-  use {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("config.colorizer")
-    end
-  }
-
+  --
   -- Icons
+  --
+
   use {
     "projekt0n/circles.nvim",
     requires = {{"kyazdani42/nvim-web-devicons"}, {"kyazdani42/nvim-tree.lua", opt = true}},
@@ -150,18 +143,24 @@ local plugins = function(use)
     end
   }
 
-  -- Formatter
+  --
+  -- Code Formatter
+  --
+
+  use "psf/black"
+  use "andrejlevkovitch/vim-lua-format"
+  use {"prettier/vim-prettier", run = "yarn install"}
   use {
     "mhartington/formatter.nvim",
     config = function()
       require("config.formatter")
     end
   }
-  use "andrejlevkovitch/vim-lua-format"
-  use {"prettier/vim-prettier", run = "yarn install"}
-  use "psf/black"
 
+  --
   -- Misc
+  --
+
   use "dag/vim-fish"
   use "tpope/vim-surround"
   use {
@@ -174,6 +173,19 @@ local plugins = function(use)
     "windwp/nvim-autopairs",
     config = function()
       require("config.autopairs")
+    end
+  }
+  use {
+    "kyazdani42/nvim-tree.lua",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("config.nvimtree")
+    end
+  }
+  use {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("config.colorizer")
     end
   }
 end
