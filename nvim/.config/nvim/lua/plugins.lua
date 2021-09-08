@@ -43,8 +43,15 @@ return require("packer").startup(function(use)
   use "lewis6991/spellsitter.nvim"
 
   -- Telescope
-  use {"nvim-telescope/telescope.nvim", requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}}
-  use "nvim-telescope/telescope-fzy-native.nvim"
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}},
+    config = function()
+      require("config.telescope")
+    end
+  }
+
+  use {"nvim-telescope/telescope-fzy-native.nvim", requires = "nvim-telescope/telescope.nvim"}
 
   -- Git
   use "tpope/vim-fugitive"

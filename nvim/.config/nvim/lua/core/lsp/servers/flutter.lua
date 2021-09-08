@@ -10,10 +10,3 @@ require("flutter-tools").setup({
     settings = {showTodos = true, completeFunctionCalls = true}
   }
 })
-
--- telescope extension
-require("telescope").load_extension("flutter")
-
--- Keybinding
-vim.api.nvim_set_keymap("n", "<Leader>fr", ":lua require('telescope').extensions.flutter.commands()<cr>",
-                        {noremap = true})

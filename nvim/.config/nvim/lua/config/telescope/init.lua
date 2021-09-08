@@ -45,21 +45,25 @@ end
 local opts = {noremap = true, silent = true}
 local map = vim.api.nvim_set_keymap
 
-map("n", "<Leader>vrc", [[<cmd>lua require('config.telescope').search_dotfiles()<cr>]], opts)
-map("n", "<Leader>term", [[<cmd>lua require('config.telescope').search_kitty_dotfiles()<cr>]], opts)
-map("n", "<C-p>", [[<cmd>lua require('config.telescope').project_files()<cr>]], opts)
+map("n", "<Leader>vrc", "<cmd>lua require('config.telescope').search_dotfiles()<cr>", opts)
+map("n", "<Leader>term", "<cmd>lua require('config.telescope').search_kitty_dotfiles()<cr>", opts)
+map("n", "<C-p>", "<cmd>lua require('config.telescope').project_files()<cr>", opts)
 
 -- Builtin KeyBinding
-map("n", "<Leader>help", [[<cmd>lua require('telescope.builtin').help_tags()<cr>]], opts)
-map("n", "<Leader>man", [[<cmd>lua require('telescope.builtin').man_pages()<cr>]], opts)
-map("n", "<Leader>=", [[<cmd>lua require('telescope.builtin').spell_suggest()<cr>]], opts)
+map("n", "<Leader>help", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
+map("n", "<Leader>man", "<cmd>lua require('telescope.builtin').man_pages()<cr>", opts)
+map("n", "<Leader>=", "<cmd>lua require('telescope.builtin').spell_suggest()<cr>", opts)
 
-map("n", "<Leader>ca", [[<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>]], opts)
-map("n", "<Leader>ts", [[<cmd>lua require('telescope.builtin').treesitter()<cr>]], opts)
-map("n", "<Leader>hi", [[<cmd>lua require('telescope.builtin').highlights()<cr>]], opts)
-map("n", "<Leader>reg", [[<cmd>lua require('telescope.builtin').registers()<cr>]], opts)
+map("n", "<Leader>ca", "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>", opts)
+map("n", "<Leader>ts", "<cmd>lua require('telescope.builtin').treesitter()<cr>", opts)
+map("n", "<Leader>hi", "<cmd>lua require('telescope.builtin').highlights()<cr>", opts)
+map("n", "<Leader>reg", "<cmd>lua require('telescope.builtin').registers()<cr>", opts)
 
-map("n", "<Leader>pf",
-    [[<cmd>lua require('telescope.builtin').grep_string({search = vim.fn.input("Grep For > ")})<cr>]], opts)
+map("n", "<Leader>pf", "<cmd>lua require('telescope.builtin').grep_string({search = vim.fn.input('Grep For > ')})<cr>",
+    opts)
+
+-- Flutter Extension
+require("telescope").load_extension("flutter")
+map("n", "<Leader>fr", ":lua require('telescope').extensions.flutter.commands()<cr>", opts)
 
 return M
