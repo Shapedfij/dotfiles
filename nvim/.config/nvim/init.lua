@@ -5,5 +5,3 @@ require("settings")
 require("plugins")
 require("core")
 require("config")
-
-require("themes")

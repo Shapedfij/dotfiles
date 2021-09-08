@@ -1,6 +1,5 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
-
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 -- Only required if you have packer configured as `opt`
@@ -12,7 +11,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Auto source when there are changes in plugins.lua
-vim.cmd [[autocmd BufWritePost plugins.lua luafile %]]
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile profile=true
+  augroup end
+]])
 
 return require("packer").startup({
   function(use)
@@ -20,7 +24,12 @@ return require("packer").startup({
     use "wbthomason/packer.nvim"
 
     -- Startup-time
-    use "dstein64/vim-startuptime"
+    use {
+      "dstein64/vim-startuptime",
+      config = function()
+        vim.api.nvim_set_keymap("n", "<Leader>st", ":StartupTime<CR>", {noremap = true})
+      end
+    }
 
     -- Native LSP
     use "neovim/nvim-lspconfig"
@@ -74,9 +83,40 @@ return require("packer").startup({
     use "Neevash/awesome-flutter-snippets"
 
     -- ColorScheme
-    use "ful1e5/onedark.nvim"
-    use "projekt0n/github-nvim-theme"
-    use "folke/tokyonight.nvim"
+    use {
+      "ful1e5/onedark.nvim",
+      -- disable = true,
+      requires = {"hoob3rt/lualine.nvim"},
+      config = function()
+        require("onedark").setup({
+          msgAreaStyle = "italic",
+          hideInactiveStatusline = true,
+          darkFloat = false,
+          darkSidebar = false
+        })
+      end
+    }
+    use {
+      "projekt0n/github-nvim-theme",
+      disable = true,
+      requires = {"hoob3rt/lualine.nvim"},
+      config = function()
+        require("github-theme").setup({
+          themeStyle = "dark",
+          msgAreaStyle = "italic",
+          hideInactiveStatusline = true,
+          darkFloat = false,
+          darkSidebar = false
+        })
+      end
+    }
+    use {
+      "folke/tokyonight.nvim",
+      disable = true,
+      config = function()
+        vim.cmd [[colorscheme tokyonight]]
+      end
+    }
 
     -- Color previewers
     use "norcalli/nvim-colorizer.lua"
@@ -91,7 +131,13 @@ return require("packer").startup({
     }
 
     -- Status Line
-    use {"hoob3rt/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
+    use {
+      "hoob3rt/lualine.nvim",
+      requires = {"kyazdani42/nvim-web-devicons", opt = true},
+      config = function()
+        require("config.lualine").setup("dark")
+      end
+    }
 
     -- Formatter
     use "mhartington/formatter.nvim"
