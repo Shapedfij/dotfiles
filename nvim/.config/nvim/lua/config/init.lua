@@ -1,8 +1,0 @@
-require("config.autopairs")
-require("config.colorizer")
-require("config.comment")
-require("config.formatter")
-require("config.fugitive")
-require("config.gitsigns")
-require("config.spellsitter")
-require("config.treesitter")

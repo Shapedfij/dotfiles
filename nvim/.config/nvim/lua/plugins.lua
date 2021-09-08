@@ -40,7 +40,13 @@ return require("packer").startup({
     use "mattn/efm-langserver"
 
     -- Treesitter
-    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+    use {
+      "nvim-treesitter/nvim-treesitter",
+      run = ":TSUpdate",
+      config = function()
+        require("config.treesitter")
+      end
+    }
     use "nvim-treesitter/playground"
     use "windwp/nvim-ts-autotag"
 
@@ -50,7 +56,12 @@ return require("packer").startup({
     use "rafamadriz/friendly-snippets"
 
     -- Spell Checker
-    use "lewis6991/spellsitter.nvim"
+    use {
+      "lewis6991/spellsitter.nvim",
+      config = function()
+        require("config.spellsitter")
+      end
+    }
 
     -- Telescope
     use {
@@ -65,8 +76,18 @@ return require("packer").startup({
     use {"nvim-telescope/telescope-fzy-native.nvim", requires = "nvim-telescope/telescope.nvim"}
 
     -- Git
-    use "tpope/vim-fugitive"
-    use "lewis6991/gitsigns.nvim"
+    use {
+      "tpope/vim-fugitive",
+      config = function()
+        require("config.fugitive")
+      end
+    }
+    use {
+      "lewis6991/gitsigns.nvim",
+      config = function()
+        require("config.gitsigns")
+      end
+    }
 
     -- Explorer
     use {
@@ -112,7 +133,12 @@ return require("packer").startup({
     }
 
     -- Color previewers
-    use "norcalli/nvim-colorizer.lua"
+    use {
+      "norcalli/nvim-colorizer.lua",
+      config = function()
+        require("config.colorizer")
+      end
+    }
 
     -- Icons
     use {
@@ -124,7 +150,12 @@ return require("packer").startup({
     }
 
     -- Formatter
-    use "mhartington/formatter.nvim"
+    use {
+      "mhartington/formatter.nvim",
+      config = function()
+        require("config.formatter")
+      end
+    }
     use "andrejlevkovitch/vim-lua-format"
     use {"prettier/vim-prettier", run = "yarn install"}
     use "psf/black"
@@ -132,8 +163,18 @@ return require("packer").startup({
     -- Misc
     use "dag/vim-fish"
     use "tpope/vim-surround"
-    use "terrortylor/nvim-comment"
-    use "windwp/nvim-autopairs"
+    use {
+      "terrortylor/nvim-comment",
+      config = function()
+        require("config.comment")
+      end
+    }
+    use {
+      "windwp/nvim-autopairs",
+      config = function()
+        require("config.autopairs")
+      end
+    }
   end,
   config = {
     profile = {enable = true, threshold = 1},
