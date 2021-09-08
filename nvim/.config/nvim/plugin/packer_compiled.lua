@@ -11,7 +11,7 @@ local no_errors, error_msg = pcall(function()
 
   local time
   local profile_info
-  local should_profile = false
+  local should_profile = true
   if should_profile then
     local hrtime = vim.loop.hrtime
     profile_info = {}
@@ -78,7 +78,7 @@ _G.packer_plugins = {
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/black"
   },
   ["circles.nvim"] = {
-    config = { "\27LJ\2\nq\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\nicons\1\0\0\1\0\3\nempty\b\vfilled\b\15lsp_prefix\b\nsetup\fcircles\frequire\0" },
+    config = { "\27LJ\2\nq\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\nicons\1\0\0\1\0\3\15lsp_prefix\b\nempty\b\vfilled\b\nsetup\fcircles\frequire\0" },
     loaded = true,
     path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/circles.nvim"
   },
@@ -189,8 +189,9 @@ _G.packer_plugins = {
   },
   ["telescope.nvim"] = {
     config = { "\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21config.telescope\frequire\0" },
-    loaded = true,
-    path = "/home/kaiz/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    loaded = false,
+    needs_bufread = true,
+    path = "/home/kaiz/.local/share/nvim/site/pack/packer/opt/telescope.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
@@ -231,15 +232,18 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20config.nvimtree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21config.telescope\frequire\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
 -- Config for: circles.nvim
 time([[Config for circles.nvim]], true)
-try_loadstring("\27LJ\2\nq\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\nicons\1\0\0\1\0\3\nempty\b\vfilled\b\15lsp_prefix\b\nsetup\fcircles\frequire\0", "config", "circles.nvim")
+try_loadstring("\27LJ\2\nq\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\nicons\1\0\0\1\0\3\15lsp_prefix\b\nempty\b\vfilled\b\nsetup\fcircles\frequire\0", "config", "circles.nvim")
 time([[Config for circles.nvim]], false)
-if should_profile then save_profiles() end
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'telescope.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
+if should_profile then save_profiles(1) end
 
 end)
 
