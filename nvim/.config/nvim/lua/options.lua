@@ -1,11 +1,23 @@
 -- Leader key
 vim.g.mapleader = " "
 
--- Block inside insert mode
+-- Block cursor always
 vim.cmd [[set guicursor=i:block]]
 
 -- quicker update
-vim.opt.updatetime = 50
+vim.opt.updatetime = 500
+
+-- statusline
+-- %<                                             trim from here
+-- %{fugitive#head()}                             name of the current branch (needs fugitive.vim)
+-- %f                                             path+filename
+-- %m                                             check modifi{ed,able}
+-- %r                                             check readonly
+-- %w                                             check preview window
+-- %=                                             left/right separator
+-- %{&fileencoding?&fileencoding:&encoding}       file encoding
+-- %l/%L,%c                                       rownumber/total,colnumber
+vim.opt.statusline = " %< [ %{fugitive#head()}] %f %m %r %w %=%{&fileencoding?&fileencoding:&encoding} | %l/%L,%c "
 
 -- syntax highlighting
 vim.opt.termguicolors = true
