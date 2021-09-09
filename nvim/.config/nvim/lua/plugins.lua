@@ -40,8 +40,6 @@ local plugins = function(use)
   -- LSP tools
   --
 
-  use "mattn/efm-langserver"
-
   use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim"}
   use "dart-lang/dart-vim-plugin"
   use "Neevash/awesome-flutter-snippets"

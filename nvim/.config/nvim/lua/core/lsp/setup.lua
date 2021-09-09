@@ -51,6 +51,10 @@ M.capabilities.textDocument.completion.completionItem.resolveSupport =
 
 -- LSP setup
 local servers = require("lspinstall").installed_servers()
-for _, lsp in pairs(servers) do M.lspconfig[lsp].setup {on_attach = M.on_attach, capabilities = M.capabilities} end
+local ignore = {efm = true, sumneko_lua = true}
+
+for _, lsp in pairs(servers) do
+  if ignore[lsp] ~= true then M.lspconfig[lsp].setup {on_attach = M.on_attach, capabilities = M.capabilities} end
+end
 
 return M
