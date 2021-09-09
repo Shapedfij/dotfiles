@@ -105,10 +105,10 @@ local plugins = function(use)
 
   --
   -- ColorScheme
-  --
 
   use {
     "ful1e5/onedark.nvim",
+    -- "~/GitHub/ful1e5/onedark.nvim",
     -- disable = true,
     config = function()
       require("themes.onedark")

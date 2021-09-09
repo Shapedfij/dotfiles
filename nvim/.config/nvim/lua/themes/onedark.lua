@@ -1,1 +1,1 @@
-require("onedark").setup({msgAreaStyle = "italic", darkFloat = false, darkSidebar = false})
+require("onedark").setup({darkFloat = false, darkSidebar = false})
