@@ -105,6 +105,7 @@ local plugins = function(use)
 
   --
   -- ColorScheme
+  --
 
   use {
     "ful1e5/onedark.nvim",
