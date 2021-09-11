@@ -110,14 +110,14 @@ local plugins = function(use)
   use {
     "ful1e5/onedark.nvim",
     -- "~/GitHub/ful1e5/onedark.nvim",
-    -- disable = true,
+    disable = true,
     config = function()
       require("themes.onedark")
     end
   }
   use {
     "projekt0n/github-nvim-theme",
-    disable = true,
+    -- disable = true,
     config = function()
       require("themes.github")
     end
