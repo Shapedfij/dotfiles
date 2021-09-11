@@ -1,4 +1,4 @@
-local lsp = require("core.lsp.setup")
+local lsp = require("lsp.setup")
 
 local flake8 = {
   lintCommand = "flake8 --stdin-display-name ${INPUT} -",

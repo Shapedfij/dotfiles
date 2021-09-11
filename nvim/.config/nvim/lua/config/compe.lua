@@ -1,4 +1,4 @@
-local lsp = require("core.lsp.setup")
+local lsp = require("lsp.setup")
 
 -- Compe setup
 require("compe").setup {

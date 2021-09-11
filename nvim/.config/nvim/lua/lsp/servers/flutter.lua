@@ -1,4 +1,4 @@
-local lsp = require("core.lsp.setup")
+local lsp = require("lsp.setup")
 
 require("flutter-tools").setup({
   ui = {border = lsp.border},

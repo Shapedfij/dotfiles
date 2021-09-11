@@ -68,7 +68,13 @@ local plugins = function(use)
   -- Auto Completion
   --
 
-  use "hrsh7th/nvim-compe"
+  use {
+    "hrsh7th/nvim-compe",
+    event = "BufRead",
+    config = function()
+      require("config.compe")
+    end
+  }
   use "hrsh7th/vim-vsnip"
   use "rafamadriz/friendly-snippets"
 

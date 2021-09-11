@@ -1,4 +1,4 @@
-local lsp = require("core.lsp.setup")
+local lsp = require("lsp.setup")
 
 USER = vim.fn.expand("$USER")
 
