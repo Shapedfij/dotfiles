@@ -28,11 +28,5 @@ define_augroups({
   -- Auto Formaters
   _auto_formatters = {
     -- {"BufWritePre", "*", "lua vim.lsp.buf.formatting_sync(nil, 1000)"},
-    {"BufWritePre", "*.py", ":Black"}, {"BufWritePre", "*.dart", "execute ':DartFmt'"},
-    {"BufWritePre", "*.lua", "call LuaFormat()"}, {
-      "BufWritePost",
-      "*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*markdown,*.vue,*.yml,*.yaml,*.html",
-      "FormatWrite"
-    }
   }
 })

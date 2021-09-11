@@ -40,7 +40,13 @@ local plugins = function(use)
   -- LSP tools
   --
 
-  use {"akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim"}
+  use {
+    "akinsho/flutter-tools.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("lsp.tools.flutter")
+    end
+  }
   use "dart-lang/dart-vim-plugin"
   use "Neevash/awesome-flutter-snippets"
 
@@ -75,8 +81,8 @@ local plugins = function(use)
       require("config.compe")
     end
   }
-  use "hrsh7th/vim-vsnip"
-  use "rafamadriz/friendly-snippets"
+  use {"hrsh7th/vim-vsnip", event = "BufRead"}
+  use {"rafamadriz/friendly-snippets", event = "BufRead"}
 
   --
   -- Telescope
@@ -85,10 +91,10 @@ local plugins = function(use)
   use {
     "nvim-telescope/telescope.nvim",
     requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}},
+    event = "VimEnter",
     config = function()
       require("config.telescope")
-    end,
-    event = "VimEnter"
+    end
   }
   use {"nvim-telescope/telescope-fzy-native.nvim", requires = "nvim-telescope/telescope.nvim"}
 
@@ -104,6 +110,7 @@ local plugins = function(use)
   }
   use {
     "lewis6991/gitsigns.nvim",
+    event = "VimEnter",
     config = function()
       require("config.gitsigns")
     end
@@ -152,9 +159,27 @@ local plugins = function(use)
   -- Code Formatter
   --
 
-  use "psf/black"
-  use "andrejlevkovitch/vim-lua-format"
-  use {"prettier/vim-prettier", run = "yarn install"}
+  use {
+    "psf/black",
+    event = "BufRead",
+    config = function()
+      vim.cmd [[autocmd BufWrite *.py,*.pyi execute ':Black']]
+    end
+  }
+  use {
+    "andrejlevkovitch/vim-lua-format",
+    event = "BufRead",
+    config = function()
+      vim.cmd [[autocmd BufWrite *.lua call LuaFormat()]]
+    end
+  }
+  use {
+    "prettier/vim-prettier",
+    run = "yarn install",
+    config = function()
+      vim.cmd [[autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*markdown,*.vue,*.yml,*.yaml,*.html FormatWrite]]
+    end
+  }
   use {
     "mhartington/formatter.nvim",
     config = function()

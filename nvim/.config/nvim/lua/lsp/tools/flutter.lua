@@ -10,3 +10,6 @@ require("flutter-tools").setup({
     settings = {showTodos = true, completeFunctionCalls = true}
   }
 })
+
+-- Auto Formate
+vim.cmd [[autocmd BufWrite *.dart execute ':DartFmt']]
