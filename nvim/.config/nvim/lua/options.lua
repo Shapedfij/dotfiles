@@ -7,6 +7,9 @@ vim.cmd [[set guicursor=i:block]]
 -- quicker update
 vim.opt.updatetime = 500
 
+-- Highlight Yank
+vim.cmd [[autocmd TextYankPost * lua require('vim.highlight').on_yank({higroup = 'Search', timeout = 100})]]
+
 -- statusline
 -- %<                                             trim from here
 -- %{fugitive#head()}                             name of the current branch (needs fugitive.vim)

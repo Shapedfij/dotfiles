@@ -76,13 +76,13 @@ local plugins = function(use)
 
   use {
     "hrsh7th/nvim-compe",
-    event = "BufRead",
+    event = "InsertEnter",
     config = function()
       require("config.compe")
     end
   }
-  use {"hrsh7th/vim-vsnip", event = "BufRead"}
-  use {"rafamadriz/friendly-snippets", event = "BufRead"}
+  use {"hrsh7th/vim-vsnip", event = "InsertEnter"}
+  use {"rafamadriz/friendly-snippets", event = "InsertCharPre"}
 
   --
   -- Telescope
@@ -110,7 +110,7 @@ local plugins = function(use)
   }
   use {
     "lewis6991/gitsigns.nvim",
-    event = "VimEnter",
+    event = "BufRead",
     config = function()
       require("config.gitsigns")
     end
@@ -162,6 +162,7 @@ local plugins = function(use)
   use {
     "psf/black",
     event = "BufRead",
+    ft = {"py", "pyi"},
     config = function()
       vim.cmd [[autocmd BufWrite *.py,*.pyi execute ':Black']]
     end
@@ -169,15 +170,9 @@ local plugins = function(use)
   use {
     "andrejlevkovitch/vim-lua-format",
     event = "BufRead",
+    ft = {"lua"},
     config = function()
       vim.cmd [[autocmd BufWrite *.lua call LuaFormat()]]
-    end
-  }
-  use {
-    "prettier/vim-prettier",
-    run = "yarn install",
-    config = function()
-      vim.cmd [[autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*markdown,*.vue,*.yml,*.yaml,*.html FormatWrite]]
     end
   }
   use {
@@ -195,12 +190,14 @@ local plugins = function(use)
   use "tpope/vim-surround"
   use {
     "terrortylor/nvim-comment",
+    event = "BufRead",
     config = function()
       require("config.comment")
     end
   }
   use {
     "windwp/nvim-autopairs",
+    after = "nvim-compe",
     config = function()
       require("config.autopairs")
     end

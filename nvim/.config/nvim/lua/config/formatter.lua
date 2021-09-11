@@ -18,3 +18,10 @@ require("formatter").setup({
     html = {prettierFmt}
   }
 })
+
+vim.cmd [[
+augroup Format
+    autocmd!
+    autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*markdown,*.vue,*.yml,*.yaml,*.html FormatWrite
+augroup END
+]]
