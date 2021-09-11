@@ -65,6 +65,7 @@ local plugins = function(use)
   use "windwp/nvim-ts-autotag"
   use {
     "lewis6991/spellsitter.nvim",
+    after = "nvim-treesitter",
     config = function()
       require("config.spellsitter")
     end
