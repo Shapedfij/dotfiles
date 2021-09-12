@@ -1,1 +1,6 @@
-require("github-theme").setup({themeStyle = "dark", darkFloat = false, darkSidebar = false})
+require("github-theme").setup({
+  themeStyle = "dark",
+  hideInactiveStatusline = true,
+  darkFloat = false,
+  darkSidebar = false
+})

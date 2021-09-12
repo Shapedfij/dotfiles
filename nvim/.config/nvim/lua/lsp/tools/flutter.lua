@@ -13,3 +13,10 @@ require("flutter-tools").setup({
 
 -- Auto Formate
 vim.cmd [[autocmd BufWrite *.dart execute ':DartFmt']]
+
+-- Flutter Extension
+local opts = {noremap = true, silent = true}
+local map = require("util").map
+
+require("telescope").load_extension("flutter")
+map("n", "<Leader>fr", ":lua require('telescope').extensions.flutter.commands()<cr>", opts)

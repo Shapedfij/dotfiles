@@ -62,8 +62,4 @@ map("n", "<Leader>reg", "<cmd>lua require('telescope.builtin').registers()<cr>",
 map("n", "<Leader>pf", "<cmd>lua require('telescope.builtin').grep_string({search = vim.fn.input('Grep For > ')})<cr>",
     opts)
 
--- Flutter Extension
-require("telescope").load_extension("flutter")
-map("n", "<Leader>fr", ":lua require('telescope').extensions.flutter.commands()<cr>", opts)
-
 return M

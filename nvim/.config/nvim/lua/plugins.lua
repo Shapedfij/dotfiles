@@ -33,8 +33,23 @@ local plugins = function(use)
   --
 
   use "neovim/nvim-lspconfig"
-  use "kabouzeid/nvim-lspinstall"
-  use "folke/lua-dev.nvim"
+  use {
+    "kabouzeid/nvim-lspinstall",
+    after = "nvim-lspconfig",
+    config = function()
+      local lspconfig = require("lsp")
+      lspconfig.setup()
+      lspconfig.load_efm()
+    end
+  }
+  use {
+    "folke/lua-dev.nvim",
+    after = {"nvim-lspconfig", "nvim-lspinstall"},
+    ft = {"lua"},
+    config = function()
+      require("lsp.").load_sumneko_lua()
+    end
+  }
 
   --
   -- LSP tools
@@ -42,13 +57,15 @@ local plugins = function(use)
 
   use {
     "akinsho/flutter-tools.nvim",
+    ft = {"dart"},
+    after = "telescope.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
-      require("lsp.tools.flutter")
+      require("lsp").setup_flutter_tool()
     end
   }
   use "dart-lang/dart-vim-plugin"
-  use "Neevash/awesome-flutter-snippets"
+  use {"Neevash/awesome-flutter-snippets", event = "InsertCharPre"}
 
   --
   -- Treesitter & Spell Checker
