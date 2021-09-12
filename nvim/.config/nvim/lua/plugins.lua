@@ -138,28 +138,9 @@ local plugins = function(use)
   -- ColorScheme
   --
 
-  use {
-    "ful1e5/onedark.nvim",
-    -- "~/GitHub/ful1e5/onedark.nvim",
-    disable = true,
-    config = function()
-      require("themes.onedark")
-    end
-  }
-  use {
-    "projekt0n/github-nvim-theme",
-    -- disable = true,
-    config = function()
-      require("themes.github")
-    end
-  }
-  use {
-    "folke/tokyonight.nvim",
-    disable = true,
-    config = function()
-      vim.cmd [[colorscheme tokyonight]]
-    end
-  }
+  use "ful1e5/onedark.nvim"
+  use "projekt0n/github-nvim-theme"
+  use "folke/tokyonight.nvim"
 
   --
   -- Icons
