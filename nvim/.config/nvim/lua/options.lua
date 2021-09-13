@@ -18,9 +18,10 @@ vim.cmd [[autocmd TextYankPost * lua require('vim.highlight').on_yank({higroup =
 -- %r                                             check readonly
 -- %w                                             check preview window
 -- %=                                             left/right separator
--- %{&fileencoding?&fileencoding:&encoding}       file encoding
 -- %l/%L,%c                                       rownumber/total,colnumber
-vim.opt.statusline = " %< [ %{fugitive#head()}] %f %m %r %w %=%{&fileencoding?&fileencoding:&encoding} | %l/%L,%c "
+-- %{&fileencoding?&fileencoding:&encoding}       file encoding
+vim.opt.statusline =
+    "  %< %{fugitive#head()}  %f %m %r %w %= Ln %l, Col %c  %{&fileencoding?&fileencoding:&encoding}  "
 
 -- syntax highlighting
 vim.opt.termguicolors = true
