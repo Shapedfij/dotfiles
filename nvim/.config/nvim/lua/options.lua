@@ -4,6 +4,9 @@ vim.g.mapleader = " "
 -- Block cursor always
 vim.cmd [[set guicursor=i:block]]
 
+-- Spell Checker
+vim.cmd [[set spell]]
+
 -- quicker update
 vim.opt.updatetime = 500
 
