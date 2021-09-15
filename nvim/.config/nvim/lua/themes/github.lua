@@ -1,6 +1,2 @@
-require("github-theme").setup({
-  themeStyle = "dark",
-  hideInactiveStatusline = true,
-  darkFloat = false,
-  darkSidebar = false
-})
+-- require("lualine").setup({options = {theme = "github"}})
+require("github-theme").setup({theme_style = "dark_default", dark_sidebar = false})
