@@ -139,8 +139,7 @@ local plugins = function(use)
   --
 
   use "ful1e5/onedark.nvim"
-  -- use "projekt0n/github-nvim-theme"
-  use "ful1e5/github-nvim-theme"
+  use "projekt0n/github-nvim-theme"
   use "folke/tokyonight.nvim"
 
   --
@@ -188,7 +187,6 @@ local plugins = function(use)
 
   use "dag/vim-fish"
   use "tpope/vim-surround"
-  use "hoob3rt/lualine.nvim"
   use {
     "terrortylor/nvim-comment",
     event = "BufRead",
