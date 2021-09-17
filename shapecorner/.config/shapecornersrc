@@ -1,5 +1,5 @@
 [General]
-Radius=12
+Radius=10
 Type=Rounded
 SquareAtScreenEdge=true
 FilterShadow=true
