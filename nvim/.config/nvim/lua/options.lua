@@ -11,7 +11,10 @@ vim.cmd [[set spell]]
 vim.opt.updatetime = 500
 
 -- Highlight Yank
-vim.cmd [[autocmd TextYankPost * lua require('vim.highlight').on_yank({higroup = 'Search', timeout = 100})]]
+local au = require("au")
+au.TextYankPost = function()
+  vim.highlight.on_yank({higroup = "Search", timeout = 120})
+end
 
 -- statusline
 -- %<                                             trim from here
