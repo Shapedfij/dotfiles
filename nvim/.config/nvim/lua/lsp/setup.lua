@@ -37,7 +37,7 @@ M.on_attach = function(_, bufnr)
   buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts={border=M.border}})<cr>", opts)
   buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts={border=M.border}})<cr>", opts)
   buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", opts)
-  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
+  buf_set_keymap("n", "<space>ff", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 
   vim.cmd("setlocal omnifunc=v:lua.vim.lsp.omnifunc")
 
