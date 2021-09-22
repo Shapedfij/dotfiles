@@ -29,23 +29,35 @@ stow --adopt -nv *
 ### [onedark](https://github.com/ful1e5/onedark.nvim)
 
 <p align="center">
-  <img src="https://imgur.com/E7adsuT.png" alt="kitty+nvim+onedark" />
+  <img src="https://imgur.com/yap8q3B.png" alt="onedark.nvim" />
 </p>
 
 ### [github dark](https://github.com/projekt0n/github-nvim-theme)
 
 <p align="center">
-  <img src="https://imgur.com/SDVkP2d.png" alt="kitty+nvim+github-dark-theme" />
+  <img src="https://imgur.com/wsST2ZB.png" alt="github_dark" />
+</p>
+
+### [github dark default](https://github.com/projekt0n/github-nvim-theme)
+
+<p align="center">
+  <img src="https://imgur.com/pNJDMft.png" alt="github_dark_default" />
 </p>
 
 ### [github dimmed](https://github.com/projekt0n/github-nvim-theme)
 
 <p align="center">
-  <img src="https://imgur.com/ZP5txJf.png" alt="kitty+nvim+github-dimmed-theme" />
+  <img src="https://imgur.com/LLp5qnT.png" alt="github_dimmed" />
 </p>
 
 ### [github light](https://github.com/projekt0n/github-nvim-theme)
 
 <p align="center">
-  <img src="https://imgur.com/Iae8xg5.png" alt="kitty+nvim+github-light-theme" />
+  <img src="https://imgur.com/yXEj746.png" alt="github_light" />
+</p>
+
+### [github light default](https://github.com/projekt0n/github-nvim-theme)
+
+<p align="center">
+  <img src="https://imgur.com/fykVFCr.png" alt="github_light_default" />
 </p>
