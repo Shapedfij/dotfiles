@@ -138,6 +138,9 @@ local plugins = function(use)
   use "projekt0n/github-nvim-theme"
   use "folke/tokyonight.nvim"
 
+  -- use "ful1e5/github-nvim-theme"
+  use "hoob3rt/lualine.nvim"
+
   --
   -- Icons
   --
