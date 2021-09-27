@@ -136,7 +136,6 @@ local plugins = function(use)
 
   use "ful1e5/onedark.nvim"
   use "projekt0n/github-nvim-theme"
-  use "folke/tokyonight.nvim"
 
   use "hoob3rt/lualine.nvim"
 
