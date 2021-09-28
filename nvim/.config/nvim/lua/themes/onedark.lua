@@ -1,2 +1,2 @@
 -- require("lualine").setup({options = {theme = "onedark"}})
-require("onedark").setup({darkFloat = false, hideInactiveStatusline = true, darkSidebar = false})
+require("onedark").setup({transparent = false, darkFloat = false, hideInactiveStatusline = true, darkSidebar = false})
