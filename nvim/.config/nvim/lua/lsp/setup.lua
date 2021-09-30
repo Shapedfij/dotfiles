@@ -44,16 +44,18 @@ M.on_attach = function(_, bufnr)
   print("LSP Attached.")
 end
 
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-M.capabilities.textDocument.completion.completionItem.resolveSupport =
-    {properties = {"documentation", "detail", "additionalTextEdits"}}
+-- M.capabilities = vim.lsp.protocol.make_client_capabilities()
+-- M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- M.capabilities.textDocument.completion.completionItem.resolveSupport =
+--     {properties = {"documentation", "detail", "additionalTextEdits"}}
+
+M.capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- LSP setup
-local servers = require("lspinstall").installed_servers()
+M.servers = require("lspinstall").installed_servers()
 local ignore = {efm = true, sumneko_lua = true}
 
-for _, lsp in pairs(servers) do
+for _, lsp in pairs(M.servers) do
   if ignore[lsp] ~= true then M.lspconfig[lsp].setup {on_attach = M.on_attach, capabilities = M.capabilities} end
 end
 
