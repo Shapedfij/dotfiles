@@ -48,7 +48,7 @@ local plugins = function(use)
   }
 
   --
-  -- LSP tools
+  -- Flutter LSP tools
   --
 
   use {
@@ -88,28 +88,33 @@ local plugins = function(use)
   -- Auto Completion
   --
 
-  -- use {
-  --   "hrsh7th/nvim-compe",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require("config.compe")
-  --   end
-  -- }
   use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-buffer"
   use {
-    "hrsh7th/nvim-cmp"
-    -- config = function()
-    --   require("config.cmp")
-    -- end
+    "hrsh7th/nvim-cmp",
+    after = {"nvim-lspinstall"},
+    config = function()
+      require("config.cmp")
+    end
   }
 
+  use {"hrsh7th/cmp-buffer", event = "InsertEnter"}
+  use {"hrsh7th/cmp-emoji", event = "InsertEnter"}
   use {"hrsh7th/vim-vsnip", event = "InsertEnter"}
   use {"hrsh7th/cmp-vsnip", event = "InsertEnter"}
   use {"rafamadriz/friendly-snippets", event = "InsertCharPre"}
 
   --
-  -- Telescope
+  -- Auto pair
+  --
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("config.autopairs")
+    end
+  }
+
+  --
+  -- telescope
   --
 
   use {
@@ -201,14 +206,6 @@ local plugins = function(use)
       require("config.comment")
     end
   }
-  -- use {
-  --   "windwp/nvim-autopairs",
-  --   -- after = "nvim-compe",
-  --   after = "nvim-cmp",
-  --   config = function()
-  --     require("config.autopairs")
-  --   end
-  -- }
   use {
     "kyazdani42/nvim-tree.lua",
     requires = "kyazdani42/nvim-web-devicons",
