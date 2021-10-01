@@ -4107,3 +4107,17 @@ completeopt
 menuone
 noselect
 luasnip
+sidescrolloff
+wrapscan
+autoindent
+
+colnumber
+rownumber
+readonly
+modifi
+higroup
+guicursor
+trror
+bo
+errorformat
+whitespace
