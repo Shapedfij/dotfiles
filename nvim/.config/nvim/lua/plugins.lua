@@ -99,6 +99,7 @@ local plugins = function(use)
 
   use {"hrsh7th/cmp-buffer", event = "InsertEnter"}
   use {"hrsh7th/cmp-emoji", event = "InsertEnter"}
+  use {"hrsh7th/cmp-path", event = "InsertEnter"}
   use {"hrsh7th/vim-vsnip", event = "InsertEnter"}
   use {"hrsh7th/cmp-vsnip", event = "InsertEnter"}
   use {"rafamadriz/friendly-snippets", event = "InsertCharPre"}
