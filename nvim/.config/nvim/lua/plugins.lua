@@ -195,10 +195,16 @@ local plugins = function(use)
   }
 
   --
+  -- Highlights
+  --
+
+  use "fladson/vim-kitty"
+  use "dag/vim-fish"
+
+  --
   -- Misc
   --
 
-  use "dag/vim-fish"
   use "tpope/vim-surround"
   use {
     "terrortylor/nvim-comment",
