@@ -151,6 +151,8 @@ local plugins = function(use)
   --
 
   use "ful1e5/onedark.nvim"
+  -- use "~/GitHub/ful1e5/onedark.nvim"
+
   use "projekt0n/github-nvim-theme"
 
   use "hoob3rt/lualine.nvim"
