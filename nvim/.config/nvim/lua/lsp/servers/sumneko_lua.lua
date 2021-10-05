@@ -28,7 +28,7 @@ local luadev = require("lua-dev").setup({
           -- Setup your lua path
           path = vim.split(package.path, ";")
         },
-        diagnostics = {globals = {"vim"}},
+        diagnostics = {globals = {"vim"}, disable = "duplicate-doc-class"},
         workspace = {
           checkThirdParty = false,
           library = {[vim.fn.expand("$VIMRUNTIME/lua")] = true, [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true},
