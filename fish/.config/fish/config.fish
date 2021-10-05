@@ -9,6 +9,7 @@ alias llt="exa -l -T --icons"
 # nvim
 alias n="nvim ."
 alias nd="nvim --cmd 'set rtp+=$PWD' ."
+alias .packer="cd ~/.local/share/nvim/site/pack/packer"
 
 # Stream song-grab
 alias gsvlc="VERBOSE=true OUTPUT_DIR=./.output ./Github/grab-song/grab-song.sh vlc"
