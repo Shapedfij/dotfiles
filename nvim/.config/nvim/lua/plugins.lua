@@ -152,6 +152,7 @@ local plugins = function(use)
 
   use "ful1e5/onedark.nvim"
   -- use "~/GitHub/ful1e5/onedark.nvim"
+  -- use "~/GitHub/ful1e5/onedark.nvim-1"
 
   use "projekt0n/github-nvim-theme"
   -- use "~/GitHub/ful1e5/github-nvim-theme"
@@ -207,6 +208,8 @@ local plugins = function(use)
   --
   -- Misc
   --
+
+  -- use {"romgrk/barbar.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
 
   use "tpope/vim-surround"
   use {
