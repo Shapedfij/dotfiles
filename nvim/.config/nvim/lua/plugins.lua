@@ -126,7 +126,6 @@ local plugins = function(use)
       require("config.telescope")
     end
   }
-  use {"nvim-telescope/telescope-fzy-native.nvim", requires = "nvim-telescope/telescope.nvim"}
 
   --
   -- Git
