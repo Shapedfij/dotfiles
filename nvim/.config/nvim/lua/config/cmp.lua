@@ -2,7 +2,7 @@ local lsp = require("lsp.setup")
 local cmp = require("cmp")
 
 cmp.setup({
-  completion = {completeopt = "menu,menuone,noinsert"},
+  completion = {autocomplete = false, completeopt = "menu,menuone,noinsert"},
   documentation = {
     winhighlight = "NormalFloat:CmpDocumentation,FloatBorder:CmpDocumentationBorder",
     border = lsp.border
