@@ -26,23 +26,32 @@ cmp.setup({
     format = function(entry, vim_item)
       -- set a name for each source
       vim_item.menu = ({
-        spell = "[Spell]",
-        buffer = "[Buffer]",
-        calc = "[Calc]",
-        emoji = "[Emoji]",
-        nvim_lsp = "[LSP]",
-        path = "[Path]",
-        look = "[Look]",
-        treesitter = "[treesitter]",
-        luasnip = "[LuaSnip]",
-        nvim_lua = "[Lua]",
-        latex_symbols = "[Latex]"
+        spell = "暈",
+        buffer = "﬘ ",
+        emoji = "ﲃ ",
+        nvim_lsp = " ",
+        path = " ",
+        treesitter = "滑",
+        luasnip = "",
+        nvim_lua = " ",
+        latex_symbols = " "
+        -- spell = "[Spell]",
+        -- buffer = "[Buffer]",
+        -- calc = "[Calc]",
+        -- emoji = "[Emoji]",
+        -- nvim_lsp = "[LSP]",
+        -- path = "[Path]",
+        -- look = "[Look]",
+        -- treesitter = "[treesitter]",
+        -- luasnip = "[LuaSnip]",
+        -- nvim_lua = "[Lua]",
+        -- latex_symbols = "[Latex]"
       })[entry.source.name]
       return vim_item
     end
   },
   sources = {
     {name = "nvim_lsp"}, {name = "luasnip"}, {name = "treesitter"}, {name = "nvim_lua"}, {name = "buffer"},
-    {name = "spell"}, {name = "emoji"}, {name = "path"}, {name = "look"}, {name = "latex_symbols"}
+    {name = "spell"}, {name = "emoji"}, {name = "path"}, {name = "latex_symbols"}
   }
 })

@@ -7,5 +7,6 @@ require("github-theme").setup({
   -- theme_style = "dimmed",
   transparent = false,
   dark_sidebar = false,
-  colors = {bg_search = "green", fg_search = "black"}
+  colors = {bg_search = "green", fg_search = "black"},
+  dev = true
 })
