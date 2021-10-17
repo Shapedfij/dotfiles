@@ -3,7 +3,7 @@ require("notify").setup({
   stages = "slide",
 
   -- Default timeout for notifications
-  timeout = 700,
+  timeout = 1500,
 
   -- For stages that change opacity this is treated as the highlight behind the window
   -- Set this to either a highlight group or an RGB hex value e.g. "#000000"
