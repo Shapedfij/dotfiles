@@ -1,5 +1,4 @@
-local lsp = require("lsp.setup")
-
+local lsp_opts = require("lsp.opts")
 USER = vim.fn.expand("$USER")
 
 local sumneko_root_path = ""
@@ -18,8 +17,8 @@ end
 local luadev = require("lua-dev").setup({
   lspconfig = {
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
-    on_attach = lsp.on_attach,
-    capabilities = lsp.capabilities,
+    on_attach = lsp_opts.on_attach,
+    capabilities = lsp_opts.capabilities,
     settings = {
       Lua = {
         runtime = {
@@ -40,4 +39,4 @@ local luadev = require("lua-dev").setup({
   }
 })
 
-lsp.lspconfig.sumneko_lua.setup(luadev)
+require("lspconfig").sumneko_lua.setup(luadev)
