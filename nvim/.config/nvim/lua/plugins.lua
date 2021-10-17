@@ -25,25 +25,57 @@ local plugins = function(use)
   }
 
   --
+  -- Notification
+  --
+  use {
+    "rcarriga/nvim-notify",
+    config = function()
+      require("config.notify")
+      vim.notify = require("notify")
+    end
+  }
+
+  --
   -- LSP
   --
 
-  use "neovim/nvim-lspconfig"
+  use "hrsh7th/cmp-nvim-lsp"
   use {
-    "kabouzeid/nvim-lspinstall",
-    after = "nvim-lspconfig",
+    "neovim/nvim-lspconfig",
+    "williamboman/nvim-lsp-installer",
+    after = {"cmp-nvim-lsp", "nvim-lspconfig"},
     config = function()
-      local lspconfig = require("lsp")
-      lspconfig.setup()
-      lspconfig.load_efm()
+      require("lsp.visual")
+      require("lsp.setup")
+      require("lsp.servers.efm")
     end
   }
+
   use {
     "folke/lua-dev.nvim",
-    after = {"nvim-lspconfig", "nvim-lspinstall"},
+    after = {"nvim-lspconfig", "nvim-lsp-installer"},
     ft = {"lua"},
     config = function()
-      require("lsp.").load_sumneko_lua()
+      require("lsp.servers.sumneko_lua")
+    end
+  }
+
+  --
+  -- Auto Completion
+  --
+
+  use "hrsh7th/vim-vsnip"
+  use "hrsh7th/cmp-vsnip"
+  use {"rafamadriz/friendly-snippets", event = "InsertCharPre"}
+
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-emoji"
+  use "hrsh7th/cmp-path"
+
+  use {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require("config.cmp")
     end
   }
 
@@ -57,7 +89,7 @@ local plugins = function(use)
     after = "telescope.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
-      require("lsp").setup_flutter_tool()
+      require("lsp.tools.flutter")
     end
   }
   use "dart-lang/dart-vim-plugin"
@@ -83,26 +115,6 @@ local plugins = function(use)
       require("config.spellsitter")
     end
   }
-
-  --
-  -- Auto Completion
-  --
-
-  use "hrsh7th/cmp-nvim-lsp"
-  use {
-    "hrsh7th/nvim-cmp",
-    after = {"nvim-lspinstall"},
-    config = function()
-      require("config.cmp")
-    end
-  }
-
-  use {"hrsh7th/cmp-buffer", event = "InsertEnter"}
-  use {"hrsh7th/cmp-emoji", event = "InsertEnter"}
-  use {"hrsh7th/cmp-path", event = "InsertEnter"}
-  use {"hrsh7th/vim-vsnip", event = "InsertEnter"}
-  use {"hrsh7th/cmp-vsnip", event = "InsertEnter"}
-  use {"rafamadriz/friendly-snippets", event = "InsertCharPre"}
 
   --
   -- Auto pair
