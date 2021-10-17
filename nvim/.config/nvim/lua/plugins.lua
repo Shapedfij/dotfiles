@@ -39,15 +39,13 @@ local plugins = function(use)
   -- LSP
   --
 
+  use "neovim/nvim-lspconfig"
   use "hrsh7th/cmp-nvim-lsp"
   use {
-    "neovim/nvim-lspconfig",
     "williamboman/nvim-lsp-installer",
     after = {"cmp-nvim-lsp", "nvim-lspconfig"},
     config = function()
-      require("lsp.visual")
       require("lsp.setup")
-      require("lsp.servers.efm")
     end
   }
 

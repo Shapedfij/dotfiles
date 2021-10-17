@@ -1,12 +1,8 @@
-local lsp = require("lsp.setup")
 local cmp = require("cmp")
 
 cmp.setup({
-  completion = {autocomplete = false, completeopt = "menu,menuone,noinsert"},
-  documentation = {
-    winhighlight = "NormalFloat:CmpDocumentation,FloatBorder:CmpDocumentationBorder",
-    border = lsp.border
-  },
+  completion = {autocomplete = true, completeopt = "menu,menuone,noinsert"},
+  documentation = {winhighlight = "NormalFloat:CmpDocumentation,FloatBorder:CmpDocumentationBorder", border = "rounded"},
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body)
@@ -26,32 +22,19 @@ cmp.setup({
     format = function(entry, vim_item)
       -- set a name for each source
       vim_item.menu = ({
-        spell = "暈",
-        buffer = "﬘ ",
-        emoji = "ﲃ ",
-        nvim_lsp = " ",
-        path = " ",
-        treesitter = "滑",
-        luasnip = "",
-        nvim_lua = " ",
-        latex_symbols = " "
-        -- spell = "[Spell]",
-        -- buffer = "[Buffer]",
-        -- calc = "[Calc]",
-        -- emoji = "[Emoji]",
-        -- nvim_lsp = "[LSP]",
-        -- path = "[Path]",
-        -- look = "[Look]",
-        -- treesitter = "[treesitter]",
-        -- luasnip = "[LuaSnip]",
-        -- nvim_lua = "[Lua]",
-        -- latex_symbols = "[Latex]"
+        buffer = "﬘ (Buffer) ",
+        nvim_lsp = "   (LSP)",
+        luasnip = "   (Snippet)",
+        nvim_lua = " (Lua)",
+        path = " (Folder) ",
+        spell = "暈(Spell)",
+        emoji = "ﲃ (Emoji) "
       })[entry.source.name]
       return vim_item
     end
   },
   sources = {
-    {name = "nvim_lsp"}, {name = "luasnip"}, {name = "treesitter"}, {name = "nvim_lua"}, {name = "buffer"},
-    {name = "spell"}, {name = "emoji"}, {name = "path"}, {name = "latex_symbols"}
+    {name = "buffer"}, {name = "nvim_lsp"}, {name = "luasnip"}, {name = "nvim_lua"}, {name = "path"}, {name = "spell"},
+    {name = "emoji"}
   }
 })
