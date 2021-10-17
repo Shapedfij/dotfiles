@@ -1,12 +1,12 @@
-local lsp = require("lsp.setup")
+local lsp_opts = require("lsp.opts")
 
 require("flutter-tools").setup({
-  ui = {border = lsp.border},
+  ui = {border = "rounded"},
   -- flutter_lookup_cmd = "dirname $(which flutter)", -- zsh/bash shell
   flutter_lookup_cmd = "dirname (which flutter)", -- fish shell
   lsp = {
-    on_attach = lsp.on_attach,
-    capabilities = lsp.capabilities,
+    on_attach = lsp_opts.on_attach,
+    capabilities = lsp_opts.capabilities,
     settings = {showTodos = true, completeFunctionCalls = true}
   }
 })
