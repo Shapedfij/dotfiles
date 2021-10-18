@@ -22,10 +22,6 @@ stow --adopt -nv *
 
 ## Screenshots 📺
 
-### Font
-
-- [Ubuntu Mono](https://design.ubuntu.com/font/)
-
 ### [onedark](https://github.com/ful1e5/onedark.nvim)
 
 <p align="center">
