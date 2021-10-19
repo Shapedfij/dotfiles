@@ -1,4 +1,4 @@
--- vim.o.background = "dark"
+-- vim.o.background = "light"
 -- require("lualine").setup({options = {theme = "github"}})
 require("github-theme").setup({
   -- theme_style = "light",
