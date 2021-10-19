@@ -43,18 +43,8 @@ local plugins = function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use {
     "williamboman/nvim-lsp-installer",
-    after = {"cmp-nvim-lsp", "nvim-lspconfig"},
     config = function()
       require("lsp.setup")
-    end
-  }
-
-  use {
-    "folke/lua-dev.nvim",
-    after = {"nvim-lspconfig", "nvim-lsp-installer"},
-    ft = {"lua"},
-    config = function()
-      require("lsp.servers.sumneko_lua")
     end
   }
 

@@ -5133,3 +5133,11 @@ WARNBody
 INFOBody
 DEBUGBody
 TRACEBody
+jsonls
+cssls
+bashls
+tsserver
+lemminx
+yamlls
+win32
+LSPOption
