@@ -22,11 +22,11 @@ cmp.setup({
     format = function(entry, vim_item)
       -- set a name for each source
       vim_item.menu = ({
-        buffer = "﬘ (Buffer) ",
         nvim_lsp = "   (LSP)",
         luasnip = "   (Snippet)",
         nvim_lua = " (Lua)",
         path = " (Folder) ",
+        buffer = "﬘ (Buffer) ",
         spell = "暈(Spell)",
         emoji = "ﲃ (Emoji) "
       })[entry.source.name]
@@ -34,7 +34,7 @@ cmp.setup({
     end
   },
   sources = {
-    {name = "buffer"}, {name = "nvim_lsp"}, {name = "luasnip"}, {name = "nvim_lua"}, {name = "path"}, {name = "spell"},
+    {name = "nvim_lsp"}, {name = "luasnip"}, {name = "nvim_lua"}, {name = "path"}, {name = "buffer"}, {name = "spell"},
     {name = "emoji"}
   }
 })
