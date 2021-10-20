@@ -27,6 +27,6 @@ require("nvim-treesitter.configs").setup {
   context_commentstring = {enable = true},
   incremental_selection = {
     enable = true,
-    keymaps = {init_selection = "gnn", node_incremental = "grn", scope_incremental = "grc", node_decremental = "grm"}
+    keymaps = {init_selection = "<space><space>", node_incremental = "<space>=", node_decremental = "<space>-"}
   }
 }
