@@ -5141,3 +5141,8 @@ lemminx
 yamlls
 win32
 LSPOption
+JIT
+flake8
+filetypes
+Stdin
+stdin

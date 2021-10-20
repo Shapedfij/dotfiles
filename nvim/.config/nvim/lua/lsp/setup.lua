@@ -3,6 +3,8 @@ local lsp_installer = require("nvim-lsp-installer")
 
 local servers = {"bashls", "cssls", "jsonls", "pyright", "html", "yamlls", "lemminx", "tsserver", "sumneko_lua"}
 
+USER = vim.fn.expand("$USER")
+
 -- Automatic Installation
 for _, name in pairs(servers) do
   local ok, server = lsp_installer.get_server(name)
@@ -65,6 +67,21 @@ lsp_installer.on_server_ready(function(server)
           telemetry = {enable = false}
         }
       }
+    end,
+    efm = function()
+
+      local flake8 = {
+        lintCommand = "flake8 --stdin-display-name ${INPUT} -",
+        lintStdin = true,
+        lintFormats = {"%f=%l:%c: %m"}
+      }
+      default_opts.cmd = {
+        vim.fn.stdpath("data") .. "/lsp_servers/efm/efm-langserver", "-c",
+        "/home/" .. USER .. "/.config/efm-langserver/config.yaml"
+      }
+      default_opts.init_options = {documentFormatting = true}
+      default_opts.filetypes = {"python"}
+      default_opts.settings = {rootMarkers = {".git/"}, languages = {python = {flake8}}}
     end
   }
 
