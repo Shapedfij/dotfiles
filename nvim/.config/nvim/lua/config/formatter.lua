@@ -1,27 +1,46 @@
-local prettierFmt = function()
+local prettier = function()
   return {exe = "prettier", args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)}, stdin = true}
+end
+
+local isort = function()
+  return {exe = "isort", args = {"-"}, stdin = true}
+end
+
+local black = function()
+  return {exe = "black", args = {"-"}, stdin = true}
 end
 
 require("formatter").setup({
   logging = false,
   filetype = {
-    typescript = {prettierFmt},
-    typescriptreact = {prettierFmt},
-    javascript = {prettierFmt},
-    javascriptreact = {prettierFmt},
-    css = {prettierFmt},
-    vue = {prettierFmt},
-    less = {prettierFmt},
-    json = {prettierFmt},
-    yaml = {prettierFmt},
-    markdown = {prettierFmt},
-    html = {prettierFmt}
+    typescript = {prettier},
+    typescriptreact = {prettier},
+    javascript = {prettier},
+    javascriptreact = {prettier},
+    css = {prettier},
+    vue = {prettier},
+    less = {prettier},
+    json = {prettier},
+    yaml = {prettier},
+    markdown = {prettier},
+    html = {prettier},
+    python = {isort, black}
   }
 })
 
-vim.cmd [[
-augroup Format
-    autocmd!
-    autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*markdown,*.vue,*.yml,*.yaml,*.html FormatWrite
-augroup END
-]]
+local au = require("au")
+
+local files = {
+  "*.js", "*.jsx", "*.mjs", "*.ts", "*.tsx", "*.css", "*.less", "*.scss", "*.json", "*.graphql", "*.md", "*markdown",
+  "*.vue", "*.yml", "*.yaml", "*.html", "*.py", "*.pyi"
+}
+local ftypes = table.concat(files, ",")
+
+au.group("FormatAutogroup", {{"BufWritePost", ftypes, "FormatWrite"}})
+
+-- vim.cmd [[
+-- augroup Format
+--     autocmd!
+--     autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*markdown,*.vue,*.yml,*.yaml,*.html,*.py,*.pyi FormatWrite
+-- augroup END
+-- ]]

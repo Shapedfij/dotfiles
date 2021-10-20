@@ -12,7 +12,7 @@ end
 
 -- Auto source when there are changes in plugins.lua
 local au = require("au")
-au.BufWritePost = {"plugins.lua", "source <afile> | PackerCompile"}
+au.group("PackerGroup", {{"BufWritePost", "plugins.lua", "source <afile> | PackerCompile profile=true"}})
 
 local plugins = function(use)
   use "wbthomason/packer.nvim"
@@ -175,16 +175,7 @@ local plugins = function(use)
   --
 
   use {
-    "psf/black",
-    event = "BufRead",
-    ft = {"py", "pyi"},
-    config = function()
-      vim.cmd [[autocmd BufWrite *.py,*.pyi execute ':Black']]
-    end
-  }
-  use {
     "andrejlevkovitch/vim-lua-format",
-    event = "BufRead",
     ft = {"lua"},
     config = function()
       vim.cmd [[autocmd BufWrite *.lua call LuaFormat()]]
