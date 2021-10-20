@@ -67,9 +67,11 @@ lsp_installer.on_server_ready(function(server)
           telemetry = {enable = false}
         }
       }
-    end,
-    efm = function()
 
+      return default_opts
+    end,
+
+    ["efm"] = function()
       local flake8 = {
         lintCommand = "flake8 --stdin-display-name ${INPUT} -",
         lintStdin = true,
@@ -77,11 +79,14 @@ lsp_installer.on_server_ready(function(server)
       }
       default_opts.cmd = {
         vim.fn.stdpath("data") .. "/lsp_servers/efm/efm-langserver", "-c",
-        "/home/" .. USER .. "/.config/efm-langserver/config.yaml"
+        -"/home/" .. USER .. "/.config/efm-langserver/config.yaml"
       }
+      default_opts.flags = {debounce_text_changes = 150}
       default_opts.init_options = {documentFormatting = true}
       default_opts.filetypes = {"python"}
       default_opts.settings = {rootMarkers = {".git/"}, languages = {python = {flake8}}}
+
+      return default_opts
     end
   }
 
