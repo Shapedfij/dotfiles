@@ -22,19 +22,25 @@ cmp.setup({
     format = function(entry, vim_item)
       -- set a name for each source
       vim_item.menu = ({
-        nvim_lsp = "   (LSP)",
-        luasnip = "   (Snippet)",
-        nvim_lua = " (Lua)",
-        path = " (Folder) ",
-        buffer = "﬘ (Buffer) ",
-        spell = "暈(Spell)",
-        emoji = "ﲃ (Emoji) "
+        nvim_lua = "[lua]",
+        nvim_lsp = " [LSP]",
+        luasnip = " [snip]",
+        path = "[path] ",
+        buffer = "[buff] ",
+        spell = "[spell]",
+        emoji = "[emoji] "
       })[entry.source.name]
       return vim_item
     end
   },
   sources = {
-    {name = "nvim_lsp"}, {name = "luasnip"}, {name = "nvim_lua"}, {name = "path"}, {name = "buffer"}, {name = "spell"},
+    {name = "nvim_lua"},
+    {name = "nvim_lsp"},
+    {name = "luasnip"},
+    {name = "path"},
+    {name = "spell"},
+    {name = "buffer", keyword_length = 5},
     {name = "emoji"}
-  }
+  },
+  experimental = {native_menu = false, ghost_text = true}
 })
