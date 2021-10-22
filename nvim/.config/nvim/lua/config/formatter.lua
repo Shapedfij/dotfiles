@@ -31,8 +31,24 @@ require("formatter").setup({
 local au = require("au")
 
 local files = {
-  "*.js", "*.jsx", "*.mjs", "*.ts", "*.tsx", "*.css", "*.less", "*.scss", "*.json", "*.graphql", "*.md", "*markdown",
-  "*.vue", "*.yml", "*.yaml", "*.html", "*.py", "*.pyi"
+  "*.js",
+  "*.jsx",
+  "*.mjs",
+  "*.ts",
+  "*.tsx",
+  "*.css",
+  "*.less",
+  "*.scss",
+  "*.json",
+  "*.graphql",
+  "*.md",
+  "*markdown",
+  "*.vue",
+  "*.yml",
+  "*.yaml",
+  "*.html",
+  "*.py",
+  "*.pyi"
 }
 local ftypes = table.concat(files, ",")
 

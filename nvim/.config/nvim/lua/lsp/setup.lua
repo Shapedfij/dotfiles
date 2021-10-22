@@ -1,7 +1,7 @@
 -- LSP installer setup
 local lsp_installer = require("nvim-lsp-installer")
 
-local servers = {"bashls", "cssls", "jsonls", "pyright", "html", "yamlls", "lemminx", "tsserver", "sumneko_lua"}
+local servers = {"bashls", "cssls", "jsonls", "pyright", "html", "yamlls", "lemminx", "efm", "tsserver", "sumneko_lua"}
 
 USER = vim.fn.expand("$USER")
 
@@ -81,8 +81,9 @@ lsp_installer.on_server_ready(function(server)
         lintFormats = {"%f=%l:%c: %m"}
       }
       default_opts.cmd = {
-        vim.fn.stdpath("data") .. "/lsp_servers/efm/efm-langserver", "-c",
-        -"/home/" .. USER .. "/.config/efm-langserver/config.yaml"
+        vim.fn.stdpath("data") .. "/lsp_servers/efm/efm-langserver",
+        "-c",
+        "/home/" .. USER .. "/.config/efm-langserver/config.yaml"
       }
       default_opts.flags = {debounce_text_changes = 150}
       default_opts.init_options = {documentFormatting = true}
@@ -99,7 +100,7 @@ lsp_installer.on_server_ready(function(server)
 end)
 
 -- Diagnostic icons
-local signs = {Error = " ", Warn = " ", Hint = " ", Info = " "}
+local signs = {Error = " ", Warn = " ", Hint = "硫", Info = " "}
 
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
