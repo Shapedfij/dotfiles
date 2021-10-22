@@ -189,7 +189,7 @@ local plugins = function(use)
   }
 
   --
-  -- Highlights
+  -- Language syntax highlights
   --
 
   use "fladson/vim-kitty"
@@ -200,6 +200,13 @@ local plugins = function(use)
   --
 
   -- use {"romgrk/barbar.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
+  -- use {
+  --   "akinsho/bufferline.nvim",
+  --   requires = "kyazdani42/nvim-web-devicons",
+  --   config = function()
+  --     require("bufferline").setup {options = {separator_style = "slant"}}
+  --   end
+  -- }
 
   use "tpope/vim-surround"
   use {
@@ -219,7 +226,7 @@ local plugins = function(use)
   use {
     "norcalli/nvim-colorizer.lua",
     config = function()
-      require("config.colorizer")
+      require("colorizer").setup()
     end
   }
 end
