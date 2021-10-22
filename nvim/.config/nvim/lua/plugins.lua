@@ -52,8 +52,8 @@ local plugins = function(use)
   -- Auto Completion
   --
 
-  use "hrsh7th/vim-vsnip"
-  use "hrsh7th/cmp-vsnip"
+  use "L3MON4D3/LuaSnip"
+  use "saadparwaiz1/cmp_luasnip"
   use {"rafamadriz/friendly-snippets", event = "InsertCharPre"}
 
   use "hrsh7th/cmp-buffer"
