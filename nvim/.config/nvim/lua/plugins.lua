@@ -167,7 +167,7 @@ local plugins = function(use)
     "projekt0n/circles.nvim",
     requires = {{"kyazdani42/nvim-web-devicons"}, {"kyazdani42/nvim-tree.lua", opt = true}},
     config = function()
-      require("circles").setup({icons = {empty = "", filled = "", lsp_prefix = ""}})
+      require("circles").setup({icons = {empty = "", filled = "", lsp_prefix = " "}})
     end
   }
 
