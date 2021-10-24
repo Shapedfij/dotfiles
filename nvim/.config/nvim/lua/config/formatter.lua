@@ -53,10 +53,3 @@ local files = {
 local ftypes = table.concat(files, ",")
 
 au.group("FormatAutogroup", {{"BufWritePost", ftypes, "FormatWrite"}})
-
--- vim.cmd [[
--- augroup Format
---     autocmd!
---     autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*markdown,*.vue,*.yml,*.yaml,*.html,*.py,*.pyi FormatWrite
--- augroup END
--- ]]
