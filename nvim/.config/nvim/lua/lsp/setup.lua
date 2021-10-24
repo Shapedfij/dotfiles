@@ -1,7 +1,19 @@
 -- LSP installer setup
 local lsp_installer = require("nvim-lsp-installer")
 
-local servers = {"bashls", "cssls", "jsonls", "pyright", "html", "yamlls", "lemminx", "efm", "tsserver", "sumneko_lua"}
+local servers = {
+  "bashls",
+  "cssls",
+  "jsonls",
+  "pyright",
+  "html",
+  "yamlls",
+  "lemminx",
+  "efm",
+  "tsserver",
+  "sumneko_lua",
+  "lemminx"
+}
 
 USER = vim.fn.expand("$USER")
 
