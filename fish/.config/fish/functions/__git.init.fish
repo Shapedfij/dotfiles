@@ -74,6 +74,7 @@ function __git.init
   __git.create_abbr gloo       "git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
   __git.create_abbr gm         git merge
   __git.create_abbr gmt        git mergetool --no-prompt
+  __git.create_abbr gmom       git merge origin/\(__git.default_branch\)
   __git.create_abbr gp         git push
   __git.create_abbr gp!        git push --force-with-lease
   __git.create_abbr gpo        git push origin
@@ -126,6 +127,9 @@ function __git.init
   __git.create_abbr gswc       git switch --create
   __git.create_abbr gunignore  git update-index --no-assume-unchanged
   __git.create_abbr gup        git pull --rebase
+  __git.create_abbr gupv       git pull --rebase -v
+  __git.create_abbr gupa       git pull --rebase --autostash
+  __git.create_abbr gupav      git pull --rebase --autostash -v
   __git.create_abbr gwch       git whatchanged -p --abbrev-commit --pretty=medium
 
   # git checkout abbreviations
