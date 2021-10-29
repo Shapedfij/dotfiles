@@ -15,6 +15,7 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", {noremap = true})
 
 -- Buffer
 map("n", "<Leader><Esc>", ":bd<CR>", {noremap = true})
+map("n", "<C-l>", ":%bd!<CR>", {noremap = true})
 map("n", "<Leader>]", ":bnext<CR>", {noremap = true})
 map("n", "<Leader>[", ":bprev<CR>", {noremap = true})
 
@@ -26,3 +27,6 @@ map("n", "<Leader>l", ":wincmd l<CR>", {noremap = true})
 
 -- Clear search result
 map("n", "<C-n>", ":set hlsearch!<CR>", {noremap = true})
+
+-- Source luafile
+map("n", "<Leader>so", ":luafile %<CR>", {noremap = true})
