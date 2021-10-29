@@ -52,13 +52,16 @@ local plugins = function(use)
   -- Auto Completion
   --
 
+  -- Snippets
   use "L3MON4D3/LuaSnip"
   use "saadparwaiz1/cmp_luasnip"
   use {"rafamadriz/friendly-snippets", event = "InsertCharPre"}
 
+  -- Sources
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-path"
+  use {"petertriho/cmp-git", requires = "nvim-lua/plenary.nvim"}
 
   use {
     "hrsh7th/nvim-cmp",

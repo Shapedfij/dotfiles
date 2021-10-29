@@ -7,7 +7,7 @@ local has_words_before = function()
 end
 
 cmp.setup({
-  completion = {autocomplete = true, completeopt = "menu,menuone,noinsert"},
+  completion = {autocomplete = false, completeopt = "menu,menuone,noinsert"},
   documentation = {winhighlight = "NormalFloat:CmpDocumentation,FloatBorder:CmpDocumentationBorder", border = "rounded"},
   snippet = {
     expand = function(args)
@@ -46,6 +46,7 @@ cmp.setup({
     format = function(entry, vim_item)
       -- set a name for each source
       vim_item.menu = ({
+        cmp_git = "[git]",
         nvim_lua = "[lua]",
         nvim_lsp = " [LSP]",
         luasnip = " [snip]",
@@ -58,6 +59,7 @@ cmp.setup({
     end
   },
   sources = {
+    {name = "cmp_git"},
     {name = "nvim_lua"},
     {name = "nvim_lsp"},
     {name = "luasnip"},
@@ -67,4 +69,17 @@ cmp.setup({
     {name = "emoji"}
   },
   experimental = {native_menu = false, ghost_text = true}
+})
+
+require("cmp_git").setup({
+  -- defaults
+  filetypes = {"gitcommit", "markdown"},
+  github = {
+    issues = {
+      filter = "all", -- assigned, created, mentioned, subscribed, all, repos
+      limit = 100,
+      state = "all" -- open, closed, all
+    },
+    mentions = {limit = 100}
+  }
 })
