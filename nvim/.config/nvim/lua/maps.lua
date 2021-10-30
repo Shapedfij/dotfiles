@@ -30,3 +30,6 @@ map("n", "<C-n>", ":set hlsearch!<CR>", {noremap = true})
 
 -- Source luafile
 map("n", "<Leader>so", ":luafile %<CR>", {noremap = true})
+
+-- Change word
+map("n", "<Leader><F2>", ":%s/\\<<C-r><C-w>\\>//g<Left><Left>", {noremap = true})
