@@ -1,7 +1,7 @@
 -- LSP installer setup
 local lsp_installer = require("nvim-lsp-installer")
 
-local servers = {"bashls", "cssls", "jsonls", "pyright", "html", "yamlls", "efm", "tsserver", "sumneko_lua"}
+local servers = {"bashls", "cssls", "jsonls", "pyright", "html", "yamlls", "tsserver", "sumneko_lua"}
 
 USER = vim.fn.expand("$USER")
 
@@ -72,17 +72,18 @@ lsp_installer.on_server_ready(function(server)
       }
 
       return default_opts
-    end,
-
-    ["efm"] = function()
-      -- Configure  config.yaml for settings
-      default_opts.cmd = {
-        vim.fn.stdpath("data") .. "/lsp_servers/efm/efm-langserver",
-        "-c",
-        "/home/" .. USER .. "/.config/efm-langserver/config.yaml"
-      }
-      return default_opts
     end
+
+    -- ["efm"] = function()
+    --   -- Configure  config.yaml for settings
+    --   default_opts.cmd = {
+    --     vim.fn.stdpath("data") .. "/lsp_servers/efm/efm-langserver",
+    --     "-c",
+    --     "/home/" .. USER .. "/.config/efm-langserver/config.yaml"
+    --   }
+    --   default_opts.filetypes = {"python"}
+    --   return default_opts
+    -- end
   }
 
   -- We check to see if any custom server_opts exist for the LSP server, if so, load them, if not, use our default_opts
