@@ -3,5 +3,5 @@ require("notify").setup({
   stages = "slide",
 
   -- Default timeout for notifications
-  timeout = 1500
+  timeout = 500
 })
