@@ -28,7 +28,7 @@ cmp.setup({
       else
         fallback()
       end
-    end, {"i", "s"}),
+    end, {"i", "n"}),
     ["<C-p>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -37,7 +37,7 @@ cmp.setup({
       else
         fallback()
       end
-    end, {"i", "s"}),
+    end, {"i", "n"}),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-y>"] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace, select = true})
   },
