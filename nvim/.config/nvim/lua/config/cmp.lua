@@ -48,7 +48,7 @@ cmp.setup({
       vim_item.menu = ({
         cmp_git = "[git]",
         nvim_lua = "[lua]",
-        nvim_lsp = " [LSP]",
+        nvim_lsp = " [lsp]",
         luasnip = " [snip]",
         path = "[path] ",
         buffer = "[buff] ",
