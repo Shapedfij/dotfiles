@@ -73,17 +73,6 @@ lsp_installer.on_server_ready(function(server)
 
       return default_opts
     end
-
-    -- ["efm"] = function()
-    --   -- Configure  config.yaml for settings
-    --   default_opts.cmd = {
-    --     vim.fn.stdpath("data") .. "/lsp_servers/efm/efm-langserver",
-    --     "-c",
-    --     "/home/" .. USER .. "/.config/efm-langserver/config.yaml"
-    --   }
-    --   default_opts.filetypes = {"python"}
-    --   return default_opts
-    -- end
   }
 
   -- We check to see if any custom server_opts exist for the LSP server, if so, load them, if not, use our default_opts
