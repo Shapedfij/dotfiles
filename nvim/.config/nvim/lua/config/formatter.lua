@@ -10,6 +10,10 @@ local black = function()
   return {exe = "black", args = {"-"}, stdin = true}
 end
 
+local xmllint = function()
+  return {exe = "xmllint", args = {"--format", "-"}, stdin = true}
+end
+
 require("formatter").setup({
   logging = false,
   filetype = {
@@ -24,7 +28,9 @@ require("formatter").setup({
     yaml = {prettier},
     markdown = {prettier},
     html = {prettier},
-    python = {isort, black}
+    python = {isort, black},
+    xml = {xmllint},
+    svg = {xmllint}
   }
 })
 
@@ -48,7 +54,9 @@ local files = {
   "*.yaml",
   "*.html",
   "*.py",
-  "*.pyi"
+  "*.pyi",
+  "*.xml",
+  "*.svg"
 }
 local ftypes = table.concat(files, ",")
 
