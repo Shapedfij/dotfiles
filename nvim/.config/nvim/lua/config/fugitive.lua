@@ -11,3 +11,4 @@ map("n", "<Leader>gp", ":G push<CR>", {noremap = true})
 map("n", "<Leader>gl", ":G pull<CR>", {noremap = true})
 
 map("n", "<Leader>grs", ":G reset --soft HEAD~1<CR>", {noremap = true})
+map("n", "<Leader>grh", ":G reset --hard HEAD~1<CR>", {noremap = true})
