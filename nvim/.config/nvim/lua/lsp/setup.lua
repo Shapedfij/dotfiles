@@ -1,6 +1,6 @@
 -- LSP installer setup
 local lsp_installer = require("nvim-lsp-installer")
-
+local opts = require("lsp.opts")
 local servers = {"bashls", "cssls", "jsonls", "pylsp", "html", "yamlls", "tsserver", "sumneko_lua"}
 
 USER = vim.fn.expand("$USER")
@@ -19,11 +19,14 @@ end
 
 -- Configuration
 lsp_installer.on_server_ready(function(server)
-  local default_opts = require("lsp.opts")
+
+  local default_opts = opts
 
   -- Now we'll create a server_opts table where we'll specify our custom LSP server configuration
   local server_opts = {
+
     ["sumneko_lua"] = function()
+
       local system_name
       if vim.fn.has("mac") == 1 then
         system_name = "macOS"
@@ -43,6 +46,7 @@ lsp_installer.on_server_ready(function(server)
       table.insert(runtime_path, "lua/?.lua")
       table.insert(runtime_path, "lua/?/init.lua")
 
+      default_opts = opts
       default_opts.cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"}
       default_opts.settings = {
         Lua = {
@@ -76,7 +80,7 @@ lsp_installer.on_server_ready(function(server)
   }
 
   -- We check to see if any custom server_opts exist for the LSP server, if so, load them, if not, use our default_opts
-  server:setup(server_opts[server.name] and server_opts[server.name]() or default_opts)
+  server:setup(server_opts[server.name] and server_opts[server.name]() or opts)
   vim.cmd([[ do User LspAttachBuffers ]])
 end)
 
