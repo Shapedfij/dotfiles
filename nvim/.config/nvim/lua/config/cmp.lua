@@ -68,18 +68,22 @@ cmp.setup({
     {name = "buffer", keyword_length = 5},
     {name = "emoji"}
   },
-  experimental = {native_menu = false, ghost_text = true}
+  experimental = {native_menu = false, ghost_text = true},
+  sorting = {
+    comparators = {
+      cmp.config.compare.offset,
+      cmp.config.compare.exact,
+      cmp.config.compare.sort_text,
+      cmp.config.compare.score,
+      cmp.config.compare.kind,
+      cmp.config.compare.length,
+      cmp.config.compare.order
+    }
+  }
 })
 
 require("cmp_git").setup({
   -- defaults
   filetypes = {"gitcommit", "markdown"},
-  github = {
-    issues = {
-      filter = "all", -- assigned, created, mentioned, subscribed, all, repos
-      limit = 100,
-      state = "all" -- open, closed, all
-    },
-    mentions = {limit = 100}
-  }
+  mentions = {limit = 100}
 })
