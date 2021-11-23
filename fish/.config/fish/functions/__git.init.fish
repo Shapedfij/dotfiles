@@ -65,8 +65,8 @@ function __git.init
   __git.create_abbr gl         git pull
   __git.create_abbr gll        git pull origin
   __git.create_abbr glr        git pull --rebase
-  __git.create_abbr glg        git log --stat --max-count=10
-  __git.create_abbr glgg       git log --graph --max-count=10
+  __git.create_abbr glg        git log --stat
+  __git.create_abbr glgg       git log --graph
   __git.create_abbr glgga      git log --graph --decorate --all
   __git.create_abbr glo        git log --oneline --decorate --color
   __git.create_abbr glog       git log --oneline --decorate --color --graph
@@ -117,6 +117,7 @@ function __git.init
   __git.create_abbr gst        git status
   __git.create_abbr gsta       git stash
   __git.create_abbr gstd       git stash drop
+  __git.create_abbr gstl       git stash list
   __git.create_abbr gstp       git stash pop
   __git.create_abbr gsts       git stash show --text
   __git.create_abbr gsu        git submodule update
