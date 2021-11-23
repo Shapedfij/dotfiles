@@ -47,9 +47,9 @@ cmp.setup({
       -- set a name for each source
       vim_item.menu = ({
         cmp_git = "[git]",
+        luasnip = " [snip]",
         nvim_lua = "[lua]",
         nvim_lsp = " [lsp]",
-        luasnip = " [snip]",
         path = "[path] ",
         buffer = "[buff] ",
         spell = "[spell]",
@@ -60,9 +60,9 @@ cmp.setup({
   },
   sources = {
     {name = "cmp_git"},
+    {name = "luasnip"},
     {name = "nvim_lua"},
     {name = "nvim_lsp"},
-    {name = "luasnip"},
     {name = "path"},
     {name = "spell"},
     {name = "buffer", keyword_length = 5},
