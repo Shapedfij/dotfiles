@@ -1,9 +1,12 @@
 local cmp = require("cmp")
-local luasnip = require("luasnip")
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
+local feedkey = function(key, mode)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
 cmp.setup({
@@ -11,7 +14,7 @@ cmp.setup({
   documentation = {winhighlight = "NormalFloat:CmpDocumentation,FloatBorder:CmpDocumentationBorder", border = "rounded"},
   snippet = {
     expand = function(args)
-      require("luasnip").lsp_expand(args.body)
+      vim.fn["vsnip#anonymous"](args.body)
     end
   },
   mapping = {
@@ -21,23 +24,21 @@ cmp.setup({
     ["<C-n>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
+      elseif vim.fn["vsnip#available"](1) == 1 then
+        feedkey("<Plug>(vsnip-expand-or-jump)", "")
       elseif has_words_before() then
         cmp.complete()
       else
-        fallback()
+        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
       end
-    end, {"i", "n"}),
-    ["<C-p>"] = cmp.mapping(function(fallback)
+    end, {"i", "s"}),
+    ["<C-p>"] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
+      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+        feedkey("<Plug>(vsnip-jump-prev)", "")
       end
-    end, {"i", "n"}),
+    end, {"i", "s"}),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-y>"] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace, select = true})
   },
@@ -47,7 +48,7 @@ cmp.setup({
       -- set a name for each source
       vim_item.menu = ({
         cmp_git = "[git]",
-        luasnip = " [snip]",
+        vsnip = " [snip]",
         nvim_lua = "[lua]",
         nvim_lsp = " [lsp]",
         path = "[path] ",
@@ -60,7 +61,7 @@ cmp.setup({
   },
   sources = {
     {name = "cmp_git"},
-    {name = "luasnip"},
+    {name = "vsnip"},
     {name = "nvim_lua"},
     {name = "nvim_lsp"},
     {name = "path"},
@@ -81,6 +82,12 @@ cmp.setup({
     }
   }
 })
+
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline("/", {sources = {{name = "buffer"}}})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(":", {sources = cmp.config.sources({{name = "path"}}, {{name = "cmdline"}})})
 
 require("cmp_git").setup({
   -- defaults
