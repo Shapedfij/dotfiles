@@ -28,6 +28,7 @@ M = {
     buf_set_keymap("n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", opts)
     buf_set_keymap("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
     buf_set_keymap("n", "<F2>", "<cmd>lua _G.rename()<cr>", opts)
+    buf_set_keymap("n", "<F3>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
     buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
     buf_set_keymap("n", "<space>e", "<cmd>lua vim.diagnostic.show_line_diagnostics({float={border='rounded'}})<cr>",
                    opts)
