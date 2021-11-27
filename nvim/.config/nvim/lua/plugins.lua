@@ -61,7 +61,6 @@ local plugins = function(use)
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-cmdline"
   use {"petertriho/cmp-git", requires = "nvim-lua/plenary.nvim"}
 
   use {
