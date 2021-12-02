@@ -152,8 +152,8 @@ local plugins = function(use)
   -- ColorScheme
   --
 
-  -- use "ful1e5/onedark.nvim"
-  use "~/GitHub/ful1e5/onedark.nvim"
+  use "ful1e5/onedark.nvim"
+  -- use "~/GitHub/ful1e5/onedark.nvim"
   -- use "~/GitHub/ful1e5/onedark.nvim-1"
 
   use "projekt0n/github-nvim-theme"
