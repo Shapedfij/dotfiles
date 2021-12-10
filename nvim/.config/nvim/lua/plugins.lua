@@ -161,6 +161,7 @@ local plugins = function(use)
   -- use "~/GitHub/ful1e5/github-nvim-theme"
 
   use "catppuccin/nvim"
+  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 
   use "hoob3rt/lualine.nvim"
 
