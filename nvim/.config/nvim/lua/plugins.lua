@@ -152,13 +152,15 @@ local plugins = function(use)
   -- ColorScheme
   --
 
+  use "rktjmp/lush.nvim"
+
   use "ful1e5/onedark.nvim"
   -- use "~/GitHub/ful1e5/onedark.nvim"
   -- use "~/GitHub/ful1e5/onedark.nvim-1"
 
-  -- use "projekt0n/github-nvim-theme"
+  use "projekt0n/github-nvim-theme"
   -- use "ful1e5/github-nvim-theme"
-  use "~/GitHub/ful1e5/github-nvim-theme"
+  -- use "~/GitHub/ful1e5/github-nvim-theme"
 
   use "catppuccin/nvim"
   use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
