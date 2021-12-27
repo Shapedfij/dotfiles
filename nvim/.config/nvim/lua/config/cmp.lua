@@ -84,7 +84,14 @@ cmp.setup({
 })
 
 require("cmp_git").setup({
-  -- defaults
   filetypes = {"gitcommit", "markdown"},
-  mentions = {limit = 100}
+  remotes = {"upstream", "origin"}, -- in order of most to least prioritized
+  github = {
+    issues = {
+      state = "all" -- open, closed, all
+    },
+    pull_requests = {
+      state = "all" -- open, closed, merged, all
+    }
+  }
 })
