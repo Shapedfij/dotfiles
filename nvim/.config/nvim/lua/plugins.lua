@@ -175,7 +175,7 @@ local plugins = function(use)
     "projekt0n/circles.nvim",
     requires = {{"kyazdani42/nvim-web-devicons"}, {"kyazdani42/nvim-tree.lua", opt = true}},
     config = function()
-      require("circles").setup({icons = {empty = "", filled = "", lsp_prefix = " "}})
+      require("circles").setup({icons = {empty = "", filled = "", lsp_prefix = ""}})
     end
   }
 
@@ -207,15 +207,6 @@ local plugins = function(use)
   --
   -- Misc
   --
-
-  -- use {"romgrk/barbar.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
-  -- use {
-  --   "akinsho/bufferline.nvim",
-  --   requires = "kyazdani42/nvim-web-devicons",
-  --   config = function()
-  --     require("bufferline").setup {options = {separator_style = "slant"}}
-  --   end
-  -- }
 
   use "tpope/vim-surround"
   use {
