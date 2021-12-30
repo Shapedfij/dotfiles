@@ -99,17 +99,18 @@ local plugins = function(use)
   }
   use "nvim-treesitter/playground"
   use "windwp/nvim-ts-autotag"
-  use {
-    "lewis6991/spellsitter.nvim",
-    after = "nvim-treesitter",
-    config = function()
-      require("config.spellsitter")
-    end
-  }
+  -- use {
+  --   "lewis6991/spellsitter.nvim",
+  --   after = "nvim-treesitter",
+  --   config = function()
+  --     require("config.spellsitter")
+  --   end
+  -- }
 
   --
   -- Auto pair
   --
+
   use {
     "windwp/nvim-autopairs",
     config = function()
@@ -118,7 +119,7 @@ local plugins = function(use)
   }
 
   --
-  -- telescope
+  -- Telescope (Fuzzy Finder)
   --
 
   use {
