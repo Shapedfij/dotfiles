@@ -6,5 +6,6 @@ require("gitsigns").setup({
     topdelete = {text = "▌"},
     changedelete = {text = "▌"}
   },
-  preview_config = {border = "rounded"}
+  preview_config = {border = "rounded"},
+  current_line_blame = true
 })
