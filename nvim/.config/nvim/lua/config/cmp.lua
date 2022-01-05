@@ -83,15 +83,4 @@ cmp.setup({
   }
 })
 
-require("cmp_git").setup({
-  filetypes = {"gitcommit", "markdown"},
-  remotes = {"upstream", "origin"}, -- in order of most to least prioritized
-  github = {
-    issues = {
-      state = "all" -- open, closed, all
-    },
-    pull_requests = {
-      state = "all" -- open, closed, merged, all
-    }
-  }
-})
+require("cmp_git").setup({filetypes = {"gitcommit", "markdown"}})
