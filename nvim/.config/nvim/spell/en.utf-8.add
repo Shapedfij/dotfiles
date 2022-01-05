@@ -5281,3 +5281,8 @@ local
 install
 slug
 feat
+ColorGroup
+palette1
+palette2
+LineNumber
+HexColor
