@@ -1,11 +1,11 @@
-require("gitsigns").setup({
+require('gitsigns').setup({
   signs = {
-    add = {text = "▌"},
-    change = {text = "▌"},
-    delete = {text = "▌"},
-    topdelete = {text = "▌"},
-    changedelete = {text = "▌"}
+    add = { text = '▌' },
+    change = { text = '▌' },
+    delete = { text = '▌' },
+    topdelete = { text = '▌' },
+    changedelete = { text = '▌' },
   },
-  preview_config = {border = "rounded"},
-  current_line_blame = true
+  preview_config = { border = 'rounded' },
+  current_line_blame = true,
 })

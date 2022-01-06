@@ -1,8 +1,8 @@
-local cmp = require("cmp")
+local cmp = require('cmp')
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
 local feedkey = function(key, mode)
@@ -10,66 +10,66 @@ local feedkey = function(key, mode)
 end
 
 cmp.setup({
-  completion = {autocomplete = false, completeopt = "menu,menuone,noinsert"},
-  documentation = {winhighlight = "NormalFloat:CmpDocumentation,FloatBorder:CmpDocumentationBorder", border = "rounded"},
+  completion = { autocomplete = false, completeopt = 'menu,menuone,noinsert' },
+  documentation = { winhighlight = 'NormalFloat:CmpDocumentation,FloatBorder:CmpDocumentationBorder', border = 'rounded' },
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
-    end
+      vim.fn['vsnip#anonymous'](args.body)
+    end,
   },
   mapping = {
-    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-e>"] = cmp.mapping.close(),
-    ["<C-n>"] = cmp.mapping(function(fallback)
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<C-n>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif vim.fn["vsnip#available"](1) == 1 then
-        feedkey("<Plug>(vsnip-expand-or-jump)", "")
+      elseif vim.fn['vsnip#available'](1) == 1 then
+        feedkey('<Plug>(vsnip-expand-or-jump)', '')
       elseif has_words_before() then
         cmp.complete()
       else
         fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
       end
-    end, {"i", "s"}),
-    ["<C-p>"] = cmp.mapping(function()
+    end, { 'i', 's' }),
+    ['<C-p>'] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-        feedkey("<Plug>(vsnip-jump-prev)", "")
+      elseif vim.fn['vsnip#jumpable'](-1) == 1 then
+        feedkey('<Plug>(vsnip-jump-prev)', '')
       end
-    end, {"i", "s"}),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-y>"] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace, select = true})
+    end, { 'i', 's' }),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-y>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
   },
 
   formatting = {
     format = function(entry, vim_item)
       -- set a name for each source
       vim_item.menu = ({
-        cmp_git = "[git]",
-        vsnip = " [snip]",
-        nvim_lua = "[lua]",
-        nvim_lsp = " [lsp]",
-        path = "[path] ",
-        buffer = "[buff] ",
-        spell = "[spell]",
-        emoji = "[emoji] "
+        cmp_git = '[git]',
+        vsnip = ' [snip]',
+        nvim_lua = '[lua]',
+        nvim_lsp = ' [lsp]',
+        path = '[path] ',
+        buffer = '[buff] ',
+        spell = '[spell]',
+        emoji = '[emoji] ',
       })[entry.source.name]
       return vim_item
-    end
+    end,
   },
   sources = {
-    {name = "cmp_git"},
-    {name = "vsnip"},
-    {name = "nvim_lua"},
-    {name = "nvim_lsp"},
-    {name = "path"},
-    {name = "spell"},
-    {name = "buffer", keyword_length = 5},
-    {name = "emoji"}
+    { name = 'cmp_git' },
+    { name = 'vsnip' },
+    { name = 'nvim_lua' },
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+    { name = 'spell' },
+    { name = 'buffer', keyword_length = 5 },
+    { name = 'emoji' },
   },
-  experimental = {native_menu = false, ghost_text = true},
+  experimental = { native_menu = false, ghost_text = true },
   sorting = {
     comparators = {
       cmp.config.compare.offset,
@@ -78,9 +78,9 @@ cmp.setup({
       cmp.config.compare.score,
       cmp.config.compare.kind,
       cmp.config.compare.length,
-      cmp.config.compare.order
-    }
-  }
+      cmp.config.compare.order,
+    },
+  },
 })
 
-require("cmp_git").setup({filetypes = {"gitcommit", "markdown"}})
+require('cmp_git').setup({ filetypes = { 'gitcommit', 'markdown' } })

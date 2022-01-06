@@ -1,7 +1,7 @@
-require("notify").setup({
+require('notify').setup({
   -- Animation style (see below for details)
-  stages = "slide",
+  stages = 'slide',
 
   -- Default timeout for notifications
-  timeout = 500
+  timeout = 500,
 })

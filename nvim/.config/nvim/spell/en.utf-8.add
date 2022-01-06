@@ -5286,3 +5286,6 @@ palette1
 palette2
 LineNumber
 HexColor
+nocombine
+stanout
+githooks
