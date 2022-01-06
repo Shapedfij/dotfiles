@@ -34,6 +34,9 @@ alias .on="cd ~/GitHub/projekt0n/"
 alias p="python"
 set -x PATH ~/.local/bin $PATH
 
+# Cargo
+set -gx PATH "$HOME/.cargo/bin" $PATH;
+
 # Flutter
 # set -Ua fish_user_paths ~/GitHub/flutter/bin
 set PATH ~/GitHub/flutter/bin $PATH
