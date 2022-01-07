@@ -1,4 +1,4 @@
--- require("lualine").setup({options = {theme = "onedark-nvim"}})
+-- require('lualine').setup({ options = { theme = 'onedark-nvim' } })
 require('onedark').setup({
   -- transparent = true,
   dark_float = false,
