@@ -159,8 +159,8 @@ local plugins = function(use)
   use('ful1e5/onedark.nvim')
   -- use "~/GitHub/ful1e5/onedark.nvim"
 
-  use('projekt0n/github-nvim-theme')
-  -- use('~/GitHub/projekt0n/github-nvim-theme')
+  -- use('projekt0n/github-nvim-theme')
+  use('~/GitHub/projekt0n/github-nvim-theme')
 
   use('catppuccin/nvim')
   use({ 'ellisonleao/gruvbox.nvim', requires = { 'rktjmp/lush.nvim' } })
